@@ -499,10 +499,11 @@ const MACHINES = {
   },
   madoka3: {
     name: "スマスロ まどか☆マギカ フォルテ", settings: [1,2,3,4,5,6], mode:"score",
-    BONUS_PROB:  {1:1/251.2,2:1/243.9,3:1/223.4,4:1/210.2,5:1/197.7,6:1/187.5},
-    CHERRY_PROB: {1:1/79.9,2:1/79.0,3:1/77.1,4:1/75.3,5:1/73.6,6:1/72.0},
+    BONUS_PROB:   {1:1/251.2,2:1/243.9,3:1/223.4,4:1/210.2,5:1/197.7,6:1/187.5},
+    CHERRY_PROB:  {1:1/79.9,2:1/79.0,3:1/77.1,4:1/75.3,5:1/73.6,6:1/72.0},
+    CEILING_500:  {1:0.031,2:0.039,3:0.055,4:0.078,5:0.102,6:0.125},
     EVENTS: {},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"bonus",label:"ボーナス当選回数"},{key:"cherry",label:"弱チェリー回数（200G以上でサンプル有効）",note:"なければ0のまま"},{key:"petit_total",label:"プチボーナス 総回数",note:"なければ0のまま"},{key:"petit_big",label:"うちビッグへ昇格した回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"bonus",label:"ボーナス当選回数"},{key:"cherry",label:"弱チェリー回数（200G以上でサンプル有効）",note:"なければ0のまま"},{key:"petit_total",label:"プチボーナス 総回数",note:"なければ0のまま"},{key:"petit_big",label:"うちビッグへ昇格した回数",note:"なければ0のまま"},{key:"ceiling_500",label:"AT後 500G天井 選択回数",note:"なければ0のまま"},{key:"ceiling_total",label:"AT終了 総回数",note:"なければ0のまま"}]
   },
   tokyorevengers: {
     name: "スマスロ 東京リベンジャーズ", settings: [1,2,3,4,5,6],
@@ -678,15 +679,17 @@ function calcBayesian(machine, data) {
     return{probs,reasons,suggestions};
   }
   else if(machine==="madoka3"){
-    const{games=0,bonus,cherry,petit_total,petit_big}=data;
+    const{games=0,bonus,cherry,petit_total,petit_big,ceiling_500,ceiling_total}=data;
     const scores={}; S.forEach(s=>scores[s]=1.0);
     if(bonus>0&&games>0){const actual=games/bonus;S.forEach(s=>{const diff=Math.abs(actual-1/m.BONUS_PROB[s])/(1/m.BONUS_PROB[s]);scores[s]*=Math.max(0.1,1-diff*2);});reasons.push(`ボーナス 1/${actual.toFixed(0)}`);}
     if(cherry>=200&&games>0){const actual=games/cherry;S.forEach(s=>{const diff=Math.abs(actual-1/m.CHERRY_PROB[s])/(1/m.CHERRY_PROB[s]);scores[s]*=Math.max(0.1,1-diff*3);});reasons.push(`弱チェリー 1/${actual.toFixed(1)}`);}
     if(petit_total>=5&&petit_big!=null){const r=petit_big/petit_total;S.forEach(s=>{const exp=0.1+(s-1)*0.06;const diff=Math.abs(r-exp)/(exp+0.01);scores[s]*=Math.max(0.1,1-diff*1.5);});reasons.push(`プチ→ビッグ ${petit_big}/${petit_total}`);}
+    if(ceiling_total>=3&&ceiling_500!=null){const r=ceiling_500/ceiling_total;S.forEach(s=>{const diff=Math.abs(r-m.CEILING_500[s])/m.CEILING_500[s];scores[s]*=Math.max(0.1,1-diff*2);});reasons.push(`AT後500G天井 ${ceiling_500}/${ceiling_total}（設定差4倍！）`);}
     const total=S.reduce((a,s)=>a+scores[s],0)||1;
     const probs={}; S.forEach(s=>probs[s]=scores[s]/total);
     if(cherry<200) suggestions.push("弱チェリーは200回以上でサンプル有効");
     if(!petit_total||petit_total<5) suggestions.push("プチ→ビッグ昇格率をカウント（設定差3倍！）");
+    if(!ceiling_total||ceiling_total<3) suggestions.push("AT後500G天井選択率をカウント（設定差4倍！最重要）");
     return{probs,reasons,suggestions};
   }
   else if(machine==="tokyorevengers"){
