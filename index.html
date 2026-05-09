@@ -310,18 +310,18 @@
 <div class="container">
   <select class="machine-select" id="machine-select" onchange="onMachineChange()">
     <option value="">— SELECT MACHINE —</option>
-    <option value="tokyoghoul">東京喰種</option>
-    <option value="kabaneri">カバネリ2</option>
-    <option value="valvrave">ヴァルブレイヴ2</option>
-    <option value="unicorn">ユニコーン2</option>
-    <option value="monkey">モンキーターンV</option>
-    <option value="hokuto">北斗転生</option>
-    <option value="kaguya">かぐや様は告らせたい</option>
-    <option value="milliongod">スマスロミリオンゴッド</option>
-    <option value="karakuri">スマスロからくりサーカス</option>
-    <option value="tatenoyusha">盾の勇者の成り上がり</option>
-    <option value="codegeass3">コードギアス3</option>
-    <option value="madoka3">まどか☆マギカ フォルテ</option>
+    <option value="tokyoghoul">L 東京喰種</option>
+    <option value="kabaneri">スマスロ カバネリ2</option>
+    <option value="valvrave">スマスロ ヴァルヴレイヴ2</option>
+    <option value="unicorn">スマスロ ガンダムUC2</option>
+    <option value="monkey">スマスロ モンキーターンV</option>
+    <option value="hokuto">パチスロ 北斗転生</option>
+    <option value="kaguya">パチスロ かぐや様は告らせたい</option>
+    <option value="milliongod">スマスロ ミリオンゴッド</option>
+    <option value="karakuri">スマスロ からくりサーカス</option>
+    <option value="tatenoyusha">スマスロ 盾の勇者の成り上がり</option>
+    <option value="codegeass3">パチスロ コードギアス3</option>
+    <option value="madoka3">スマスロ まどか☆マギカ フォルテ</option>
     <option value="tokyorevengers">スマスロ 東京リベンジャーズ</option>
     <option value="rezero2">スマスロ リゼロ2</option>
   </select>
@@ -398,7 +398,7 @@ function signOut() { auth.signOut(); }
 // ========== 機種データ ==========
 const MACHINES = {
   tokyoghoul: {
-    name: "東京喰種", settings: [1,2,3,4,5,6],
+    name: "L 東京喰種", settings: [1,2,3,4,5,6],
     AT_PROB:    {1:1/394.4,2:1/380.5,3:1/357.0,4:1/325.9,5:1/291.2,6:1/261.3},
     CZ_PROB:    {1:1/300.5,2:1/295.1,3:1/287.6,4:1/276.7,5:1/262.7,6:1/251.2},
     UPPER_CZ:   {1:1/2079.1,2:1/1906.5,3:1/1722.8,4:1/1478.9,5:1/1226.6,6:1/1074.9},
@@ -410,7 +410,7 @@ const MACHINES = {
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"cz",label:"通常CZ（レミニセンス）回数"},{key:"upper_cz",label:"上位CZ（大喰いのリゼ）回数",note:"なければ0のまま"},{key:"cz_100g",label:"100G以内CZ当選回数",note:"なければ0のまま"},{key:"cz_100g_total",label:"CZ総回数（100G内判定用）",note:"なければ0のまま"},{key:"eb",label:"エピソードボーナス（EB）回数",note:"なければ0のまま"},{key:"rebattle",label:"引き戻し 成功回数",note:"なければ0のまま"},{key:"rebattle_total",label:"引き戻し 挑戦回数",note:"なければ0のまま"},{key:"seishin33",label:"精神世界ステージ 30G 発生回数",note:"なければ0のまま"},{key:"seishin_total",label:"精神世界ステージ 突入総回数",note:"なければ0のまま"}]
   },
   kabaneri: {
-    name: "カバネリ2", settings: [1,2,3,4,5,6],
+    name: "スマスロ カバネリ2", settings: [1,2,3,4,5,6],
     ST_PROB:   {1:1/422.5,2:1/405.9,3:1/398.7,4:1/357.2,5:1/332.6,6:1/318.5},
     BELL_PROB: {1:1/121.1,2:1/114.4,3:1/112.8,4:1/106.2,5:1/104.2,6:1/99.1},
     FEMALE:    {1:0.500,2:0.575,3:0.415,4:0.585,5:0.399,6:0.600},
@@ -418,7 +418,7 @@ const MACHINES = {
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"st",label:"ST回数"},{key:"bell",label:"下段ベル回数",note:"なければ0のまま"},{key:"female",label:"キャラ紹介 女性回数",note:"なければ0のまま"},{key:"male",label:"キャラ紹介 男性回数",note:"なければ0のまま"},{key:"mima",label:"美馬の出現回数",note:"なければ0のまま"}]
   },
   valvrave: {
-    name: "ヴァルブレイヴ2", settings: [1,2,4,5,6],
+    name: "スマスロ ヴァルヴレイヴ2", settings: [1,2,4,5,6],
     AT_PROB:      {1:1/476,2:1/473,4:1/464,5:1/459,6:1/456},
     HARAIKIRI:    {1:1/17.5,2:1/17.5,4:1/7.0,5:1/7.0,6:1/7.0},
     BUFFET_HUMAN: {1:0.45,2:0.55,4:0.55,5:0.45,6:0.55},
@@ -427,7 +427,7 @@ const MACHINES = {
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"haraikiri",label:"ハラキリドライブ発生回数",note:"なければ0のまま"},{key:"human",label:"バッフェ 有人タイプ回数",note:"なければ0のまま"},{key:"robot",label:"バッフェ 無人タイプ回数",note:"なければ0のまま"},{key:"bar_direct",label:"BAR揃い→AT直撃 回数",note:"なければ0のまま"},{key:"bar_total",label:"BAR揃い 総回数",note:"なければ0のまま"}]
   },
   unicorn: {
-    name: "ユニコーン2", settings: [1,2,3,4,5,6],
+    name: "スマスロ ガンダムUC2", settings: [1,2,3,4,5,6],
     CZ_PROB:  {1:1/298.5,2:1/287.0,3:1/265.1,4:1/247.7,5:1/243.9,6:1/239.8},
     AT_PROB:  {1:1/471.9,2:1/456.6,3:1/427.8,4:1/403.9,5:1/398.3,6:1/392.3},
     FEMALE:   {1:0.40,2:0.60,3:0.40,4:0.60,5:0.40,6:0.60},
@@ -435,7 +435,7 @@ const MACHINES = {
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"cz",label:"CZ回数"},{key:"at",label:"AT回数"},{key:"female",label:"STAND BYキャラ 女性回数",note:"なければ0のまま"},{key:"male",label:"STAND BYキャラ 男性回数",note:"なければ0のまま"}]
   },
   monkey: {
-    name: "モンキーターンV", settings: [1,2,4,5,6],
+    name: "スマスロ モンキーターンV", settings: [1,2,4,5,6],
     AT_PROB:       {1:1/299.8,2:1/295.5,4:1/258.8,5:1/235.7,6:1/222.9},
     FIVEROLL:      {1:1/38.15,2:1/36.86,4:1/30.27,5:1/24.51,6:1/22.53},
     WEAK_DIRECT:   {1:0.000,2:0.000,4:0.004,5:0.020,6:0.031},
@@ -447,7 +447,7 @@ const MACHINES = {
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"fiveroll",label:"5枚役回数",note:"なければ0のまま"},{key:"weak_total",label:"弱チェリー/ボート 総回数",note:"なければ0のまま"},{key:"weak_direct",label:"うちAT直撃した回数",note:"なければ0のまま"},{key:"ex_weak",label:"うちEXアイテム獲得回数",note:"なければ0のまま"},{key:"strong_chance",label:"強チャンス目→AT直撃 回数",note:"なければ0のまま"},{key:"strong_chance_total",label:"強チャンス目 総回数",note:"なければ0のまま"},{key:"gamo",label:"蒲生モード移行回数",note:"なければ0のまま"},{key:"rival_total",label:"ライバルモード 総選択回数",note:"なければ0のまま"},{key:"black_medal",label:"AT終了 黒メダル出現回数",note:"なければ0のまま"}]
   },
   hokuto: {
-    name: "北斗転生", settings: [1,2,3,4,5,6],
+    name: "パチスロ 北斗転生", settings: [1,2,3,4,5,6],
     AT_PROB:      {1:1/355.7,2:1/341.6,3:1/320.9,4:1/279.3,5:1/251.1,6:1/237.6},
     STRONG_CH:    {1:1/199.8,2:1/195.0,3:1/190.5,4:1/185.1,5:1/180.5,6:1/176.1},
     WEAK_CH:      {1:1/93.8,2:1/94.9,3:1/96.0,4:1/97.5,5:1/98.8,6:1/100.2},
@@ -457,21 +457,21 @@ const MACHINES = {
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"strong_cherry",label:"強チェリー回数",note:"なければ0のまま"},{key:"weak_cherry",label:"弱チェリー回数",note:"なければ0のまま"},{key:"suika_direct",label:"スイカ→AT直撃 回数",note:"なければ0のまま"},{key:"raoh",label:"SPバトル ラオウ選択回数",note:"なければ0のまま"},{key:"raoh_total",label:"SPバトル 総回数",note:"なければ0のまま"}]
   },
   kaguya: {
-    name: "かぐや様は告らせたい", settings: [1,2,3,4,5,6],
+    name: "パチスロ かぐや様は告らせたい", settings: [1,2,3,4,5,6],
     AT_PROB:   {1:1/362,2:1/360,3:1/357,4:1/349,5:1/343,6:1/335},
     SHIROGANE: {1:0.10,2:0.10,3:0.10,4:0.15,5:0.15,6:0.15},
     EVENTS: {"早坂愛シナリオ":[2,3,4,5,6],"白銀パパシナリオ":[4,5,6],"虹背景":[4,5,6],"ボーナス終了画面金枠":[6],"ボーナス終了画面銀枠":[4,5,6],"ミニ藤原体操服→制服":[6],"ミニ藤原体操服→LOVE探偵":[4,5,6],"獲得666枚":[6],"獲得444枚":[4,5,6]},
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"ボーナス初当たり回数"},{key:"shirogane",label:"REG中 白銀圭シナリオ回数",note:"なければ0のまま"},{key:"reg_total",label:"REG総回数",note:"なければ0のまま"}]
   },
   milliongod: {
-    name: "スマスロミリオンゴッド", settings: [1,2,3,4,5,6],
+    name: "スマスロ ミリオンゴッド", settings: [1,2,3,4,5,6],
     AT_PROB:  {1:1/533,2:1/420,3:1/496,4:1/338,5:1/455,6:1/295},
     BLUE7_3:  {1:0.012,2:0.102,3:0.102,4:0.200,5:0.200,6:0.300},
     EVENTS: {"GOD揃い":[6],"青7×5連以上GG":[1,2,3,4,5,6],"青7×4連GG（偶数設定）":[2,4,6],"ユニバプレート虹":[6],"ユニバプレート金":[4,5,6],"ユニバプレート銀":[3,4,5,6],"ユニバプレート銅":[2,3,4,5,6]},
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"GG初当たり回数"},{key:"blue7_3hit",label:"青7×3連→GG当選 回数",note:"なければ0のまま"},{key:"blue7_3total",label:"青7×3連 総回数",note:"なければ0のまま"}]
   },
   karakuri: {
-    name: "スマスロからくりサーカス", settings: [1,2,4,5,6],
+    name: "スマスロ からくりサーカス", settings: [1,2,4,5,6],
     CZ_PROB:      {1:1/333,2:1/320,4:1/292,5:1/277,6:1/275},
     AT_PROB:      {1:1/564,2:1/543,4:1/469,5:1/451,6:1/447},
     WEAK_GREEN:   {1:0.13,2:0.15,4:0.16,5:0.18,6:0.20},
@@ -481,14 +481,14 @@ const MACHINES = {
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"cz",label:"CZ回数"},{key:"at",label:"AT回数"},{key:"weak_green",label:"弱レア小役 ランプ緑 回数",note:"なければ0のまま"},{key:"weak_total",label:"弱レア小役 総回数",note:"なければ0のまま"},{key:"strong_green",label:"強レア小役 ランプ緑 回数",note:"なければ0のまま"},{key:"strong_total",label:"強レア小役 総回数",note:"なければ0のまま"},{key:"makuai",label:"幕間チャンス 突入回数",note:"なければ0のまま"}]
   },
   tatenoyusha: {
-    name: "盾の勇者の成り上がり", settings: [1,2,3,4,5,6], mode:"score",
+    name: "スマスロ 盾の勇者の成り上がり", settings: [1,2,3,4,5,6], mode:"score",
     AT_PROB:   {1:1/298.9,2:1/284.0,3:1/274.3,4:1/246.7,5:1/228.5,6:1/190.5},
     BELL_PROB: {1:1/21.70,2:1/21.03,3:1/20.40,4:1/18.72,5:1/18.06,6:1/16.21},
     EVENTS: {},
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT当選回数"},{key:"bell",label:"共通ベル回数",note:"なければ0のまま"},{key:"exp",label:"EXP表示の数値（AT後）",note:"なければ0のまま"}]
   },
   codegeass3: {
-    name: "コードギアス3", settings: [1,2,3,4,5,6], mode:"score",
+    name: "パチスロ コードギアス3", settings: [1,2,3,4,5,6], mode:"score",
     AT_PROB:    {1:1/594.0,2:1/565.9,3:1/517.8,4:1/437.0,5:1/383.1,6:1/322.0},
     REG_CZ:     {1:0.242,2:0.278,3:0.312,4:0.380,5:0.445,6:0.509},
     SUIKA_PROB: {1:1/93.2,2:1/90.4,3:1/87.8,4:1/84.1,5:1/80.8,6:1/77.0},
@@ -496,7 +496,7 @@ const MACHINES = {
     fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT当選回数"},{key:"reg_count",label:"REG回数",note:"なければ0のまま"},{key:"cz_from_reg",label:"REG後CZ当選回数",note:"なければ0のまま"},{key:"suika",label:"スイカ回数",note:"なければ0のまま"}]
   },
   madoka3: {
-    name: "まどか☆マギカ フォルテ", settings: [1,2,3,4,5,6], mode:"score",
+    name: "スマスロ まどか☆マギカ フォルテ", settings: [1,2,3,4,5,6], mode:"score",
     BONUS_PROB:  {1:1/251.2,2:1/243.9,3:1/223.4,4:1/210.2,5:1/197.7,6:1/187.5},
     CHERRY_PROB: {1:1/79.9,2:1/79.0,3:1/77.1,4:1/75.3,5:1/73.6,6:1/72.0},
     EVENTS: {},
