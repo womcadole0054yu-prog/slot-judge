@@ -411,20 +411,22 @@ const MACHINES = {
   },
   kabaneri: {
     name: "スマスロ カバネリ2", settings: [1,2,3,4,5,6],
-    ST_PROB:   {1:1/422.5,2:1/405.9,3:1/398.7,4:1/357.2,5:1/332.6,6:1/318.5},
-    BELL_PROB: {1:1/121.1,2:1/114.4,3:1/112.8,4:1/106.2,5:1/104.2,6:1/99.1},
-    FEMALE:    {1:0.500,2:0.575,3:0.415,4:0.585,5:0.399,6:0.600},
+    BONUS_PROB: {1:1/254.2,2:1/242.3,3:1/239.6,4:1/214.0,5:1/203.2,6:1/195.1},
+    ST_PROB:    {1:1/422.5,2:1/405.9,3:1/398.7,4:1/357.2,5:1/332.6,6:1/318.5},
+    BELL_PROB:  {1:1/121.1,2:1/114.4,3:1/112.8,4:1/106.2,5:1/104.2,6:1/99.1},
+    FEMALE:     {1:0.500,2:0.575,3:0.415,4:0.585,5:0.399,6:0.600},
     EVENTS: {"サミートロフィー虹":[6],"サミートロフィーキリン柄":[5,6],"サミートロフィー金":[4,5,6],"サミートロフィー銀":[3,4,5,6],"サミートロフィー銅":[2,3,4,5,6],"ST終了無名&菖蒲":[6],"美馬キャラ出現":[4,5,6],"獲得666OVER":[6],"獲得456OVER":[4,5,6],"上乗せ+66G":[6],"上乗せ+55G":[5,6],"上乗せ+44G":[4,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"st",label:"ST回数"},{key:"bell",label:"下段ベル回数",note:"なければ0のまま"},{key:"female",label:"キャラ紹介 女性回数",note:"なければ0のまま"},{key:"male",label:"キャラ紹介 男性回数",note:"なければ0のまま"},{key:"mima",label:"美馬の出現回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"bonus_total",label:"ボーナス総当選回数（ST含む）",note:"なければ0のまま"},{key:"st",label:"うちST回数"},{key:"bell",label:"下段ベル回数",note:"なければ0のまま"},{key:"female",label:"キャラ紹介 女性回数",note:"なければ0のまま"},{key:"male",label:"キャラ紹介 男性回数",note:"なければ0のまま"},{key:"mima",label:"美馬の出現回数",note:"なければ0のまま"}]
   },
   valvrave: {
     name: "スマスロ ヴァルヴレイヴ2", settings: [1,2,4,5,6],
-    AT_PROB:      {1:1/476,2:1/473,4:1/464,5:1/459,6:1/456},
-    HARAIKIRI:    {1:1/17.5,2:1/17.5,4:1/7.0,5:1/7.0,6:1/7.0},
+    AT_PROB:        {1:1/476,2:1/473,4:1/464,5:1/459,6:1/456},
+    HARAIKIRI:      {1:1/17.5,2:1/17.5,4:1/7.0,5:1/7.0,6:1/7.0},
+    SPECIAL_TABLE:  {1:0.01,2:0.02,4:0.04,5:0.08,6:0.12},
     BUFFET_HUMAN: {1:0.45,2:0.55,4:0.55,5:0.45,6:0.55},
     BAR_DIRECT:   {1:0.03,2:0.04,4:0.05,5:0.06,6:0.07},
     EVENTS: {"終了画面金枠（リーゼロッテ）":[6],"終了画面銀枠（ピノ&プルー）":[4,5,6],"終了画面翔子&サキ（紫）":[2,4,5,6],"AT開始+66G":[6],"AT開始+44G":[4,5,6],"AT開始+22G":[2,4,5,6],"ラウンド開始リーゼロッテ":[6],"ラウンド開始サキ(200年後)":[4,5,6],"夢夢ちゃんピース":[4,5,6],"マギウスマーク4個以上":[4,5,6],"ゾロ目66G":[6],"ゾロ目44G":[4,5,6],"ゾロ目22G":[2,4,5,6],"獲得666枚OVER":[6],"獲得456枚OVER":[4,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"haraikiri",label:"ハラキリドライブ発生回数",note:"なければ0のまま"},{key:"human",label:"バッフェ 有人タイプ回数",note:"なければ0のまま"},{key:"robot",label:"バッフェ 無人タイプ回数",note:"なければ0のまま"},{key:"bar_direct",label:"BAR揃い→AT直撃 回数",note:"なければ0のまま"},{key:"bar_total",label:"BAR揃い 総回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"haraikiri",label:"ハラキリドライブ発生回数",note:"なければ0のまま"},{key:"human",label:"バッフェ 有人タイプ回数",note:"なければ0のまま"},{key:"robot",label:"バッフェ 無人タイプ回数",note:"なければ0のまま"},{key:"bar_direct",label:"BAR揃い→AT直撃 回数",note:"なければ0のまま"},{key:"bar_total",label:"BAR揃い 総回数",note:"なければ0のまま"},{key:"special_table",label:"特殊テーブル当選（400pt以下AT）回数",note:"2周期目以降で当選時 / なければ0のまま"},{key:"at_2nd",label:"2周期目以降AT総回数",note:"なければ0のまま"}]
   },
   unicorn: {
     name: "スマスロ ガンダムUC2", settings: [1,2,3,4,5,6],
@@ -474,11 +476,11 @@ const MACHINES = {
     name: "スマスロ からくりサーカス", settings: [1,2,4,5,6],
     CZ_PROB:      {1:1/333,2:1/320,4:1/292,5:1/277,6:1/275},
     AT_PROB:      {1:1/564,2:1/543,4:1/469,5:1/451,6:1/447},
-    WEAK_GREEN:   {1:0.13,2:0.15,4:0.16,5:0.18,6:0.20},
-    STRONG_GREEN: {1:0.13,2:0.15,4:0.16,5:0.18,6:0.20},
+    WEAK_GREEN:   {1:0.14,2:0.18,4:0.21,5:0.23,6:0.27},
+    STRONG_GREEN: {1:0.14,2:0.20,4:0.26,5:0.28,6:0.33},
     MAKUAI:       {1:1/3000,2:1/2500,4:1/1800,5:1/1400,6:1/1000},
     EVENTS: {"ランプ虹":[6],"ランプ紫":[4,5,6],"ボタン連打+6":[6],"ボタン連打+4":[4,5,6],"ボタン連打+20":[2,4,5,6],"AT終了画面フランシーヌ":[6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"cz",label:"CZ回数"},{key:"at",label:"AT回数"},{key:"weak_green",label:"弱レア小役 ランプ緑 回数",note:"なければ0のまま"},{key:"weak_total",label:"弱レア小役 総回数",note:"なければ0のまま"},{key:"strong_green",label:"強レア小役 ランプ緑 回数",note:"なければ0のまま"},{key:"strong_total",label:"強レア小役 総回数",note:"なければ0のまま"},{key:"makuai",label:"幕間チャンス 突入回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"cz",label:"CZ回数"},{key:"at",label:"AT回数"},{key:"weak_green",label:"弱レア 緑以上ランプ（緑/赤/紫/虹）回数",note:"なければ0のまま"},{key:"weak_total",label:"弱レア小役 総回数",note:"なければ0のまま"},{key:"strong_green",label:"強レア 緑以上ランプ（緑/赤/紫/虹）回数",note:"なければ0のまま"},{key:"strong_total",label:"強レア小役 総回数",note:"なければ0のまま"},{key:"makuai",label:"幕間チャンス 突入回数",note:"なければ0のまま"}]
   },
   tatenoyusha: {
     name: "スマスロ 盾の勇者の成り上がり", settings: [1,2,3,4,5,6], mode:"score",
@@ -584,12 +586,14 @@ function calcBayesian(machine, data) {
     if(!rebattle) suggestions.push("AT引き戻し 成功/挑戦をカウント");
   }
   else if(machine==="kabaneri"){
-    const{games=0,st,bell,female,male,mima=0}=data;
+    const{games=0,bonus_total,st,bell,female,male,mima=0}=data;
+    if(games>0&&bonus_total!=null){S.forEach(s=>logL[s]+=poissonLL(bonus_total,games*m.BONUS_PROB[s]));reasons.push(`ボーナス総当選 ${bonus_total}回`);}
     if(games>0&&st!=null){S.forEach(s=>logL[s]+=poissonLL(st,games*m.ST_PROB[s]));reasons.push(`ST ${st}回 / ${games}G`);}
     if(games>0&&bell!=null){S.forEach(s=>logL[s]+=poissonLL(bell,games*m.BELL_PROB[s]));reasons.push(`下段ベル 1/${bell>0?(games/bell).toFixed(0):"―"}`);}
     if(female!=null&&male!=null){const tot=female+male+(mima||0);if(tot>0){S.forEach(s=>logL[s]+=binomialLL(female,tot,m.FEMALE[s]));reasons.push(`キャラ紹介 女${female}/男${male}`);}}
     if(mima>0) reasons.push(`美馬 ${mima}回 → 設定4以上確定`);
     if(!bell) suggestions.push("下段ベルをカウント（最重要）");
+    if(!bonus_total) suggestions.push("ボーナス総当選回数をカウント（初回から）");
   }
   else if(machine==="valvrave"){
     const{games=0,at,haraikiri,human,robot,bar_direct,bar_total}=data;
@@ -597,7 +601,10 @@ function calcBayesian(machine, data) {
     if(at>0&&haraikiri!=null){S.forEach(s=>logL[s]+=binomialLL(haraikiri,at*10,m.HARAIKIRI[s]));reasons.push(`ハラキリ ${haraikiri}回`);}
     if(human!=null&&robot!=null){const tot=human+robot;if(tot>0){S.forEach(s=>logL[s]+=binomialLL(human,tot,m.BUFFET_HUMAN[s]));reasons.push(`バッフェ 有人${human}/無人${robot}`);}}
     if(bar_direct!=null&&bar_total>0){S.forEach(s=>logL[s]+=binomialLL(bar_direct,bar_total,m.BAR_DIRECT[s]));reasons.push(`BAR直撃 ${bar_direct}/${bar_total}`);}
+    const{special_table,at_2nd}=data;
+    if(special_table!=null&&at_2nd>0){S.forEach(s=>logL[s]+=binomialLL(special_table,at_2nd,m.SPECIAL_TABLE[s]));reasons.push(`特殊テーブル ${special_table}/${at_2nd}`);}
     if(!haraikiri) suggestions.push("ハラキリドライブをカウント（最重要）");
+    if(!at_2nd) suggestions.push("特殊テーブル当選率をカウント（設定差12倍！）");
   }
   else if(machine==="unicorn"){
     const{games=0,cz,at,female,male}=data;
