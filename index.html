@@ -95,6 +95,9 @@
   }
   .counter-label { font-size: 0.78em; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
   .counter-note { font-size: 0.68em; color: var(--gray2); margin-top: 4px; letter-spacing: 1px; }
+  .help-btn { display: inline-flex; align-items: center; justify-content: center; width: 17px; height: 17px; background: var(--gray2); color: var(--white); border: none; border-radius: 50%; font-size: 0.65em; font-weight: 700; cursor: pointer; margin-left: 6px; vertical-align: middle; padding: 0; font-family: 'Oswald', sans-serif; flex-shrink: 0; }
+  .help-btn:active { background: var(--red); }
+  .help-text { font-size: 0.73em; color: #aaa; background: #0d0d0d; border-left: 2px solid var(--gray2); padding: 7px 10px; margin-top: 4px; line-height: 1.6; }
   .counter-row { display: flex; align-items: center; gap: 8px; }
   .counter-btn {
     width: 48px; height: 48px;
@@ -407,7 +410,7 @@ const MACHINES = {
     CZ_100G:    {1:0.1958,2:0.2104,3:0.2315,4:0.2637,5:0.3196,6:0.3601},
     SEISHIN33:  {1:0.031,2:0.031,3:0.063,4:0.094,5:0.109,6:0.125},
     EVENTS: {"AT終了あんていく全員集合":[6],"AT終了金木研&霧嶋董香":[4,5,6],"AT終了画面白フレーム":[1,3,5],"AT終了画面青フレーム":[2,4,6],"エンディングカード虹":[6],"エンディングカード喰柄":[5,6],"ナミちゃんトロフィー虹":[6],"ナミちゃんトロフィー喰柄":[5,6],"CZエンドカード有馬虹":[6],"CZエンドカード梟":[4,5,6],"CZエンドカード鈴屋什造":[2,4,6],"獲得456枚OVER":[4,5,6],"獲得666枚OVER":[6],"獲得993枚(1000-7)OVER":[6],"月山招待状：特別な夜を楽しもうじゃないか":[6],"月山招待状：存分に楽しもうじゃないか":[4,5,6],"月山招待状：偶にはディナーでもどうだい":[2,4,6],"月山招待状：不思議な香りだ（設定1否定）":[2,3,4,5,6],"月山招待状：活字中毒らしいね（設定2否定）":[1,3,4,5,6],"月山招待状：本は良いよね（設定3否定）":[1,2,4,5,6],"月山招待状：僕としたことがすまない（設定4否定）":[1,2,3,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"cz",label:"通常CZ（レミニセンス）回数"},{key:"upper_cz",label:"上位CZ（大喰いのリゼ）回数",note:"なければ0のまま"},{key:"cz_100g",label:"100G以内CZ当選回数",note:"なければ0のまま"},{key:"cz_100g_total",label:"CZ総回数（100G内判定用）",note:"なければ0のまま"},{key:"eb",label:"エピソードボーナス（EB）回数",note:"なければ0のまま"},{key:"rebattle",label:"引き戻し 成功回数",note:"なければ0のまま"},{key:"rebattle_total",label:"引き戻し 挑戦回数",note:"なければ0のまま"},{key:"seishin33",label:"精神世界ステージ 30G 発生回数",note:"なければ0のまま"},{key:"seishin_total",label:"精神世界ステージ 突入総回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games",help:"スロットの残りゲーム数カウンターを確認。打ち始めた時点からの累計を入力。"},{key:"at",label:"AT回数",help:"東卍RUSH（AT）に突入したとき1カウント。CZのみで終わった場合は含まない。"},{key:"cz",label:"通常CZ（レミニセンス）回数",help:"通常CZ「レミニセンス」が発生したとき1カウント。上位CZも1カウントに含む。"},{key:"upper_cz",label:"上位CZ（大喰いのリゼ）回数",note:"なければ0のまま",help:"上位CZ「大喰いのリゼ」が発生したとき1カウント。通常CZより大きな演出が入る。設定差3倍以上。"},{key:"cz_100g",label:"100G以内CZ当選回数",note:"なければ0のまま",help:"前回のCZ or AT終了から100G以内でCZに当選したとき1カウント。100G目ちょうども含む。"},{key:"cz_100g_total",label:"CZ総回数（100G内判定用）",note:"なければ0のまま",help:"CZに当選した全回数（100G以内かどうかに関わらず）。100G以内CZ当選回数の分母になる。"},{key:"eb",label:"エピソードボーナス（EB）回数",note:"なければ0のまま",help:"エピソードボーナス（EB）が発生したとき1カウント。非常にレアだが設定差が大きい。"},{key:"rebattle",label:"引き戻し 成功回数",note:"なければ0のまま",help:"AT終了後の引き戻しゾーンで成功（再びATへ突入）したとき1カウント。"},{key:"rebattle_total",label:"引き戻し 挑戦回数",note:"なければ0のまま",help:"AT終了後に引き戻しゾーンが発生した総回数（成功・失敗を問わず全カウント）。"},{key:"seishin33",label:"精神世界ステージ 30G 発生回数",note:"なければ0のまま",help:"通常 or 高確中に弱チェリー・リプレイから移行する精神世界ステージ（30G保証）が発生したとき1カウント。AT中は含まない。"},{key:"seishin_total",label:"精神世界ステージ 突入総回数",note:"なければ0のまま",help:"精神世界ステージに突入した総回数（30Gかどうかに関わらず）。発生回数の分母になる。"}]
   },
   kabaneri: {
     name: "スマスロ カバネリ2", settings: [1,2,3,4,5,6],
@@ -416,7 +419,7 @@ const MACHINES = {
     BELL_PROB:  {1:1/121.1,2:1/114.4,3:1/112.8,4:1/106.2,5:1/104.2,6:1/99.1},
     FEMALE:     {1:0.500,2:0.575,3:0.415,4:0.585,5:0.399,6:0.600},
     EVENTS: {"サミートロフィー虹":[6],"サミートロフィーキリン柄":[5,6],"サミートロフィー金":[4,5,6],"サミートロフィー銀":[3,4,5,6],"サミートロフィー銅":[2,3,4,5,6],"ST終了無名&菖蒲":[6],"美馬キャラ出現":[4,5,6],"獲得666OVER":[6],"獲得456OVER":[4,5,6],"上乗せ+66G":[6],"上乗せ+55G":[5,6],"上乗せ+44G":[4,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"bonus_total",label:"ボーナス総当選回数（ST含む）",note:"なければ0のまま"},{key:"st",label:"うちST回数"},{key:"bell",label:"下段ベル回数",note:"なければ0のまま"},{key:"female",label:"キャラ紹介 女性回数",note:"なければ0のまま"},{key:"male",label:"キャラ紹介 男性回数",note:"なければ0のまま"},{key:"mima",label:"美馬の出現回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"bonus_total",label:"ボーナス総当選回数（ST含む）",note:"なければ0のまま",help:"駿城ボーナス・カバネリボーナス・ST直撃を問わず、ボーナスが出るたびに1カウント。設定1/6で1.3倍差。"},{key:"st",label:"うちST回数",help:"STに突入したとき1カウント。ボーナス総当選のうちSTになった回数。"},{key:"bell",label:"下段ベル回数",note:"なければ0のまま",help:"下段ベル（13枚役）が揃ったとき1カウント。毎ゲーム目視で確認。最重要指標。設定1/6で1.2倍差。"},{key:"female",label:"キャラ紹介 女性回数",note:"なければ0のまま",help:"カバネリボーナス中のキャラ紹介で無名・菖蒲など女性が出たとき1カウント。偶数設定で女性が多い。"},{key:"male",label:"キャラ紹介 男性回数",note:"なければ0のまま",help:"キャラ紹介で生駒・来葉など男性が出たとき1カウント。奇数設定で男性が多い。"},{key:"mima",label:"美馬の出現回数",note:"なければ0のまま",help:"キャラ紹介で美馬が出たとき1カウント。1回でも出たら設定4以上確定。通常は0.1〜0.15%しか出ない。"}]
   },
   valvrave: {
     name: "スマスロ ヴァルヴレイヴ2", settings: [1,2,4,5,6],
@@ -426,7 +429,7 @@ const MACHINES = {
     BUFFET_HUMAN: {1:0.45,2:0.55,4:0.55,5:0.45,6:0.55},
     BAR_DIRECT:   {1:0.03,2:0.04,4:0.05,5:0.06,6:0.07},
     EVENTS: {"終了画面金枠（リーゼロッテ）":[6],"終了画面銀枠（ピノ&プルー）":[4,5,6],"終了画面翔子&サキ（紫）":[2,4,5,6],"AT開始+66G":[6],"AT開始+44G":[4,5,6],"AT開始+22G":[2,4,5,6],"ラウンド開始リーゼロッテ":[6],"ラウンド開始サキ(200年後)":[4,5,6],"夢夢ちゃんピース":[4,5,6],"マギウスマーク4個以上":[4,5,6],"ゾロ目66G":[6],"ゾロ目44G":[4,5,6],"ゾロ目22G":[2,4,5,6],"獲得666枚OVER":[6],"獲得456枚OVER":[4,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"haraikiri",label:"ハラキリドライブ発生回数",note:"なければ0のまま"},{key:"human",label:"バッフェ 有人タイプ回数",note:"なければ0のまま"},{key:"robot",label:"バッフェ 無人タイプ回数",note:"なければ0のまま"},{key:"bar_direct",label:"BAR揃い→AT直撃 回数",note:"なければ0のまま"},{key:"bar_total",label:"BAR揃い 総回数",note:"なければ0のまま"},{key:"special_table",label:"特殊テーブル当選（400pt以下AT）回数",note:"2周期目以降で当選時 / なければ0のまま"},{key:"at_2nd",label:"2周期目以降AT総回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数",help:"革命の刻（AT）に突入したとき1カウント。CZのみで終わった場合は含まない。"},{key:"haraikiri",label:"ハラキリドライブ発生回数",note:"なければ0のまま",help:"AT中にハラキリドライブが発生したとき1カウント。低設定は15〜20ATに1回、高設定（4以上）は6〜8ATに1回のペースで発生。最重要指標。"},{key:"human",label:"バッフェ 有人タイプ回数",note:"なければ0のまま",help:"通常時のサブ液晶に表示されるバッフェが「有人タイプ（人が乗ったロボット）」のとき1カウント。偶数設定で有人が多い。"},{key:"robot",label:"バッフェ 無人タイプ回数",note:"なければ0のまま",help:"バッフェが「無人タイプ（人が乗っていないロボット）」のとき1カウント。奇数設定で無人が多い。"},{key:"bar_direct",label:"BAR揃い→AT直撃 回数",note:"なければ0のまま",help:"BAR揃いが成立した後にそのままATに直撃したとき1カウント。設定1:3% → 設定6:7%。"},{key:"bar_total",label:"BAR揃い 総回数",note:"なければ0のまま",help:"BAR揃いが発生した総回数（AT直撃したかどうかに関わらず）。直撃回数の分母になる。"},{key:"special_table",label:"特殊テーブル当選（400pt以下AT）回数",note:"2周期目以降で当選時 / なければ0のまま",help:"2周期目以降でATに当選したとき、液晶の規定ポイント表示が400pt以下だった場合に1カウント。設定1:1% → 設定6:12%（12倍差！）。"},{key:"at_2nd",label:"2周期目以降AT総回数",note:"なければ0のまま",help:"2周期目以降（初当たりではなく2回目以降の当選）でATに当選した総回数。特殊テーブル当選の分母になる。"}]
   },
   unicorn: {
     name: "スマスロ ガンダムUC2", settings: [1,2,3,4,5,6],
@@ -434,7 +437,7 @@ const MACHINES = {
     AT_PROB:  {1:1/471.9,2:1/456.6,3:1/427.8,4:1/403.9,5:1/398.3,6:1/392.3},
     FEMALE:   {1:0.40,2:0.60,3:0.40,4:0.60,5:0.40,6:0.60},
     EVENTS: {"AT終了女性キャラ集合":[6],"獲得666OVER":[6],"獲得456OVER":[4,5,6],"獲得246OVER":[2,4,6],"虹ランプ":[6],"紫ランプ":[4,5,6],"エンディング赤ランプ":[2,3,4,5,6],"エンディング緑ランプ":[4,5,6],"エンディング黄ランプ":[2,4,6],"エンディング青ランプ":[1,3,5]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"cz",label:"CZ回数"},{key:"at",label:"AT回数"},{key:"female",label:"STAND BYキャラ 女性回数",note:"なければ0のまま"},{key:"male",label:"STAND BYキャラ 男性回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"cz",label:"CZ回数",help:"CZ（可能性の獣 or 覚醒チャレンジ）が発生したとき1カウント。ATに発展しなかった場合も含む。"},{key:"at",label:"AT回数",help:"AT（覚醒DRIVE）に突入したとき1カウント。CZのみ終了は含まない。"},{key:"female",label:"STAND BYキャラ 女性回数",note:"なければ0のまま",help:"待機状態（STAND BY）に表示されるキャラが女性（ミネルバ、オードリー等）のとき1カウント。偶数設定で女性が多い。"},{key:"male",label:"STAND BYキャラ 男性回数",note:"なければ0のまま",help:"STAND BYキャラが男性（バナージ等）のとき1カウント。奇数設定で男性が多い。"}]
   },
   monkey: {
     name: "スマスロ モンキーターンV", settings: [1,2,4,5,6],
@@ -446,7 +449,7 @@ const MACHINES = {
     BLACK_MEDAL:   {1:0.0125,2:0.0150,4:0.0400,5:0.0450,6:0.0450},
     EX_ITEM_WEAK:  {1:0.250,2:0.262,4:0.328,5:0.391,6:0.430},
     EVENTS: {"トロフィー虹":[6],"舟券虹":[6],"獲得666枚":[6],"トロフィーケロット柄":[5,6],"獲得803枚":[5,6],"トロフィー金":[4,5,6],"舟券金":[4,5,6],"獲得456枚":[4,5,6],"トロフィー銅":[2,4,5,6],"舟券銀":[2,4,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"fiveroll",label:"5枚役回数",note:"なければ0のまま"},{key:"weak_total",label:"弱チェリー/ボート 総回数",note:"なければ0のまま"},{key:"weak_direct",label:"うちAT直撃した回数",note:"なければ0のまま"},{key:"ex_weak",label:"うちEXアイテム獲得回数",note:"なければ0のまま"},{key:"strong_chance",label:"強チャンス目→AT直撃 回数",note:"なければ0のまま"},{key:"strong_chance_total",label:"強チャンス目 総回数",note:"なければ0のまま"},{key:"gamo",label:"蒲生モード移行回数",note:"なければ0のまま"},{key:"rival_total",label:"ライバルモード 総選択回数",note:"なければ0のまま"},{key:"black_medal",label:"AT終了 黒メダル出現回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数",help:"AT（競艇RUSH）に突入したとき1カウント。"},{key:"fiveroll",label:"5枚役回数",note:"なければ0のまま",help:"5枚役（中段 バー/バー/バー揃い）が成立したとき1カウント。最重要指標。設定6は設定1の1.7倍出やすい。"},{key:"weak_total",label:"弱チェリー/ボート 総回数",note:"なければ0のまま",help:"弱チェリーまたはボートモチーフ役が成立した総回数。次の2項目の分母になる。"},{key:"weak_direct",label:"うちAT直撃した回数",note:"なければ0のまま",help:"弱チェリー/ボート成立後、そのままATに直撃したとき1カウント。設定4以上のみ直撃あり。"},{key:"ex_weak",label:"うちEXアイテム獲得回数",note:"なければ0のまま",help:"弱チェリー/ボート成立後にEXアイテムを獲得したとき1カウント。設定1:25% → 設定6:43%。"},{key:"strong_chance",label:"強チャンス目→AT直撃 回数",note:"なければ0のまま",help:"強チャンス目成立後にATに直撃したとき1カウント。設定1:0.4% → 設定6:6.3%（16倍差！）。"},{key:"strong_chance_total",label:"強チャンス目 総回数",note:"なければ0のまま",help:"強チャンス目が成立した総回数（直撃したかどうかに関わらず）。"},{key:"gamo",label:"蒲生モード移行回数",note:"なければ0のまま",help:"ライバルモードで蒲生道場が選ばれたとき1カウント。設定1:7.8% → 設定6:15.6%（2倍差）。"},{key:"rival_total",label:"ライバルモード 総選択回数",note:"なければ0のまま",help:"ライバルモードが発生した総回数（誰のモードになっても）。蒲生の分母になる。"},{key:"black_medal",label:"AT終了 黒メダル出現回数",note:"なければ0のまま",help:"AT終了時に黒メダルが画面に出現したとき1カウント。設定1:1.25% → 設定4-6:4〜4.5%（3倍差）。"}]
   },
   hokuto: {
     name: "パチスロ 北斗転生", settings: [1,2,3,4,5,6],
@@ -456,21 +459,21 @@ const MACHINES = {
     SUIKA_DIRECT: {1:0.0078,2:0.0078,3:0.0078,4:0.0078,5:0.0156,6:0.0200},
     RAOH:         {1:0.038,2:0.055,3:0.072,4:0.100,5:0.140,6:0.173},
     EVENTS: {"サミートロフィー虹":[6],"サミートロフィーキリン柄":[5,6],"サミートロフィー金":[4,5,6],"サミートロフィー銀":[3,4,5,6],"サミートロフィー銅":[2,3,4,5,6],"筐体ランプ金":[6],"筐体ランプ虹":[6],"スイカAT直撃（複数回）":[5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数"},{key:"strong_cherry",label:"強チェリー回数",note:"なければ0のまま"},{key:"weak_cherry",label:"弱チェリー回数",note:"なければ0のまま"},{key:"suika_direct",label:"スイカ→AT直撃 回数",note:"なければ0のまま"},{key:"raoh",label:"SPバトル ラオウ選択回数",note:"なければ0のまま"},{key:"raoh_total",label:"SPバトル 総回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT回数",help:"AT（転生の刻 or ラオウ無双等）に突入したとき1カウント。"},{key:"strong_cherry",label:"強チェリー回数",note:"なければ0のまま",help:"強チェリー（中リール単独チェリー＝左リールにチェリーが1つだけ）が成立したとき1カウント。高設定ほど出やすい。"},{key:"weak_cherry",label:"弱チェリー回数",note:"なければ0のまま",help:"弱チェリー（角チェリー＝左リール上段または下段にチェリー）が成立したとき1カウント。低設定ほど出やすいため逆相関に注意。"},{key:"suika_direct",label:"スイカ→AT直撃 回数",note:"なければ0のまま",help:"スイカが揃った後にそのままATに直撃したとき1カウント。複数回確認できれば高設定期待度大。"},{key:"raoh",label:"SPバトル ラオウ選択回数",note:"なければ0のまま",help:"SPバトルの相手がラオウに選択されたとき1カウント。設定1:3.8% → 設定6:17.3%（4.5倍差！）。最重要指標。"},{key:"raoh_total",label:"SPバトル 総回数",note:"なければ0のまま",help:"SPバトルが発生した総回数（相手が誰でも）。ラオウ選択率の分母になる。"}]
   },
   kaguya: {
     name: "パチスロ かぐや様は告らせたい", settings: [1,2,3,4,5,6],
     AT_PROB:   {1:1/362,2:1/360,3:1/357,4:1/349,5:1/343,6:1/335},
     SHIROGANE: {1:0.10,2:0.10,3:0.10,4:0.15,5:0.15,6:0.15},
     EVENTS: {"早坂愛シナリオ":[2,3,4,5,6],"白銀パパシナリオ":[4,5,6],"虹背景":[4,5,6],"ボーナス終了画面金枠":[6],"ボーナス終了画面銀枠":[4,5,6],"ミニ藤原体操服→制服":[6],"ミニ藤原体操服→LOVE探偵":[4,5,6],"獲得666枚":[6],"獲得444枚":[4,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"ボーナス初当たり回数"},{key:"shirogane",label:"REG中 白銀圭シナリオ回数",note:"なければ0のまま"},{key:"reg_total",label:"REG総回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"ボーナス初当たり回数",help:"BIG・REG・スーパーBIG問わず、ボーナスに当選したとき1カウント。"},{key:"shirogane",label:"REG中 白銀圭シナリオ回数",note:"なければ0のまま",help:"REG（レギュラーボーナス）中のキャラ紹介で白銀圭シナリオが選ばれたとき1カウント。設定1〜3:10%、設定4〜6:15%。"},{key:"reg_total",label:"REG総回数",note:"なければ0のまま",help:"REG（レギュラーボーナス）に当選した総回数。白銀圭シナリオ率の分母になる。"}]
   },
   milliongod: {
     name: "スマスロ ミリオンゴッド", settings: [1,2,3,4,5,6],
     AT_PROB:  {1:1/533,2:1/420,3:1/496,4:1/338,5:1/455,6:1/295},
     BLUE7_3:  {1:0.012,2:0.102,3:0.102,4:0.200,5:0.200,6:0.300},
     EVENTS: {"GOD揃い":[6],"青7×5連以上GG":[1,2,3,4,5,6],"青7×4連GG（偶数設定）":[2,4,6],"ユニバプレート虹":[6],"ユニバプレート金":[4,5,6],"ユニバプレート銀":[3,4,5,6],"ユニバプレート銅":[2,3,4,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"GG初当たり回数"},{key:"blue7_3hit",label:"青7×3連→GG当選 回数",note:"なければ0のまま"},{key:"blue7_3total",label:"青7×3連 総回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"GG初当たり回数",help:"GG（ゴッドゲーム）に突入したとき1カウント。偶数設定が圧倒的に有利（設定2:1/420、設定1:1/533）。"},{key:"blue7_3hit",label:"青7×3連→GG当選 回数",note:"なければ0のまま",help:"青7が3連揃いした後にGGに当選したとき1カウント。設定1:1.2%、設定2:10.2%（8倍差！）。偶数設定確認の最強指標。"},{key:"blue7_3total",label:"青7×3連 総回数",note:"なければ0のまま",help:"青7が3連揃いした総回数（GG当選したかどうかに関わらず）。GG当選率の分母になる。"}]
   },
   karakuri: {
     name: "スマスロ からくりサーカス", settings: [1,2,4,5,6],
@@ -480,14 +483,14 @@ const MACHINES = {
     STRONG_GREEN: {1:0.14,2:0.20,4:0.26,5:0.28,6:0.33},
     MAKUAI:       {1:1/3000,2:1/2500,4:1/1800,5:1/1400,6:1/1000},
     EVENTS: {"ランプ虹":[6],"ランプ紫":[4,5,6],"ボタン連打+6":[6],"ボタン連打+4":[4,5,6],"ボタン連打+20":[2,4,5,6],"AT終了画面フランシーヌ":[6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"cz",label:"CZ回数"},{key:"at",label:"AT回数"},{key:"weak_green",label:"弱レア 緑以上ランプ（緑/赤/紫/虹）回数",note:"なければ0のまま"},{key:"weak_total",label:"弱レア小役 総回数",note:"なければ0のまま"},{key:"strong_green",label:"強レア 緑以上ランプ（緑/赤/紫/虹）回数",note:"なければ0のまま"},{key:"strong_total",label:"強レア小役 総回数",note:"なければ0のまま"},{key:"makuai",label:"幕間チャンス 突入回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"cz",label:"CZ回数",help:"CZ（からくり一座の見世物 等）が発生したとき1カウント。AT未突入でも1カウント。"},{key:"at",label:"AT回数",help:"AT（からくり劇場）に突入したとき1カウント。"},{key:"weak_green",label:"弱レア 緑以上ランプ（緑/赤/紫/虹）回数",note:"なければ0のまま",help:"エンディング中に弱レア役（弱チェリー/チャンス目）が成立し、筐体ランプが緑・赤・紫・虹のいずれかになったとき1カウント。設定1:14%→設定6:27%（2倍差）。"},{key:"weak_total",label:"弱レア小役 総回数",note:"なければ0のまま",help:"エンディング中に弱レア役（弱チェリー/チャンス目）が成立した総回数。緑以上ランプ率の分母になる。"},{key:"strong_green",label:"強レア 緑以上ランプ（緑/赤/紫/虹）回数",note:"なければ0のまま",help:"エンディング中に強レア役（強チェリー/強チャンス目）が成立し、ランプが緑・赤・紫・虹のいずれかになったとき1カウント。設定1:14%→設定6:33%（2.4倍差）。"},{key:"strong_total",label:"強レア小役 総回数",note:"なければ0のまま",help:"エンディング中に強レア役が成立した総回数。"},{key:"makuai",label:"幕間チャンス 突入回数",note:"なければ0のまま",help:"通常時に幕間チャンスへ突入したとき1カウント。設定1:1/3000→設定6:1/1000（3倍差）。少ないサンプルでも設定差が大きい。"}]
   },
   tatenoyusha: {
     name: "スマスロ 盾の勇者の成り上がり", settings: [1,2,3,4,5,6], mode:"score",
     AT_PROB:   {1:1/298.9,2:1/284.0,3:1/274.3,4:1/246.7,5:1/228.5,6:1/190.5},
     BELL_PROB: {1:1/21.70,2:1/21.03,3:1/20.40,4:1/18.72,5:1/18.06,6:1/16.21},
     EVENTS: {},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT当選回数"},{key:"bell",label:"共通ベル回数",note:"なければ0のまま"},{key:"exp",label:"EXP表示の数値（AT後）",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT当選回数",help:"AT（ウェイブウォー）に当選したとき1カウント。設定1:1/299→設定6:1/190（1.6倍差）。"},{key:"bell",label:"共通ベル回数",note:"なければ0のまま",help:"共通ベル（3枚役）が成立したとき1カウント。設定1:1/21.7→設定6:1/16.2（1.3倍差）。毎ゲーム目視確認。"},{key:"exp",label:"EXP表示の数値（AT後）",note:"なければ0のまま",help:"AT終了後に画面に表示されるEXP（経験値）の数値をそのまま入力。2200以上→設定2以上確定、4400以上→設定4以上確定、6600以上→設定6確定。最後のAT終了後に確認。"}]
   },
   codegeass3: {
     name: "パチスロ コードギアス3", settings: [1,2,3,4,5,6], mode:"score",
@@ -495,7 +498,7 @@ const MACHINES = {
     REG_CZ:     {1:0.242,2:0.278,3:0.312,4:0.380,5:0.445,6:0.509},
     SUIKA_PROB: {1:1/93.2,2:1/90.4,3:1/87.8,4:1/84.1,5:1/80.8,6:1/77.0},
     EVENTS: {},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT当選回数"},{key:"reg_count",label:"REG回数",note:"なければ0のまま"},{key:"cz_from_reg",label:"REG後CZ当選回数",note:"なければ0のまま"},{key:"suika",label:"スイカ回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT当選回数",help:"AT（反逆の刻）に当選したとき1カウント。設定1:1/594→設定6:1/322（1.8倍差）。"},{key:"reg_count",label:"REG回数",note:"なければ0のまま",help:"REG（レギュラーボーナス）が発生した総回数。REG後CZ当選率の分母になる。"},{key:"cz_from_reg",label:"REG後CZ当選回数",note:"なければ0のまま",help:"REG終了後の特殊期間にCZ（エリア7等）に当選したとき1カウント。設定1:24%→設定6:51%（2倍差）。3回以上でかなり信頼できる。"},{key:"suika",label:"スイカ回数",note:"なければ0のまま",help:"スイカが揃ったとき1カウント。設定1:1/93→設定6:1/77。200G以上でサンプル有効。"}]
   },
   madoka3: {
     name: "スマスロ まどか☆マギカ フォルテ", settings: [1,2,3,4,5,6], mode:"score",
@@ -503,7 +506,7 @@ const MACHINES = {
     CHERRY_PROB:  {1:1/79.9,2:1/79.0,3:1/77.1,4:1/75.3,5:1/73.6,6:1/72.0},
     CEILING_500:  {1:0.031,2:0.039,3:0.055,4:0.078,5:0.102,6:0.125},
     EVENTS: {},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"bonus",label:"ボーナス当選回数"},{key:"cherry",label:"弱チェリー回数（200G以上でサンプル有効）",note:"なければ0のまま"},{key:"petit_total",label:"プチボーナス 総回数",note:"なければ0のまま"},{key:"petit_big",label:"うちビッグへ昇格した回数",note:"なければ0のまま"},{key:"ceiling_500",label:"AT後 500G天井 選択回数",note:"なければ0のまま"},{key:"ceiling_total",label:"AT終了 総回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"bonus",label:"ボーナス当選回数",help:"プチボーナス含む全てのボーナスが当選したとき1カウント。設定1:1/251→設定6:1/188（1.3倍差）。"},{key:"cherry",label:"弱チェリー回数（200G以上でサンプル有効）",note:"なければ0のまま",help:"弱チェリーが成立したとき1カウント。設定1:1/79.9→設定6:1/72.0。200G以上のサンプルが揃ってから参考にする。"},{key:"petit_total",label:"プチボーナス 総回数",note:"なければ0のまま",help:"プチボーナス（小さいボーナス）が発生した総回数。"},{key:"petit_big",label:"うちビッグへ昇格した回数",note:"なければ0のまま",help:"プチボーナスからBIG（大きいボーナス）に昇格したとき1カウント。設定1:約10%→設定6:約40%（設定差3倍！）。5回以上サンプルがあると信頼度大。"},{key:"ceiling_500",label:"AT後 500G天井 選択回数",note:"なければ0のまま",help:"AT終了後、次の当選が100G超〜500G以内だったとき1カウント。設定1:3.1%→設定6:12.5%（4倍差！最重要指標）。3回以上で精度大幅アップ。"},{key:"ceiling_total",label:"AT終了 総回数",note:"なければ0のまま",help:"AT終了の総回数（次が何Gで当たっても）。500G天井選択率の分母になる。"}]
   },
   tokyorevengers: {
     name: "スマスロ 東京リベンジャーズ", settings: [1,2,3,4,5,6],
@@ -511,14 +514,14 @@ const MACHINES = {
     BELL_PROB: {1:1/99.3,2:1/96.4,3:1/89.8,4:1/84.0,5:1/79.0,6:1/77.1},
     MIDNIGHT:  {1:0.047,2:0.051,3:0.070,4:0.109,5:0.113,6:0.125},
     EVENTS: {"終了画面 東卍メンバー集合（金背景）":[6],"終了画面 ドラケン・マイキー（紫背景）":[5,6],"終了画面 武道（赤背景）":[4,5,6],"終了画面 原作絵（黄背景）":[3,4,5,6],"終了画面 ヒナ（青背景）":[2,3,4,5,6],"サミートロフィー虹":[6],"サミートロフィーキリン柄":[5,6],"サミートロフィー金":[4,5,6],"サミートロフィー銀":[3,4,5,6],"サミートロフィー銅":[2,3,4,5,6],"獲得666枚OVER":[6],"獲得555枚OVER":[5,6],"獲得456枚OVER":[4,5,6],"獲得246枚OVER（偶数）":[2,4,6],"獲得222枚OVER":[2,3,4,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT（東卍RUSH）回数"},{key:"bell",label:"共通ベル回数",note:"なければ0のまま"},{key:"midnight",label:"ミッドナイトモード 移行回数",note:"なければ0のまま"},{key:"midnight_total",label:"ミッドナイトモード 抽選総回数",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT（東卍RUSH）回数",help:"東卍RUSH（AT）に突入したとき1カウント。CZのみ終了は含まない。設定1:1/482→設定6:1/373（1.3倍差）。"},{key:"bell",label:"共通ベル回数",note:"なければ0のまま",help:"共通ベルが成立したとき1カウント。設定1:1/99→設定6:1/77（1.3倍差）。毎ゲーム目視で確認。最重要指標。"},{key:"midnight",label:"ミッドナイトモード 移行回数",note:"なければ0のまま",help:"通常滞在中にATに当選したとき、ミッドナイトモードに移行した回数。設定1:4.7%→設定6:12.5%（2.7倍差）。液晶でモード表示を確認。"},{key:"midnight_total",label:"ミッドナイトモード 抽選総回数",note:"なければ0のまま",help:"通常滞在中にATに当選した総回数。ミッドナイトモード移行率の分母になる。"}]
   },
   rezero2: {
     name: "スマスロ リゼロ2", settings: [1,2,3,4,5,6],
     AT_PROB: {1:1/417.2,2:1/408.5,3:1/387.1,4:1/354.3,5:1/332.9,6:1/305.4},
     RETURN:  {1:0.102,2:0.104,3:0.139,4:0.160,5:0.180,6:0.200},
     EVENTS: {"終了画面 温泉(夜)・女性キャラ":[6],"終了画面 ティータイム（女性キャラ）":[5,6],"終了画面 ウサギコスプレ（レム・ラム）":[4,5,6],"終了画面 温泉(昼)・女性キャラ":[2,3,4,5,6],"菜月家時計「6時6分か」":[6],"菜月家時計「5時6分か」":[5,6],"菜月家時計「4時56分か」":[4,5,6],"菜月家時計「3時過ぎか」":[3,4,5,6]},
-    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT（白鯨攻略戦）当選回数"},{key:"hikimodosi",label:"死に戻り 成功回数",note:"なければ0のまま"},{key:"hikimodosi_total",label:"死に戻り 抽選総回数（AT終了回数と同じ）",note:"なければ0のまま"}]
+    fields: [{key:"games",label:"ゲーム数",type:"games"},{key:"at",label:"AT（白鯨攻略戦）当選回数",help:"AT（白鯨攻略戦突破後のRUSH）に突入したとき1カウント。設定1:1/417→設定6:1/305（1.4倍差）。"},{key:"hikimodosi",label:"死に戻り 成功回数",note:"なければ0のまま",help:"AT終了後に死に戻り（引き戻し）が発生し、再びATに入ったとき1カウント。設定1:10.2%→設定6:20.0%（2倍差！）。最重要指標。"},{key:"hikimodosi_total",label:"死に戻り 抽選総回数（AT終了回数と同じ）",note:"なければ0のまま",help:"AT終了の総回数（死に戻りしたかどうかに関わらず）。AT終了回数 = 死に戻り抽選総回数になる。"}]
   },
 };
 
@@ -733,9 +736,13 @@ function renderForm(machine) {
 
   for (const f of m.fields) {
     const val = counts[f.key] !== undefined ? counts[f.key] : 0;
+    const helpId = `help_${machine}_${f.key}`;
+    const helpBtn = f.help ? `<button class="help-btn" ontouchstart="" onclick="toggleHelp('${helpId}')">?</button>` : "";
+    const helpText = f.help ? `<div class="help-text" id="${helpId}" style="display:none">${f.help}</div>` : "";
     if (f.type === "games") {
       html += `<div class="counter-group">
-        <div class="counter-label">${f.label}</div>
+        <div class="counter-label">${f.label}${helpBtn}</div>
+        ${helpText}
         <div class="counter-row">
           <button class="counter-btn minus games" ontouchstart="" onclick="adjustCount('${machine}','${f.key}',-10)">－10</button>
           <input class="games-input" id="field-${f.key}" type="number" min="0" value="${val}" inputmode="numeric" onchange="onGamesInput('${machine}','${f.key}',this.value)">
@@ -745,7 +752,8 @@ function renderForm(machine) {
       </div>`;
     } else {
       html += `<div class="counter-group">
-        <div class="counter-label">${f.label}</div>
+        <div class="counter-label">${f.label}${helpBtn}</div>
+        ${helpText}
         <div class="counter-row">
           <button class="counter-btn minus" ontouchstart="" onclick="adjustCount('${machine}','${f.key}',-1)">－</button>
           <div class="counter-val" id="field-${f.key}">${val}</div>
@@ -1035,6 +1043,7 @@ async function showStats() {
 }
 
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+function toggleHelp(id) { const el = document.getElementById(id); if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none'; }
 </script>
 </body>
 </html>
