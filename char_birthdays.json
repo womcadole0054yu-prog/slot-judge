@@ -1,0 +1,22 @@
+{
+  "_comment": "ピーアーク北綾瀬の設置機種に関連するアニメキャラの誕生日DB。verified=trueはWeb検索で裏取り済み、falseは記憶ベースの未検証(通知時に⚠️表示)。判明したら随時追加する。",
+  "birthdays": [
+    {"month": 7, "day": 11, "character": "リーゼロッテ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (schara.sunrockgo.com)"},
+    {"month": 1, "day": 9, "character": "犬塚キューマ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
+    {"month": 2, "day": 2, "character": "連坊小路アキラ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
+    {"month": 2, "day": 27, "character": "野火まりえ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
+    {"month": 2, "day": 29, "character": "カイン・ドレッセル", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
+    {"month": 4, "day": 11, "character": "指南ショーコ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
+    {"month": 12, "day": 20, "character": "金木研", "machine": "東京喰種", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 7, "day": 1, "character": "霧嶋董香(トーカ)", "machine": "東京喰種", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 7, "day": 7, "character": "戦場ヶ原ひたぎ", "machine": "化物語", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 10, "day": 7, "character": "キリト(桐ヶ谷和人)", "machine": "SAO2", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 9, "day": 30, "character": "アスナ(結城明日奈)", "machine": "SAO2", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 10, "day": 3, "character": "鹿目まどか", "machine": "マギレコ/まどマギ", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 5, "day": 2, "character": "御坂美琴", "machine": "とある2", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 6, "day": 25, "character": "花垣武道", "machine": "東京リベンジャーズ", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 8, "day": 20, "character": "佐野万次郎(マイキー)", "machine": "東京リベンジャーズ", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 1, "day": 1, "character": "四宮かぐや", "machine": "かぐや様", "verified": false, "source": "記憶ベース・要検証"},
+    {"month": 3, "day": 3, "character": "藤原千花", "machine": "かぐや様", "verified": false, "source": "記憶ベース・要検証"}
+  ]
+}
