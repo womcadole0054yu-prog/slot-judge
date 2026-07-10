@@ -1,22 +1,8067 @@
 {
-  "_comment": "ピーアーク北綾瀬の設置機種に関連するアニメキャラの誕生日DB。verified=trueはWeb検索で裏取り済み、falseは記憶ベースの未検証(通知時に⚠️表示)。判明したら随時追加する。",
+  "_comment": "パチンコ・パチスロ関連アニメキャラの誕生日DB。出典: p-town.dmm.com 月別誕生日リスト(2026-07-10取込)。birthday_check.pyが毎日20時に翌日分をDiscord通知する。",
+  "_source_urls": {
+    "1月": "https://p-town.dmm.com/specials/2201/",
+    "2月": "https://p-town.dmm.com/specials/2202/",
+    "3月": "https://p-town.dmm.com/specials/2203/",
+    "4月": "https://p-town.dmm.com/specials/2208/",
+    "5月": "https://p-town.dmm.com/specials/2238/",
+    "6月": "https://p-town.dmm.com/specials/2241/",
+    "7月": "https://p-town.dmm.com/specials/2242/",
+    "8月": "https://p-town.dmm.com/specials/2256/",
+    "9月": "https://p-town.dmm.com/specials/2294/",
+    "10月": "https://p-town.dmm.com/specials/2295/",
+    "11月": "https://p-town.dmm.com/specials/2296/",
+    "12月": "https://p-town.dmm.com/specials/2297/"
+  },
   "birthdays": [
-    {"month": 7, "day": 11, "character": "リーゼロッテ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (schara.sunrockgo.com)"},
-    {"month": 1, "day": 9, "character": "犬塚キューマ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
-    {"month": 2, "day": 2, "character": "連坊小路アキラ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
-    {"month": 2, "day": 27, "character": "野火まりえ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
-    {"month": 2, "day": 29, "character": "カイン・ドレッセル", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
-    {"month": 4, "day": 11, "character": "指南ショーコ", "machine": "ヴァルヴレイヴ2", "verified": true, "source": "Web検索 2026-07-10 (X @osugiyan0910)"},
-    {"month": 12, "day": 20, "character": "金木研", "machine": "東京喰種", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 7, "day": 1, "character": "霧嶋董香(トーカ)", "machine": "東京喰種", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 7, "day": 7, "character": "戦場ヶ原ひたぎ", "machine": "化物語", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 10, "day": 7, "character": "キリト(桐ヶ谷和人)", "machine": "SAO2", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 9, "day": 30, "character": "アスナ(結城明日奈)", "machine": "SAO2", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 10, "day": 3, "character": "鹿目まどか", "machine": "マギレコ/まどマギ", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 5, "day": 2, "character": "御坂美琴", "machine": "とある2", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 6, "day": 25, "character": "花垣武道", "machine": "東京リベンジャーズ", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 8, "day": 20, "character": "佐野万次郎(マイキー)", "machine": "東京リベンジャーズ", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 1, "day": 1, "character": "四宮かぐや", "machine": "かぐや様", "verified": false, "source": "記憶ベース・要検証"},
-    {"month": 3, "day": 3, "character": "藤原千花", "machine": "かぐや様", "verified": false, "source": "記憶ベース・要検証"}
+    {
+      "month": 1,
+      "day": 1,
+      "character": "四宮かぐや",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 1,
+      "character": "ラインハルト・ヴァン・アストレア",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 1,
+      "character": "アシリパ",
+      "machine": "ゴールデンカムイ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 1,
+      "character": "角谷杏",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 1,
+      "character": "諸葛亮孔明",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 1,
+      "character": "エリー",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 1,
+      "character": "アレキサンドリア・ミート",
+      "machine": "キン肉マン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 1,
+      "character": "マオ",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 2,
+      "character": "我牙丸吟",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 2,
+      "character": "新条アカネ",
+      "machine": "SSSS.GRIDMAN",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 2,
+      "character": "西条節子",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 3,
+      "character": "藤堂鏡志朗",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 3,
+      "character": "焔",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 5,
+      "character": "オズマ・リー",
+      "machine": "マクロスF",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 6,
+      "character": "イチロー",
+      "machine": "ゲッターマウスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 6,
+      "character": "遠見千鶴",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 7,
+      "character": "羽沢つぐみ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 7,
+      "character": "青柳椿",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 8,
+      "character": "響裕太",
+      "machine": "SSSS.GRIDMAN",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 8,
+      "character": "神楽ひかり",
+      "machine": "少女☆歌劇レヴュースタァライト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 8,
+      "character": "リーゼントマン",
+      "machine": "ディスクアップ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 8,
+      "character": "エリス・フィリウス",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 8,
+      "character": "エミリー・スチュアート",
+      "machine": "アイドルマスターミリオンライブ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 9,
+      "character": "犬塚キューマ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 10,
+      "character": "ハマーン・カーン",
+      "machine": "機動戦士Zガンダム",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 10,
+      "character": "カエサル",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 10,
+      "character": "アラド・メルダース",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 11,
+      "character": "鏡慶志郎",
+      "machine": "サラリーマン番長シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 12,
+      "character": "山羊座のシュラ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 12,
+      "character": "シュナイゼル・エル・ブリタニア",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 13,
+      "character": "レイヤ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 13,
+      "character": "コーネリア・リ・ブリタニア",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 14,
+      "character": "ジークフリード・キルヒアイス",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 14,
+      "character": "エスタロッサ",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 16,
+      "character": "フェリックス・アーガイル",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 17,
+      "character": "ケイ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 18,
+      "character": "北沢志保",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 18,
+      "character": "清水将貴",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 19,
+      "character": "両奈",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 19,
+      "character": "両備",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 19,
+      "character": "姿月レイコ",
+      "machine": "南国育ち",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 20,
+      "character": "稀咲鉄太",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 20,
+      "character": "鶴河秋水",
+      "machine": "女神のカフェテラス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 21,
+      "character": "椎名ひより",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 21,
+      "character": "ヒルデガルド・フォン・マリーンドルフ",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 21,
+      "character": "四条貴音",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 22,
+      "character": "尾形百之助",
+      "machine": "ゴールデンカムイ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 22,
+      "character": "高須克弥",
+      "machine": "yes！高須クリニックシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 23,
+      "character": "櫛田桔梗",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 23,
+      "character": "白鳥星座の氷河",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 24,
+      "character": "エキドナ",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 24,
+      "character": "真戸呉緒",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 24,
+      "character": "フランソワーズ・アルヌール（003）",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 25,
+      "character": "アイザック・ギルモア（ギルモア博士）",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 26,
+      "character": "アフロレディ",
+      "machine": "ディスクアップ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 26,
+      "character": "侑那",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 27,
+      "character": "南野ハナ",
+      "machine": "沖ドキ！シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 27,
+      "character": "真壁瑞希",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 28,
+      "character": "ナキ",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 28,
+      "character": "源九郎義経",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 28,
+      "character": "天子",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 28,
+      "character": "西崎芽依",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 28,
+      "character": "八木鶫",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 30,
+      "character": "アンちゃん",
+      "machine": "チバリヨ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 30,
+      "character": "花巻乙和",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 30,
+      "character": "香月美子",
+      "machine": "絶対衝激シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 31,
+      "character": "カチューシャ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 31,
+      "character": "霞ヶ丘詩羽",
+      "machine": "冴えない彼女の育てかた",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 1,
+      "day": 31,
+      "character": "董卓仲穎",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 1,
+      "character": "姫",
+      "machine": "吉宗シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 1,
+      "character": "天条院沙姫",
+      "machine": "ToLOVEるダークネス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 1,
+      "character": "椎名まゆり",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "character": "ラム",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "character": "レム",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "character": "ビリー",
+      "machine": "緑ドンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "character": "ロイド・アスプルンド",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "character": "田村源九郎",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "character": "ジェット・リンク（002）",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "character": "連坊小路アキラ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "character": "須賀京太郎",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 3,
+      "character": "のばら",
+      "machine": "ローズテイルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 4,
+      "character": "犬寄しのぶ",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 4,
+      "character": "西尾錦",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 4,
+      "character": "徳川まつり",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 5,
+      "character": "ラクス・クライン",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 5,
+      "character": "ゼルドリス",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 5,
+      "character": "日置順子",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 6,
+      "character": "ジロー",
+      "machine": "ゲッターマウスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 6,
+      "character": "ミツル",
+      "machine": "ダーリン・イン・ザ・フランキス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 6,
+      "character": "良雄",
+      "machine": "ローズテイルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 6,
+      "character": "ルンルン",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 7,
+      "character": "水瓶座のカミュ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 7,
+      "character": "春日ナツキ",
+      "machine": "喰霊-零-",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 8,
+      "character": "ルラ＆ルル",
+      "machine": "マジカルハロウィンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 9,
+      "character": "山岸一司",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 10,
+      "character": "詠",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 10,
+      "character": "トマト兄さん",
+      "machine": "リノシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 11,
+      "character": "サチ",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 11,
+      "character": "ミラージュ・ファリーナ・ジーナス",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 12,
+      "character": "横山奈緒",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 12,
+      "character": "瓜江久生",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 13,
+      "character": "シャーロット・E・イェーガー",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 13,
+      "character": "日向マコト",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 13,
+      "character": "ヨブ・トリューニヒト",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 14,
+      "character": "ペトラ・レイテ",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 14,
+      "character": "バン",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 14,
+      "character": "如月唯人",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 14,
+      "character": "伊良子美柑",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 14,
+      "character": "美野里",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 15,
+      "character": "鏑木彗",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 15,
+      "character": "ツイーゴ",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 15,
+      "character": "堀北鈴音",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 16,
+      "character": "月詠調",
+      "machine": "戦姫絶唱シンフォギアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 16,
+      "character": "ディート・ハルトリート",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 17,
+      "character": "ミリアリア・ハウ",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 17,
+      "character": "溝口恭介",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 17,
+      "character": "狩谷由紀恵",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 18,
+      "character": "雲雀",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 18,
+      "character": "洞木ヒカリ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 18,
+      "character": "ハウメア",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 18,
+      "character": "宮永照",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 19,
+      "character": "如月すみれ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 19,
+      "character": "フレデリカ・グリーンヒル",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 19,
+      "character": "倉田ましろ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 19,
+      "character": "ドロレス",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 19,
+      "character": "DAN-D",
+      "machine": "ディスクアップ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 20,
+      "character": "新門紅丸",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 20,
+      "character": "パート・コ・パーン",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 20,
+      "character": "箱崎星梨花",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 20,
+      "character": "ロム爺",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 20,
+      "character": "ハインツ・ネーリッヒ・ウィンダミア",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 21,
+      "character": "エイラ・イルマタル・ユーティライネン",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 22,
+      "character": "環古達",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 22,
+      "character": "香月ナナ",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 22,
+      "character": "要楽奈",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 22,
+      "character": "竹下みいこ",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 22,
+      "character": "池田華菜",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 22,
+      "character": "大蓮寺鈴鹿",
+      "machine": "東京レイヴンズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 23,
+      "character": "周瑜公瑾",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 24,
+      "character": "ティアーユ・ルナティーク",
+      "machine": "To LOVEる",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 24,
+      "character": "林田春樹（パーちん）",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 24,
+      "character": "ドナート・ポルポラ",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 25,
+      "character": "如月千早",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 25,
+      "character": "マリス&ルリス",
+      "machine": "Sister Quest",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 25,
+      "character": "キース・エアロ・ウィンダミア",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 25,
+      "character": "宇佐美時重",
+      "machine": "ゴールデンカムイ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 25,
+      "character": "掘ちえ",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 27,
+      "character": "野火マリエ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 27,
+      "character": "アルセーヌ",
+      "machine": "ミルキィホームズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 28,
+      "character": "生駒",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 28,
+      "character": "レントン・サーストン",
+      "machine": "エウレカセブンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 28,
+      "character": "瀬田薫",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 28,
+      "character": "佐藤摩耶",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 28,
+      "character": "台場カノン",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 28,
+      "character": "ペリーヌ・クロステルマン",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 29,
+      "character": "ゆんゆん",
+      "machine": "この素晴らしい世界に祝福を！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 29,
+      "character": "張々湖（006）",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 29,
+      "character": "カイン・ドレッセル",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 2,
+      "day": 29,
+      "character": "旧多ニ福",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 1,
+      "character": "杉元佐一",
+      "machine": "ゴールデンカムイ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 1,
+      "character": "ロコ",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 1,
+      "character": "ニコル・アマルフィ",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 1,
+      "character": "イッカククン",
+      "machine": "サンダーVシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 1,
+      "character": "春麗",
+      "machine": "ストリートファイターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "キャロル・マールス・ディーンハイム",
+      "machine": "戦姫絶唱シンフォギア",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "白石由竹",
+      "machine": "ゴールデンカムイ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "玉城真一郎",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "藤原千花",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "石上優",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "プリンセス火華",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "月山習",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "花柳香子",
+      "machine": "少女☆歌劇レヴュースタァライト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "風水暦",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "大鳴門むに",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "水鏡美三香",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "万里小路楓",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "マイ＆ユイ",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "character": "うまぽん",
+      "machine": "GI優駿倶楽部",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 5,
+      "character": "アイリス",
+      "machine": "ディスクアップ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 5,
+      "character": "皆城乙姫",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 5,
+      "character": "みこと",
+      "machine": "マジカルハロウィンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 6,
+      "character": "西連寺春菜",
+      "machine": "ToLOVEる",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 6,
+      "character": "逸見エリカ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 6,
+      "character": "サブロー",
+      "machine": "ゲッターマウスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 7,
+      "character": "青島優子",
+      "machine": "モンキーターン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 7,
+      "character": "水野愛",
+      "machine": "ゾンビランドサガ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 7,
+      "character": "幕澤桜花",
+      "machine": "女神のカフェテラス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 7,
+      "character": "ビリー田中",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 8,
+      "character": "クロエ・ルメール",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 8,
+      "character": "神代小蒔",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 8,
+      "character": "不知吟士",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 8,
+      "character": "軽井沢恵",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 9,
+      "character": "エギル",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 10,
+      "character": "アナスタシア・ホーシン",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 10,
+      "character": "魚座のアフロディーテ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 11,
+      "character": "ミーナ・ディートリンデ・ヴィルケ",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 11,
+      "character": "國神錬介",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 12,
+      "character": "ミスターブラウン",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 12,
+      "character": "四ノ宮心愛",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 12,
+      "character": "坂柳有栖",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 14,
+      "character": "犬吉親分",
+      "machine": "わんわんパラダイスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 14,
+      "character": "ヴィクトル・リヒト",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 14,
+      "character": "ラインハルト・フォン・ローエングラム",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 15,
+      "character": "フレイ・アルスター",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 15,
+      "character": "大守八雲",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 15,
+      "character": "松実玄",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 16,
+      "character": "柳生三厳",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 16,
+      "character": "姉帯豊音",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 17,
+      "character": "宇狩ころ美",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 17,
+      "character": "孫策伯符",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 18,
+      "character": "七尾百合子",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 18,
+      "character": "ミィ",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 18,
+      "character": "扇要",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 19,
+      "character": "アベルト・デスラー",
+      "machine": "宇宙戦艦ヤマト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 19,
+      "character": "栞",
+      "machine": "ローズテイル",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 20,
+      "character": "氷川紗夜",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 20,
+      "character": "氷川日菜",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 20,
+      "character": "成早朝日",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 20,
+      "character": "桜沢墨",
+      "machine": "彼女、お借りします",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 20,
+      "character": "澤村・スペンサー・英梨々",
+      "machine": "冴えない彼女の育てかた",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 20,
+      "character": "ゲルトルート・バルクホルン",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 21,
+      "character": "海皇ポセイドン",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 21,
+      "character": "結城友奈",
+      "machine": "結城友奈は勇者である",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 21,
+      "character": "時光青志",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 22,
+      "character": "佐竹美奈子",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 22,
+      "character": "土宮神楽",
+      "machine": "喰霊-零-",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 22,
+      "character": "要咲良",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 23,
+      "character": "牛込りみ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 23,
+      "character": "矢野緋彩",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 24,
+      "character": "オットー・スーウェン",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 24,
+      "character": "古間円児",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 25,
+      "character": "ユリアン・ミンツ",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 25,
+      "character": "パレオ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 25,
+      "character": "アリサ・イリーニチナ・アミエーラ",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 25,
+      "character": "高槻やよい",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 25,
+      "character": "四季",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 26,
+      "character": "冴羽獠",
+      "machine": "シティハンター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 26,
+      "character": "鶴田姫子",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 27,
+      "character": "秋樽桜備",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 27,
+      "character": "桜守歌織",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 27,
+      "character": "牡羊座のムウ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 28,
+      "character": "ナターシャ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 29,
+      "character": "紅月カレン",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 29,
+      "character": "右代宮真里亞",
+      "machine": "うみねこのなく頃に",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 29,
+      "character": "ディアッカ・エルスマン",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 30,
+      "character": "綾波レイ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 30,
+      "character": "青山操",
+      "machine": "番長シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 30,
+      "character": "牡牛座のシオン",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 30,
+      "character": "福田のり子",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 31,
+      "character": "絵心甚八",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 31,
+      "character": "峰理子",
+      "machine": "緋弾のアリアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 31,
+      "character": "シャーロック・シェリンフォード",
+      "machine": "ミルキィホームズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 31,
+      "character": "槇村香",
+      "machine": "シティハンター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 3,
+      "day": 31,
+      "character": "新聞やよい",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "ナツキ・スバル",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "潔世一",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "月島基",
+      "machine": "ゴールデンカムイ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "和住媛萌",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "キング（ハーレクイン）",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "グレート・ブリテン（007）",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "キン肉スグル",
+      "machine": "キン肉マン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "アーネスト・ジョンソン",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "面堂終太郎",
+      "machine": "うる星やつら",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 1,
+      "character": "アレキサンダー",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 2,
+      "character": "早坂愛",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 2,
+      "character": "佐々木琲世",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 2,
+      "character": "源さくら",
+      "machine": "ゾンビランドサガ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 2,
+      "character": "蔵前果林",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 3,
+      "character": "天海春香",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 3,
+      "character": "高円寺六助",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 3,
+      "character": "フェイリス・ニャンニャン",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 4,
+      "character": "桐島カンナ",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 4,
+      "character": "紫織",
+      "machine": "南国育ち",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 4,
+      "character": "クルシュ・カルステン",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 4,
+      "character": "ヤン・ウェンリー",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 4,
+      "character": "子安つばめ",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 4,
+      "character": "生駒祐未",
+      "machine": "蒼穹のファフナー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 5,
+      "character": "夜桜",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 5,
+      "character": "涼風まどか",
+      "machine": "南国育ちシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 5,
+      "character": "イズ",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 6,
+      "character": "ダクネス",
+      "machine": "この素晴らしい世界に祝福を！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 6,
+      "character": "白鷺千聖",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 7,
+      "character": "亜門鋼太朗",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 8,
+      "character": "高坂桐乃",
+      "machine": "俺の妹がこんなに可愛いわけがない。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 8,
+      "character": "ローズマリー・ベルガモット",
+      "machine": "マジカルハロウィンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 8,
+      "character": "東郷美森",
+      "machine": "結城友奈は勇者である",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 8,
+      "character": "高千穂麗",
+      "machine": "緋弾のアリアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 8,
+      "character": "高鴨穏乃",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 9,
+      "character": "冬月コウゾウ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 9,
+      "character": "アリス・ツーベルク",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 9,
+      "character": "リアス・グレモリー",
+      "machine": "ハイスクールD×D",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 10,
+      "character": "アイリス",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 10,
+      "character": "巣刈",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 10,
+      "character": "ユージオ",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 10,
+      "character": "美竹蘭",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 10,
+      "character": "新島衣舞紀",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 11,
+      "character": "天月めぐる",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 11,
+      "character": "指南ショーコ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 12,
+      "character": "橘直人",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 13,
+      "character": "暁切歌",
+      "machine": "戦姫絶唱シンフォギアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 13,
+      "character": "前原圭一",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 13,
+      "character": "諸星あたる",
+      "machine": "うる星やつら",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 14,
+      "character": "鷺森灼",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 15,
+      "character": "所恵美",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 15,
+      "character": "ブラックカーテン",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 15,
+      "character": "宇田川巴",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 16,
+      "character": "キャンベル",
+      "machine": "ディスクアップ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 16,
+      "character": "宿海仁太",
+      "machine": "あの日見た花の名前を僕達はまだ知らない。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 16,
+      "character": "兵藤一誠",
+      "machine": "ハイスクールD×D",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 16,
+      "character": "有馬さつき",
+      "machine": "GⅠDREAMROAD",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 17,
+      "character": "カメレオン星座のジュネ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 17,
+      "character": "石動双葉",
+      "machine": "少女☆歌劇レヴュースタァライト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 18,
+      "character": "ヴァルカン",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 18,
+      "character": "轟雷",
+      "machine": "フレームアームズガール",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 18,
+      "character": "武井リン",
+      "machine": "ガールズケイリン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 19,
+      "character": "水原千鶴",
+      "machine": "彼女、お借りします",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 19,
+      "character": "リーファ",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 19,
+      "character": "夏侯淵妙才",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 19,
+      "character": "ルキアーノ・ブラッドリー",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 19,
+      "character": "エーリカ・ハルトマン",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 19,
+      "character": "マキナ・中島",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 20,
+      "character": "五更瑠璃（黒猫）",
+      "machine": "俺の妹がこんなに可愛いわけがない。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 20,
+      "character": "西尾里奈",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 22,
+      "character": "ジュリア",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 22,
+      "character": "コルネリアス・ルッツ",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 24,
+      "character": "宮尾美也",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 27,
+      "character": "山手響子",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 28,
+      "character": "櫻井アイナ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 28,
+      "character": "武藤泰宏",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 29,
+      "character": "ランカ・リー",
+      "machine": "マクロスF",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 29,
+      "character": "碇ゲンドウ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 29,
+      "character": "エルザ・グランヒルテ",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 29,
+      "character": "大神環",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 29,
+      "character": "清澄雫",
+      "machine": "サラリーマン番長シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 4,
+      "day": 30,
+      "character": "諏訪天姫",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 1,
+      "character": "宗谷真霜",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 1,
+      "character": "アレックス・キャゼルヌ",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 1,
+      "character": "1000ちゃん",
+      "machine": "オーイズミ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 1,
+      "character": "犬吠埼風",
+      "machine": "結城友奈は勇者である",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 2,
+      "character": "御坂美琴",
+      "machine": "とある科学の超電磁砲",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 2,
+      "character": "上条るい",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 3,
+      "character": "古手川唯",
+      "machine": "ToLOVEる",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 4,
+      "character": "サロメ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 4,
+      "character": "田村麻奈実",
+      "machine": "俺の妹がこんなに可愛いわけがない。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "アサルト",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "ミミ・パールバトン",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "ティビー・パールバトン",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "ヘータロー・パールバトン",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "波島出海",
+      "machine": "冴えない彼女の育てかた",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "水瀬伊織",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "河嶋桃",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "百萬石嵐",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "火野ライカ",
+      "machine": "緋弾のアリアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "伊井野ミコ",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "染谷まこ",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 5,
+      "character": "ヘルブラム",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 7,
+      "character": "ヴィルヘルム・ヴァン・アストレア",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 7,
+      "character": "春日井甲洋",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 8,
+      "character": "コパンダ",
+      "machine": "番長シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 8,
+      "character": "牡牛座のアルデバラン",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 10,
+      "character": "ペイン",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 10,
+      "character": "セフィ・ミカエラ・デビルーク",
+      "machine": "ToLOVEる",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 10,
+      "character": "龍宮寺堅",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 11,
+      "character": "アーシア・アルジェント",
+      "machine": "ハイスクールD×D",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 11,
+      "character": "松原花音",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 12,
+      "character": "麻倉葉",
+      "machine": "シャーマンキング",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 12,
+      "character": "麻倉葉王",
+      "machine": "シャーマンキング",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 12,
+      "character": "七海リオン",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 12,
+      "character": "マスキング",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 14,
+      "character": "要澄美",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 14,
+      "character": "遠見弓子",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 15,
+      "character": "ギルバート・マクレイン",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 15,
+      "character": "二階堂サキ",
+      "machine": "ゾンビランドサガ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 15,
+      "character": "紺藤さつき",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 16,
+      "character": "島村ジョー",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 16,
+      "character": "曹仁子孝",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 17,
+      "character": "新子憧",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 17,
+      "character": "北上麗花",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 18,
+      "character": "ギンちゃん",
+      "machine": "ニューギン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 18,
+      "character": "リズベット",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 18,
+      "character": "キラ・ヤマト",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 18,
+      "character": "カガリ・ユラ・アスハ",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 18,
+      "character": "若狭麗緒",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 19,
+      "character": "山吹沙綾",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 19,
+      "character": "橋田至",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 20,
+      "character": "茶柱佐枝",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 20,
+      "character": "ムジカ",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 20,
+      "character": "ドルシー",
+      "machine": "ナナシー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 21,
+      "character": "笛口雛",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 21,
+      "character": "橘日向",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 22,
+      "character": "エッグマン",
+      "machine": "ディスクアップ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 22,
+      "character": "双海亜美",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 22,
+      "character": "双海真美",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 22,
+      "character": "三枝わかば",
+      "machine": "ビビッドレッド・オペレーション",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 24,
+      "character": "松野おそ松",
+      "machine": "おそ松さん",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 24,
+      "character": "松野カラ松",
+      "machine": "おそ松さん",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 24,
+      "character": "松野チョロ松",
+      "machine": "おそ松さん",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 24,
+      "character": "松野一松",
+      "machine": "おそ松さん",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 24,
+      "character": "松野十四松",
+      "machine": "おそ松さん",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 24,
+      "character": "松野トド松",
+      "machine": "おそ松さん",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 25,
+      "character": "風鳴翼",
+      "machine": "戦姫絶唱シンフォギアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 25,
+      "character": "エルエルフ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 25,
+      "character": "河田ナホヤ",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 25,
+      "character": "河田ソウヤ",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 27,
+      "character": "カノン・メンフィス",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 27,
+      "character": "宗谷ましろ",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 28,
+      "character": "納沙幸子",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 28,
+      "character": "薄墨初美",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 29,
+      "character": "白石紬",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 30,
+      "character": "双子座のサガ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 30,
+      "character": "双子座のカノン",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 30,
+      "character": "木場祐斗",
+      "machine": "ハイスクールD×D",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 30,
+      "character": "山内春樹",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 31,
+      "character": "望月杏奈",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 5,
+      "day": 31,
+      "character": "椎名心実",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "character": "松山ダリア",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "character": "木ノ下和也",
+      "machine": "彼女、お借りします",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "character": "ヴィレッタ・ヌゥ",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "character": "カノン・マルディーニ",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "character": "青木百々",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "character": "宇田慧",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "character": "翔鶴",
+      "machine": "アズールレーン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 1,
+      "character": "曹操孟徳",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 2,
+      "character": "ゴウセル",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 2,
+      "character": "真壁史彦",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 3,
+      "character": "千石撫子",
+      "machine": "物語シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 3,
+      "character": "右代宮楼座",
+      "machine": "うみねこのなく頃に",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "碇シンジ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "菖蒲",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "水無月遥",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "田村源六",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "一条凪",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "秋山優花里",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "桐生萌郁",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "ミツルギ",
+      "machine": "この素晴らしい世界に祝福を！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "ココロ",
+      "machine": "ダーリン・イン・ザ・フランキス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 6,
+      "character": "真戸暁",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 7,
+      "character": "カズマ",
+      "machine": "この素晴らしい世界に祝福を！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 7,
+      "character": "松田亜利沙",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 7,
+      "character": "劉月麗",
+      "machine": "絶対衝激シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 8,
+      "character": "鈴屋什造",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 8,
+      "character": "カナメ・バッカニア",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 8,
+      "character": "ムーンドギー",
+      "machine": "交響詩篇エウレカセブンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 9,
+      "character": "アーノルド・ノイマン",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 9,
+      "character": "ジョナサン・ミツヒロ・バートランド",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 9,
+      "character": "猿渡翔",
+      "machine": "華牌シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 9,
+      "character": "医者",
+      "machine": "アクダマドライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 9,
+      "character": "忌夢",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 10,
+      "character": "アリス・ウィッシュハート",
+      "machine": "マジカルハロウィンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 10,
+      "character": "時野志遠",
+      "machine": "マジカルハロウィンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 10,
+      "character": "橘サクヤ",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 10,
+      "character": "永近英良",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 11,
+      "character": "リネット・ビショップ",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 12,
+      "character": "馬場このみ",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 12,
+      "character": "メアリ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 12,
+      "character": "三好夏凜",
+      "machine": "結城友奈は勇者である",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 12,
+      "character": "エリザベス・リオネス",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 12,
+      "character": "スーザン・レジェス",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 12,
+      "character": "クロム",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 12,
+      "character": "テレシア・ヴァン・アストレア",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 13,
+      "character": "ジョン・ガラブシ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 14,
+      "character": "ノア・セワード",
+      "machine": "十字架5",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 14,
+      "character": "怪堂天音",
+      "machine": "やじきた道中記",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 14,
+      "character": "ジョーカー",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 14,
+      "character": "ハッカー",
+      "machine": "アクダマドライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 16,
+      "character": "杵崎ほまれ",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 16,
+      "character": "杵崎あかね",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 16,
+      "character": "北条悟史",
+      "machine": "ひぐらしのなく頃に",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 16,
+      "character": "広町七深",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 16,
+      "character": "池寛治",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 17,
+      "character": "加持リョウジ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 17,
+      "character": "右代宮縁寿",
+      "machine": "うみねこのなく頃に",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 17,
+      "character": "二葉あおい",
+      "machine": "ビビッドレッド・オペレーション",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 18,
+      "character": "エルヴィン",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 19,
+      "character": "カーミラ",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 20,
+      "character": "鷹野三四",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 20,
+      "character": "藤木コウタ",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 20,
+      "character": "許褚仲康",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 21,
+      "character": "烈火星宮",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 21,
+      "character": "ユーノ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 21,
+      "character": "篠原さつき",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 22,
+      "character": "カロン",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 22,
+      "character": "武部沙織",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 23,
+      "character": "秋月律子",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 23,
+      "character": "日野道生",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 23,
+      "character": "劉備玄徳",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 24,
+      "character": "蟹座のデスマスク",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 24,
+      "character": "北条沙都子",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 24,
+      "character": "吉備土",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 25,
+      "character": "花垣武道",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 25,
+      "character": "柏木渚",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 25,
+      "character": "ビビアン",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 26,
+      "character": "藤原萌葉",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 26,
+      "character": "カレン・エルヴェシアス",
+      "machine": "ひきこまり吸血姫の悶々",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 27,
+      "character": "若宮イヴ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 27,
+      "character": "馬狼照英",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 28,
+      "character": "春日未来",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 28,
+      "character": "蒼月潮",
+      "machine": "うしおととら",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 29,
+      "character": "フォウ・ムラサメ",
+      "machine": "機動戦士Zガンダム",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 29,
+      "character": "高嶺竜児",
+      "machine": "リングにかけろシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 29,
+      "character": "柴柚葉",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 30,
+      "character": "テリーマン",
+      "machine": "キン肉マンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 6,
+      "day": 30,
+      "character": "愛本りんく",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 1,
+      "character": "霧嶋董香",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 1,
+      "character": "西住まほ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 1,
+      "character": "加賀美茉莉",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 2,
+      "character": "ティーゼ・シュトリーネン",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 3,
+      "character": "宇田川あこ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 3,
+      "character": "風町陽歌",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 3,
+      "character": "三途春千夜",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 4,
+      "character": "霧嶋絢都",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 4,
+      "character": "日向アキト",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 4,
+      "character": "木下ひなた",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 4,
+      "character": "剣崎順",
+      "machine": "リングにかけろシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 4,
+      "character": "影道殉",
+      "machine": "リングにかけろシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "ユリウス・ユークリウス",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "ララ・サタリン・デビルーク",
+      "machine": "ToLOVEるシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "安久奈白",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "安久黒奈",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "三宅葵依",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "戦場ヶ原ひたぎ",
+      "machine": "物語シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "ハル",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "ルシア",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "ナナちゃん",
+      "machine": "パワフルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "リリカ・アスタディール",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "刃渡ミカ",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "十文字颯",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "皆城織姫",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "斑鳩",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "マーガレット・リオネス",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "古代進",
+      "machine": "宇宙戦艦ヤマト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 7,
+      "character": "【四ツ葉】大谷吉継",
+      "machine": "戦国コレクション",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 8,
+      "character": "シャーリー・フェネット",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 9,
+      "character": "四方蓮示",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 10,
+      "character": "枢木スザク",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 10,
+      "character": "アーサー",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 10,
+      "character": "園崎詩音",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 10,
+      "character": "園崎魅音",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 10,
+      "character": "オレンジペコ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 10,
+      "character": "ナナティー",
+      "machine": "ナナシー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 11,
+      "character": "吉宗",
+      "machine": "吉宗シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 11,
+      "character": "伊吹マヤ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 11,
+      "character": "リーゼロッテ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 11,
+      "character": "サリー",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 11,
+      "character": "幸村輝彦",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 12,
+      "character": "大場なな",
+      "machine": "少女☆歌劇レヴュースタァライト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 12,
+      "character": "ヴラディレーナ・ミリーゼ",
+      "machine": "86-エイティシックス-",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 13,
+      "character": "サム",
+      "machine": "海物語シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 13,
+      "character": "三宅明人",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 14,
+      "character": "戸山香澄",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 15,
+      "character": "山本タクヤ",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 15,
+      "character": "右代宮戦人",
+      "machine": "うみねこのなく頃に",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 17,
+      "character": "ロック",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 18,
+      "character": "愛宕洋榎",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 19,
+      "character": "三浦あずさ",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 19,
+      "character": "野間マチコ",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 19,
+      "character": "朝比奈桃子",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 19,
+      "character": "フレデリカ",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "character": "ワリン",
+      "machine": "海物語シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "character": "アンドリュー・バルトフェルド",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "character": "春花",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "character": "ミネルヴァ",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "character": "リヴァル・カルデモンド",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "character": "一之瀬帆波",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "character": "岬明乃",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 20,
+      "character": "【元帥姫】今川義元",
+      "machine": "戦国コレクション",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 21,
+      "character": "リュウ",
+      "machine": "ストリートファイターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 21,
+      "character": "籾岡里紗",
+      "machine": "ToLOVEるシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 21,
+      "character": "姫島朱乃",
+      "machine": "ハイスクールD×D",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 21,
+      "character": "ジョディ・バーンサイド",
+      "machine": "南国育ちシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 23,
+      "character": "舞浜歩",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 23,
+      "character": "レイナ・プラウラー",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 23,
+      "character": "四宮ひまわり",
+      "machine": "ビビッドレッド・オペレーション",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 23,
+      "character": "セリア",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 24,
+      "character": "ミレイ・アッシュフォード",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 24,
+      "character": "天堂真矢",
+      "machine": "少女☆歌劇レヴュースタァライト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 24,
+      "character": "柴大寿",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 25,
+      "character": "波多野憲二",
+      "machine": "モンキーターン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 25,
+      "character": "牧瀬紅莉栖",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 25,
+      "character": "メリオダス",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 25,
+      "character": "知名もえか",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 27,
+      "character": "早乙女アルト",
+      "machine": "マクロスF",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 27,
+      "character": "伊吹澪",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 28,
+      "character": "竜宮レナ",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 28,
+      "character": "天羽奏",
+      "machine": "戦姫絶唱シンフォギアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 28,
+      "character": "大空翼",
+      "machine": "キャプテン翼シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 30,
+      "character": "伊吹翼",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 30,
+      "character": "北沢はぐみ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 30,
+      "character": "水島茉莉花",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 30,
+      "character": "右代宮夏妃",
+      "machine": "うみねこのなく頃に",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 7,
+      "day": 30,
+      "character": "粕壁隼",
+      "machine": "女神のカフェテラス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 1,
+      "character": "マリンちゃん",
+      "machine": "海物語シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 1,
+      "character": "白銀圭",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 1,
+      "character": "羽入",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 1,
+      "character": "アクア",
+      "machine": "この素晴らしい世界に祝福を！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 1,
+      "character": "ユイ",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 1,
+      "character": "西條クロディーヌ",
+      "machine": "少女☆歌劇レヴュースタァライト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 1,
+      "character": "日高ナツ",
+      "machine": "南国育ちシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 2,
+      "character": "ジェレミア・ゴットバルト",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 2,
+      "character": "姫路果代子",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 3,
+      "character": "葉月クルミ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 3,
+      "character": "虹河ラキ",
+      "machine": "山佐ネクスト専属サポーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 3,
+      "character": "ハーノイン",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 4,
+      "character": "シャルル・ジ・ブリタニア",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 4,
+      "character": "V.V.",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 4,
+      "character": "濱田忠臣",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 4,
+      "character": "趙雲子龍",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 5,
+      "character": "立石志摩",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 5,
+      "character": "カトレア・グローリー",
+      "machine": "RAVEシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 6,
+      "character": "ホーク",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 7,
+      "character": "マリア・カデンツァヴナ・イヴ",
+      "machine": "戦姫絶唱シンフォギアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 7,
+      "character": "セリーヌ",
+      "machine": "To LOVEるシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 7,
+      "character": "お華ちゃん",
+      "machine": "遠山の金さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 7,
+      "character": "月島流星",
+      "machine": "女神のカフェテラス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "ウリンちゃん",
+      "machine": "海物語シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "ナナ・アスタ・デビルーク",
+      "machine": "ToLOVEるシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "モモ・ベリア・デビルーク",
+      "machine": "ToLOVEるシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "イザーク・ジュール",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "フェルト",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "葉月つかさ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "八波弾",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "鬼頭大龍",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "逞生",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "アシュラマン",
+      "machine": "キン肉マン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "柳原麻侖",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 8,
+      "character": "弦巻こころ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 9,
+      "character": "張飛益徳",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 9,
+      "character": "木山春生",
+      "machine": "とある魔術の禁書目録",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 10,
+      "character": "皇神楽耶",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 10,
+      "character": "御門零央",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 10,
+      "character": "高坂香美",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 11,
+      "character": "ネプチューンマン",
+      "machine": "キン肉マンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 11,
+      "character": "天城茉莉音",
+      "machine": "ミルキィホームズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 13,
+      "character": "小楯衛",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 14,
+      "character": "南野カナ",
+      "machine": "沖ドキ！シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 14,
+      "character": "連坊小路サトミ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 15,
+      "character": "鳳凰星座の一輝",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 15,
+      "character": "島大介",
+      "machine": "宇宙戦艦ヤマト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 15,
+      "character": "雅緋",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 16,
+      "character": "獅子座のアイオリア",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 16,
+      "character": "一式あかね",
+      "machine": "ビビッドレッド・オペレーション",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 17,
+      "character": "日向小次郎",
+      "machine": "キャプテン翼シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 17,
+      "character": "美雲・ギンヌメール",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 17,
+      "character": "義元",
+      "machine": "ローズテイルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 18,
+      "character": "鰍",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 18,
+      "character": "宮藤芳佳",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 18,
+      "character": "サーニャ・V・リトヴャク",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 18,
+      "character": "ヤイバ",
+      "machine": "SHOW BY ROCK!!",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 18,
+      "character": "矢吹可奈",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 19,
+      "character": "シュダ",
+      "machine": "RAVEシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 20,
+      "character": "佐野万次郎",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 20,
+      "character": "ピュンマ（008）",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 20,
+      "character": "天童寺セイラ",
+      "machine": "ガンスリンガーストラトス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 21,
+      "character": "政宗",
+      "machine": "政宗シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 21,
+      "character": "古手梨花",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 21,
+      "character": "ロック（岡島緑郎）",
+      "machine": "ブラックラグーン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 21,
+      "character": "王美雨",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 22,
+      "character": "環いろは",
+      "machine": "マギアレコード 魔法少女まどか☆マギカ外伝",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 22,
+      "character": "川流美優希",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 23,
+      "character": "ダリル・ヤン",
+      "machine": "ギルティクラウン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 24,
+      "character": "ライエ・アリアーシュ",
+      "machine": "アルドノア・ゼロ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 24,
+      "character": "松実宥",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 25,
+      "character": "田沼翼",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 25,
+      "character": "カズイ・バスカーク",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 25,
+      "character": "今井リサ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 25,
+      "character": "ラーメンマン",
+      "machine": "キン肉マンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 26,
+      "character": "更科瑠夏",
+      "machine": "彼女、お借りします",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 26,
+      "character": "ギルサンダー",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 26,
+      "character": "貴生川タクミ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 26,
+      "character": "坂本美緒",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 26,
+      "character": "弥次郎兵衛",
+      "machine": "やじきた道中記",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 27,
+      "character": "ニーナ・アインシュタイン",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 27,
+      "character": "篠宮可憐",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 27,
+      "character": "広石倫",
+      "machine": "絶対衝激シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 28,
+      "character": "ソーマ・シックザール",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 28,
+      "character": "チャック・マスタング",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 28,
+      "character": "譲崎ネロ",
+      "machine": "ミルキィホームズシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 29,
+      "character": "菊地真",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 29,
+      "character": "葉月",
+      "machine": "ドンちゃんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 29,
+      "character": "葛城康平",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 30,
+      "character": "漆原るか",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 30,
+      "character": "乃木園子",
+      "machine": "結城友奈は勇者である",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 8,
+      "day": 31,
+      "character": "陸遜伯言",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 1,
+      "character": "洞口雄大",
+      "machine": "モンキーターン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 1,
+      "character": "城戸沙織",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 1,
+      "character": "千葉凪沙",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 1,
+      "character": "冷泉麻子",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 1,
+      "character": "平田洋介",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 2,
+      "character": "クレア",
+      "machine": "秘宝伝",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 2,
+      "character": "ミネバ・ラオ・ザビ",
+      "machine": "機動戦士ガンダムUC",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 2,
+      "character": "紺野純子",
+      "machine": "ゾンビランドサガ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 2,
+      "character": "豊川風花",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 3,
+      "character": "呂蒙子明",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 3,
+      "character": "青葉モカ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 3,
+      "character": "ナギサ",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 3,
+      "character": "神楽坂砂夜",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 4,
+      "character": "流木野サキ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 4,
+      "character": "柴八戒",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 4,
+      "character": "鏑木美波",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 5,
+      "character": "小山田まん太",
+      "machine": "シャーマンキング",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 6,
+      "character": "ノワール",
+      "machine": "マジカルハロウィンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 6,
+      "character": "フルフー",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 6,
+      "character": "ジェリコ",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 6,
+      "character": "黒名蘭世",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 7,
+      "character": "プリシラ・バーリエル",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 7,
+      "character": "セシル・クルーミー",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 8,
+      "character": "飛鳥",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 8,
+      "character": "フラップくん",
+      "machine": "CCエンジェル",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "クランキー",
+      "machine": "クランキーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "糸師凛",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "アンドロメダ星座の瞬",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "寿麗",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "日影",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "羽生まどか",
+      "machine": "G1優駿倶楽部",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "白銀御行",
+      "machine": "かぐや様は告らせたい",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "清水美空",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 9,
+      "character": "御門涼子",
+      "machine": "ToLOVEるダークネス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 10,
+      "character": "滝澤政道",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 10,
+      "character": "龍門渕透華",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 10,
+      "character": "重藤秋穂",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 12,
+      "character": "ペパロニ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 12,
+      "character": "相田ケンスケ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 12,
+      "character": "セイラ・マス",
+      "machine": "機動戦士ガンダム",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 12,
+      "character": "長月平之丞",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 13,
+      "character": "渚カヲル",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 13,
+      "character": "立花響",
+      "machine": "戦姫絶唱シンフォギアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 13,
+      "character": "うまえもん",
+      "machine": "うまい棒",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 13,
+      "character": "笹原野々花",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 14,
+      "character": "井上純",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 14,
+      "character": "富竹ジロウ",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 14,
+      "character": "最上静香",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 15,
+      "character": "月光",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 15,
+      "character": "二葉つくし",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 16,
+      "character": "ロズワール・L・メイザース",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 16,
+      "character": "羽宮一虎",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 16,
+      "character": "アードライ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 16,
+      "character": "片岡優希",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 16,
+      "character": "茉希尾瀬",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 17,
+      "character": "ダージリン",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 17,
+      "character": "天都かなた",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 18,
+      "character": "ロビンマスク",
+      "machine": "キン肉マン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 18,
+      "character": "本間芽衣子",
+      "machine": "あの日見た花の名前を僕達はまだ知らない。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 19,
+      "character": "アルベルト・ハインリヒ（004）",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 19,
+      "character": "乙女座のシャカ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 19,
+      "character": "ハウザー",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 20,
+      "character": "明石真秀",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 20,
+      "character": "メグミ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 20,
+      "character": "羽佐間翔子",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 20,
+      "character": "永吉昴",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 21,
+      "character": "真壁一騎",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 21,
+      "character": "ハヤテ・インメルマン",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 22,
+      "character": "アキラ",
+      "machine": "ローズテイル",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 23,
+      "character": "エミリア",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 23,
+      "character": "アンチョビ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 23,
+      "character": "神崎・H・アリア",
+      "machine": "緋弾のアリアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 23,
+      "character": "武久火縄",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 23,
+      "character": "加藤恵",
+      "machine": "冴えない彼女の育てかた",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 23,
+      "character": "エンリー",
+      "machine": "ナナシー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 24,
+      "character": "福路美穂子",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 24,
+      "character": "来栖",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 25,
+      "character": "カスミ",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 25,
+      "character": "黒騎れい",
+      "machine": "ビビッドレッド・オペレーション",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 26,
+      "character": "良波しゅり",
+      "machine": "南国育ち",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 26,
+      "character": "ジュリア",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 27,
+      "character": "愛城華恋",
+      "machine": "少女☆歌劇レヴュースタァライト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 27,
+      "character": "阿万音鈴羽",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 28,
+      "character": "ヴェイル",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 28,
+      "character": "ヌイ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 29,
+      "character": "イクスアイン",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 30,
+      "character": "アスナ",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 9,
+      "day": 30,
+      "character": "アダム・ブレイク",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 1,
+      "character": "ミッシェル",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 1,
+      "character": "西野貴未",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 1,
+      "character": "星見純那",
+      "machine": "少女☆歌劇レヴュースタァライト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 1,
+      "character": "ウォーズマン",
+      "machine": "キン肉マンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 1,
+      "character": "勝田聡子",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 1,
+      "character": "ミーちゃん",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 2,
+      "character": "網倉麻子",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 3,
+      "character": "鹿目まどか",
+      "machine": "魔法少女まどか☆マギカ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 3,
+      "character": "宇井郡",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 4,
+      "character": "龍星座の紫龍",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 4,
+      "character": "原村和",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 4,
+      "character": "シリカ",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 5,
+      "character": "田中琴葉",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 5,
+      "character": "須藤健",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 6,
+      "character": "星川リリィ",
+      "machine": "ゾンビランドサガ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 7,
+      "character": "キリト",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 8,
+      "character": "叢",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 8,
+      "character": "神代利世",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 9,
+      "character": "福島ノア",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 10,
+      "character": "田村源三",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 10,
+      "character": "我那覇響",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 10,
+      "character": "糸師冴",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 11,
+      "character": "雷市陣吾",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 11,
+      "character": "ユーフェミア・リ・ブリタニア",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 12,
+      "character": "雨宮リンドウ",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 12,
+      "character": "ガーフィール・ティンゼル",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 12,
+      "character": "松永理都子",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 12,
+      "character": "マリュー・ラミアス",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 14,
+      "character": "クロヴィス・ラ・ブリタニア",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 15,
+      "character": "セレナ・カデンツァヴナ・イヴ",
+      "machine": "戦姫絶唱シンフォギアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 15,
+      "character": "時縞ハルト",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 15,
+      "character": "怪堂茜",
+      "machine": "やじきた道中記",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 15,
+      "character": "林良平",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 15,
+      "character": "佐倉愛理",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 15,
+      "character": "ヒロ",
+      "machine": "ダーリン・イン・ザ・フランキス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 16,
+      "character": "轟金剛",
+      "machine": "番長シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 16,
+      "character": "結城梨斗",
+      "machine": "ToLOVEるシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 17,
+      "character": "神無月咲枝",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 17,
+      "character": "白金燐子",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 19,
+      "character": "ギルバート・G・P・ギルフォード",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 20,
+      "character": "無名",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 20,
+      "character": "天秤座の童虎",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 20,
+      "character": "灰谷竜胆",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 20,
+      "character": "綾小路清隆",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 20,
+      "character": "龍園翔",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 21,
+      "character": "二階堂千鶴",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 22,
+      "character": "メイプル",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 23,
+      "character": "神無月葵",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 23,
+      "character": "西住みほ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 23,
+      "character": "等松美海",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 23,
+      "character": "上原ひまり",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 24,
+      "character": "島田愛里寿",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 24,
+      "character": "武蔵坊弁慶",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 25,
+      "character": "ナナリー・ヴィ・ブリタニア",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 25,
+      "character": "間宮あかり",
+      "machine": "緋弾のアリアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 25,
+      "character": "小笠原光",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 25,
+      "character": "九条凛",
+      "machine": "ToLOVEるシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 26,
+      "character": "アーニャ・アルストレイム",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 26,
+      "character": "島原エレナ",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 26,
+      "character": "紫",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 26,
+      "character": "湊友希那",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 27,
+      "character": "宮永咲",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 27,
+      "character": "市ヶ谷有咲",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 27,
+      "character": "半間修二",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 28,
+      "character": "呂布奉先",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 29,
+      "character": "知床鈴",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 29,
+      "character": "シンラ",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 29,
+      "character": "アスラン・ザラ",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 29,
+      "character": "ハードナー",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 30,
+      "character": "渡月麗",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 30,
+      "character": "剣城斬鉄",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 31,
+      "character": "ヘンドリクセン",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 10,
+      "day": 31,
+      "character": "バーナビー・ブルックスJr.",
+      "machine": "TIGER&BUNNY",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 1,
+      "character": "エイリやん",
+      "machine": "Sammy",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 1,
+      "character": "黒木洋美",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 1,
+      "character": "丸山沙希",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 1,
+      "character": "ロメロ",
+      "machine": "ゾンビランドサガ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 1,
+      "character": "黒咲芽亜",
+      "machine": "To LOVEるダークネス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 2,
+      "character": "比屋定真帆",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 2,
+      "character": "村上文緒",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 2,
+      "character": "江崎仁美",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 3,
+      "character": "場地圭介",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 3,
+      "character": "蟻生十兵衛",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 3,
+      "character": "フレイア・ヴィオン",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 3,
+      "character": "結城美柑",
+      "machine": "To LOVEるダークネス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 3,
+      "character": "大和麻弥",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 5,
+      "character": "葛城",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 5,
+      "character": "朱斎こよみ",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 5,
+      "character": "典韋",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 6,
+      "character": "園崎茜",
+      "machine": "ひぐらしのなく頃に",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 6,
+      "character": "周防桃子",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 7,
+      "character": "小日向未来",
+      "machine": "戦姫絶唱シンフォギア",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 7,
+      "character": "小鍛治健夜",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 8,
+      "character": "蠍座のミロ",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 8,
+      "character": "二条泉",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 8,
+      "character": "関羽雲長",
+      "machine": "一騎当千",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 8,
+      "character": "喜多八",
+      "machine": "やじきた道中記",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 9,
+      "character": "因果春日谷",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 9,
+      "character": "篠崎咲世子",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 9,
+      "character": "天王寺綯",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 11,
+      "character": "羽生まこ",
+      "machine": "GI優駿倶楽部",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 11,
+      "character": "神崎愛梨紗",
+      "machine": "大工の源さんシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 11,
+      "character": "遠見真矢",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 11,
+      "character": "大道寺",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 11,
+      "character": "カミーユ・ビダン",
+      "machine": "機動戦士Zガンダム",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 11,
+      "character": "天空橋朋花",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 11,
+      "character": "小野白菊",
+      "machine": "女神のカフェテラス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 12,
+      "character": "白鳥胡桃",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 13,
+      "character": "霊屋ユウスケ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 13,
+      "character": "竹井久",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 13,
+      "character": "七海麻美",
+      "machine": "彼女、お借りします",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 14,
+      "character": "星伽白雪",
+      "machine": "緋弾のアリアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 15,
+      "character": "おりょう",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 16,
+      "character": "久遠渉",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 17,
+      "character": "ラクシャータ・チャウラー",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 18,
+      "character": "佐々木志乃",
+      "machine": "緋弾のアリアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 19,
+      "character": "八潮瑠唯",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 19,
+      "character": "鴉",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 20,
+      "character": "櫻井明音",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 20,
+      "character": "葦原ユノ",
+      "machine": "ゴッドイーター",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 21,
+      "character": "赤木リツコ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 21,
+      "character": "百瀬莉緒",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 21,
+      "character": "伊勢桜良",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 21,
+      "character": "テア・クロイツェル",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 21,
+      "character": "テオ・ユッシラ",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 21,
+      "character": "ザオ・ユッシラ",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 22,
+      "character": "マリアンヌ・ヴィ・ブリタニア",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 22,
+      "character": "リンリン",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 23,
+      "character": "シェリル・ノーム",
+      "machine": "マクロスF",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 23,
+      "character": "星井美希",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 23,
+      "character": "ブラックトレーダー",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 23,
+      "character": "塔城小猫",
+      "machine": "ハイスクールD×D",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 23,
+      "character": "ゆうぎり",
+      "machine": "ゾンビランドサガ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 25,
+      "character": "佐野エマ",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 27,
+      "character": "ジノ・ヴァインベルグ",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 27,
+      "character": "日高さおり",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 28,
+      "character": "クライン",
+      "machine": "ソードアート・オンライン",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 29,
+      "character": "ドレファス",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 29,
+      "character": "ムウ・ラ・フラガ",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 30,
+      "character": "射手座のアイオロス",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 11,
+      "day": 30,
+      "character": "クーフィア",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 1,
+      "character": "天馬星座の星矢",
+      "machine": "聖闘士星矢",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 1,
+      "character": "カナデ",
+      "machine": "痛いのは嫌なので防御力に極振りしたいと思います。",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 1,
+      "character": "内海将",
+      "machine": "SSSS.GRIDMAN",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 1,
+      "character": "広田空",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 1,
+      "character": "鳳凰寺紅葉",
+      "machine": "女神のカフェテラス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 2,
+      "character": "千堂敦",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 3,
+      "character": "マーリン",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 3,
+      "character": "愛姫",
+      "machine": "政宗シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 3,
+      "character": "左衛門佐",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 3,
+      "character": "入江京介",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 3,
+      "character": "野々原茜",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 4,
+      "character": "式波（惣流）・アスカ・ラングレー",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 4,
+      "character": "めぐみん",
+      "machine": "この素晴らしい世界に祝福を！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 4,
+      "character": "花園たえ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 4,
+      "character": "レット",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 4,
+      "character": "キキ・コリンズ",
+      "machine": "南国育ちシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 5,
+      "character": "ルルーシュ・ヴィ・ブリタニア",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 5,
+      "character": "宝多六花",
+      "machine": "SSSS.GRIDMAN",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 5,
+      "character": "神崎隆二",
+      "machine": "ようこそ実力至上主義の教室へ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 5,
+      "character": "笹子・ジェニファー・由香",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 6,
+      "character": "美馬",
+      "machine": "甲鉄城のカバネリ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 6,
+      "character": "フレデリカ・バウマン",
+      "machine": "Re:ゼロから始める異世界生活",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 6,
+      "character": "ギーラ",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 6,
+      "character": "内田まゆみ",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 6,
+      "character": "香取石松",
+      "machine": "リングにかけろシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 7,
+      "character": "チュチュ",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 7,
+      "character": "近藤剣司",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 7,
+      "character": "若林源三",
+      "machine": "キャプテン翼",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 8,
+      "character": "葛城ミサト",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 8,
+      "character": "沖田十三",
+      "machine": "宇宙戦艦ヤマト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 8,
+      "character": "アレクサンドル・ビュコック",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 8,
+      "character": "西絹代",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 10,
+      "character": "アッサム",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 10,
+      "character": "山田ライゾウ",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 11,
+      "character": "白鳥詩織",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 12,
+      "character": "クジラッキー",
+      "machine": "海物語シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 12,
+      "character": "カリム・フラム",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 13,
+      "character": "山下秀子",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 14,
+      "character": "桜田美夢",
+      "machine": "D4DJ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 14,
+      "character": "駿河瑠奈",
+      "machine": "ハイスクール・フリート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 14,
+      "character": "岡部倫太郎",
+      "machine": "シュタインズゲート",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 14,
+      "character": "メッサー・イーレフェルト",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 14,
+      "character": "夕凪いずみ",
+      "machine": "南国育ちシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 16,
+      "character": "桐ヶ谷透子",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 16,
+      "character": "五十鈴華",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 16,
+      "character": "中谷育",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 17,
+      "character": "シエル・アランソン",
+      "machine": "ゴッドイーターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 18,
+      "character": "安芸倫也",
+      "machine": "冴えない彼女の育てかた",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 18,
+      "character": "氷堂美智留",
+      "machine": "冴えない彼女の育てかた",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 19,
+      "character": "松野千冬",
+      "machine": "東京リベンジャーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 19,
+      "character": "カルパッチョ",
+      "machine": "ガールズ＆パンツァー",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 19,
+      "character": "コーデリア・グラウカ",
+      "machine": "ミルキィホームズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 20,
+      "character": "アロー",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 20,
+      "character": "金木研",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 20,
+      "character": "有馬貴将",
+      "machine": "東京喰種",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 21,
+      "character": "加治木ゆみ",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 23,
+      "character": "千切豹馬",
+      "machine": "ブルーロック",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 23,
+      "character": "柳生",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 23,
+      "character": "葛西辰由",
+      "machine": "ひぐらしのなく頃にシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 23,
+      "character": "ビスマルク・ヴァルトシュタイン",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 23,
+      "character": "クリムヒルト",
+      "machine": "革命機ヴァルヴレイヴ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "ナイン・ヴァイオレット",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "テスラ・ヴァイオレット",
+      "machine": "ツインエンジェルシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "金色の闇",
+      "machine": "To LOVEる",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "ナタル・バジルール",
+      "machine": "機動戦士ガンダムSEED",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "島麒麟",
+      "machine": "緋弾のアリアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "萩原雪歩",
+      "machine": "アイドルマスターシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "ディアンヌ",
+      "machine": "七つの大罪",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "クリスカ・ビャーチェノワ",
+      "machine": "トータル・イクリプス",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "森雪",
+      "machine": "宇宙戦艦ヤマト",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "フランチェスカ・ルッキーニ",
+      "machine": "ストライクウィッチーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "character": "真白透子",
+      "machine": "ガールフレンド（仮）",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 25,
+      "character": "ショウ",
+      "machine": "炎炎ノ消防隊",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 25,
+      "character": "クリス",
+      "machine": "この素晴らしい世界に祝福を！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 25,
+      "character": "エリス",
+      "machine": "この素晴らしい世界に祝福を！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 25,
+      "character": "イワン・コーネフ",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 25,
+      "character": "伊勢島綾",
+      "machine": "絶対衝激シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 25,
+      "character": "005",
+      "machine": "サイボーグ009",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 26,
+      "character": "野上良太郎",
+      "machine": "仮面ライダー電王",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 26,
+      "character": "鈴原トウジ",
+      "machine": "エヴァンゲリオンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 26,
+      "character": "キャサリン・グラス",
+      "machine": "マクロスF",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 27,
+      "character": "丸山彩",
+      "machine": "バンドリ！",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 27,
+      "character": "皆城総士",
+      "machine": "蒼穹のファフナーシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 28,
+      "character": "雪音クリス",
+      "machine": "戦姫絶唱シンフォギアシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 28,
+      "character": "フロスト・アウスレーゼ",
+      "machine": "マジカルハロウィンシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 28,
+      "character": "未来",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 29,
+      "character": "高山紗代子",
+      "machine": "アイドルマスターミリオンライブ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 29,
+      "character": "高鴨綾乃",
+      "machine": "咲-Saki-シリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 30,
+      "character": "ロイド・ブレーム",
+      "machine": "マクロスΔ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 30,
+      "character": "ドリュー",
+      "machine": "RAVE",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 30,
+      "character": "エドウィン・フィッシャー",
+      "machine": "銀河英雄伝説",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 31,
+      "character": "黎星刻",
+      "machine": "コードギアスシリーズ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 31,
+      "character": "雪泉",
+      "machine": "閃乱カグラ",
+      "verified": true,
+      "source": "p-town"
+    },
+    {
+      "month": 12,
+      "day": 31,
+      "character": "ネメシス",
+      "machine": "To LOVEる",
+      "verified": true,
+      "source": "p-town"
+    }
   ]
 }
