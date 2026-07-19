@@ -24,23 +24,39 @@ def mochi_of(agg_unit_records, unit):
 
 
 def collect_targets():
-    """ghoul_report判定 + 各台の最大持玉を取得して本命/対抗/避けを返す。"""
+    """直近N日を集計し、持玉ピークのランクで本命/対抗/避けを広めに返す。
+    据え置き狙い＝『昨日よく出た台』を軸にするため、判定は持玉ピーク主体。"""
     hist = gr.load_history()
     try:
         if gr.capture_today(hist):
             gr.save_history(hist)
     except Exception as e:
         print(f"[capture失敗] {e}")
-    ndays, honmei, taikou, sake, avgf = gr.judge(hist)
-    # 各台の直近最大持玉(表示用)
     dates = sorted(hist.keys())[-gr.WINDOW_DAYS:]
+    ndays = len(dates)
     latest = dates[-1] if dates else None
-    peak = {}
+
+    agg = {}  # unit -> {peak, played, hot}
     for d in dates:
         for us, r in hist[d].items():
             u = int(us)
-            peak[u] = max(peak.get(u, 0), r.get('mochi', 0) or 0)
-    return ndays, latest, honmei, taikou, sake, avgf, peak
+            a = agg.setdefault(u, {'peak': 0, 'played': 0, 'hot': 0})
+            a['peak'] = max(a['peak'], r.get('mochi', 0) or 0)
+            if r.get('played'):
+                a['played'] += 1
+            if r.get('hot'):
+                a['hot'] += 1
+    peak = {u: a['peak'] for u, a in agg.items()}
+
+    # 持玉ピーク降順でランク付け → 本命6 / 対抗次の12
+    ranked = sorted([u for u, a in agg.items() if a['peak'] > 0],
+                    key=lambda u: -agg[u]['peak'])
+    honmei = ranked[:6]
+    taikou = ranked[6:18]
+    # 避け: 稼働はあるのに持玉ピークが低い(伸びてない)台
+    sake = sorted([u for u, a in agg.items() if a['played'] >= 1 and a['peak'] < 1200],
+                  key=lambda u: (-agg[u]['played'], agg[u]['peak']))[:12]
+    return ndays, latest, honmei, taikou, sake, peak
 
 
 def parse_hint_machines():
@@ -92,35 +108,34 @@ def zone_block(label, chips):
 
 
 def build():
-    ndays, latest, honmei, taikou, sake, avgf, peak = collect_targets()
+    ndays, latest, honmei, taikou, sake, peak = collect_targets()
     machines, tomorrow = parse_hint_machines()
     td = datetime.now() + timedelta(days=1)
 
-    # ---- 本命(持玉トップから王冠2つ) ----
-    hon = sorted(honmei, key=lambda x: -peak.get(x[0], 0))
+    # ---- 本命(持玉トップ。上位2つは王冠＋持玉表示) ----
     hon_chips = []
-    for i, (u, a) in enumerate(hon[:7]):
+    for i, u in enumerate(honmei[:8]):
         p = peak.get(u, 0)
         crown = i < 2 and p > 0
-        sub = f"{p:,}" if crown else ''
+        sub = f"{p:,}" if crown else (f"{p:,}" if p >= 3000 else '')
         hon_chips.append(chip(u, gr.zone(u), 'n-honmei', crown=crown, sub=sub))
-    honmei_html = (f'<div class="zone"><span class="zlabel">持玉上位＝据え置き最有力</span>'
+    honmei_html = (f'<div class="zone"><span class="zlabel">前日持玉上位＝据え置き最有力</span>'
                    f'<div class="nums">{"".join(hon_chips)}</div></div>'
                    if hon_chips else '<div class="tier-note">本日データ待ち（今夜23時に生成）</div>')
 
     # ---- 対抗(ゾーン別) ----
-    def by_zone(items, z):
-        return [u for u, a in items if gr.zone(u) == z]
+    def by_zone(units, z):
+        return [u for u in units if gr.zone(u) == z]
     taikou_zblocks = []
     for zlabel in ('有馬', '金木', 'トーカ'):
         us = by_zone(taikou, zlabel)
         if us:
             taikou_zblocks.append(zone_block(f'{zlabel}パネル',
-                [chip(u, zlabel, 'n-taikou') for u in us[:8]]))
+                [chip(u, zlabel, 'n-taikou') for u in us[:10]]))
     taikou_html = "".join(taikou_zblocks) or '<div class="tier-note">—</div>'
 
     # ---- 避け ----
-    sake_chips = [chip(u, gr.zone(u), 'n-sake') for u, a in sake[:10]]
+    sake_chips = [chip(u, gr.zone(u), 'n-sake') for u in sake[:12]]
     sake_html = f'<div class="nums">{"".join(sake_chips)}</div>' if sake_chips else '<div class="tier-note">—</div>'
 
     # ---- 匂わせ ----
