@@ -1,0 +1,101 @@
+<title>北綾瀬 喰種狙い台ナビ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#0b0708;--card:#180d10;--line:#2a171b;--ink:#f3e9e9;--sub:#b79aa0;--mute:#7a626a;
+    --blood:#d21f2e;--blood-deep:#8f1420;--gold:#e6b84a;--amber:#e08a2b;--cool-bg:#141b22;
+    --hot-bg:#2a0f12;--amber-bg:#241608;--radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#060404;color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic","Meiryo",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.5;padding:env(safe-area-inset-top) 0 40px;min-height:100vh;}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(92% 55% at 50% -8%,rgba(210,31,46,.30),transparent 60%),
+      radial-gradient(70% 42% at 86% 10%,rgba(143,20,32,.24),transparent 55%),
+      radial-gradient(85% 55% at 8% 34%,rgba(120,10,20,.20),transparent 60%),
+      #060404;}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg,transparent 0%,rgba(6,4,4,.45) 62%,#060404 100%),
+      repeating-linear-gradient(118deg,rgba(210,31,46,.045) 0 2px,transparent 2px 24px);}
+  .wrap{max-width:460px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+  header{padding:44px 4px 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+  .brand{display:flex;flex-direction:column;gap:4px}
+  .brand .k{font-size:12px;letter-spacing:.22em;color:#ff5661;font-weight:700;text-shadow:0 2px 10px #000}
+  .brand h1{font-size:25px;font-weight:800;letter-spacing:.01em;line-height:1.12;text-shadow:0 2px 16px rgba(0,0,0,.85),0 0 30px rgba(0,0,0,.6)}
+  .brand h1 .drip{color:var(--blood);text-shadow:0 0 18px rgba(210,31,46,.6)}
+  .datebadge{text-align:right;flex-shrink:0;background:linear-gradient(160deg,var(--blood),var(--blood-deep));
+    color:#fff;border-radius:12px;padding:8px 12px;box-shadow:0 4px 14px -4px #d21f2e66;}
+  .datebadge .d{font-size:19px;font-weight:800;line-height:1}
+  .datebadge .l{font-size:10px;letter-spacing:.14em;opacity:.85;margin-top:3px}
+  .stamp{font-size:11.5px;color:var(--mute);padding:0 4px 14px;display:flex;align-items:center;gap:6px}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+  .card{background:rgba(16,9,11,.68);-webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15);
+    border:1px solid rgba(120,42,50,.30);border-radius:var(--radius);padding:16px 15px;margin-bottom:14px;
+    box-shadow:0 14px 34px -18px #000,inset 0 1px 0 rgba(255,255,255,.05)}
+  .card h2{font-size:13px;letter-spacing:.04em;color:var(--sub);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .card h2 b{color:var(--ink);font-size:15px;font-weight:800}
+  .tier{margin-bottom:15px}.tier:last-child{margin-bottom:0}
+  .tier-head{display:flex;align-items:baseline;gap:8px;margin-bottom:9px}
+  .badge{font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.06em;flex-shrink:0}
+  .b-honmei{background:var(--hot-bg);color:#ff6b76;border:1px solid #4a1a20}
+  .b-taikou{background:var(--amber-bg);color:var(--amber);border:1px solid #4a3110}
+  .b-sake{background:var(--cool-bg);color:#8fa6bb;border:1px solid #2b3945}
+  .tier-note{font-size:11.5px;color:var(--mute)}
+  .rack{display:flex;flex-wrap:wrap;gap:14px}
+  .zone{display:flex;flex-direction:column;gap:5px}
+  .zlabel{font-size:10px;letter-spacing:.1em;color:var(--mute);padding-left:2px}
+  .nums{display:flex;flex-wrap:wrap;gap:6px}
+  .n{min-width:38px;height:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    border-radius:10px;font-weight:800;font-size:16px;font-variant-numeric:tabular-nums;position:relative}
+  .n small{font-size:8px;font-weight:600;letter-spacing:.02em;opacity:.75;margin-top:1px}
+  .n-honmei{background:linear-gradient(165deg,#d21f2e,#7c1019);color:#fff;box-shadow:0 3px 10px -3px #d21f2e88}
+  .n-honmei.crown{background:linear-gradient(165deg,#e6b84a,#a37a1e);color:#241205;box-shadow:0 3px 12px -2px #e6b84a99}
+  .n-taikou{background:#241608;color:var(--amber);border:1px solid #4a3110}
+  .n-sake{background:var(--cool-bg);color:#7f97ab;border:1px solid #2b3945;opacity:.85;font-size:14px;height:34px;min-width:32px}
+  .hl{background:var(--hot-bg);border:1px solid #3a151a;border-radius:12px;padding:10px 12px;font-size:12.5px;color:#f0c9cd;margin-top:13px;display:flex;gap:8px;align-items:flex-start}
+  .hl b{color:var(--gold)}
+  .machines{display:flex;flex-direction:column;gap:8px}
+  .m{display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:12px;background:#160c0e;border:1px solid var(--line)}
+  .m.top{border-color:#4a1a20;background:linear-gradient(100deg,#220d10,#160c0e)}
+  .m .name{font-weight:800;font-size:15px;flex:1}
+  .m .why{font-size:11px;color:var(--mute);font-weight:500;display:block;margin-top:2px}
+  .stars{font-size:12px;letter-spacing:1px;color:var(--gold);flex-shrink:0}
+  .flag{font-size:10px;font-weight:800;color:#ffb84d;background:#3a2708;border:1px solid #5a3d10;padding:2px 7px;border-radius:999px;flex-shrink:0;white-space:nowrap}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:7px;height:52px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;border:none;cursor:pointer;font-family:inherit}
+  .btn-primary{background:linear-gradient(160deg,#d21f2e,#8f1420);color:#fff;box-shadow:0 6px 18px -6px #d21f2e88}
+  .btn-ghost{background:#180d10;color:var(--ink);border:1px solid var(--line)}
+  .btn:active{transform:translateY(1px)}.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  footer{text-align:center;font-size:11px;color:var(--mute);padding:20px 8px 0;line-height:1.7}
+  footer b{color:var(--sub)}
+</style>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="k">ピーアーク北綾瀬</span><h1>東京喰種 <span class="drip">狙い台ナビ</span></h1></div>
+    <div class="datebadge"><div class="d">7/20</div><div class="l">実戦</div></div>
+  </header>
+  <div class="stamp"><span class="dot"></span>データ：2026-07-19 実績（据え置き狙い・直近2日 r=0.83）</div>
+  <section class="card">
+    <h2>🩸 <b>喰種 狙い台</b>（有馬 / 金木 / トーカ）</h2>
+    <div class="tier"><div class="tier-head"><span class="badge b-honmei">本命</span><span class="tier-note">前日持玉上位＝据え置き最有力</span></div><div class="zone"><span class="zlabel">持玉上位＝据え置き最有力</span><div class="nums"><div class="n n-honmei crown">64<small>10,812</small></div><div class="n n-honmei crown">16<small>8,487</small></div><div class="n n-honmei">40</div><div class="n n-honmei">34</div><div class="n n-honmei">14</div></div></div></div>
+    <div class="tier"><div class="tier-head"><span class="badge b-taikou">対抗</span><span class="tier-note">好調ゾーン継続</span></div><div class="rack"><div class="tier-note">—</div></div></div>
+    <div class="tier"><div class="tier-head"><span class="badge b-sake">避け</span><span class="tier-note">稼働あるのに伸びない台</span></div><div class="nums"><div class="n n-sake">21</div><div class="n n-sake">24</div><div class="n n-sake">25</div><div class="n n-sake">26</div></div></div>
+    <div class="hl">🔥<div>第一狙いは<b>持玉上位の連番</b>。据え置き型(r=0.83)で翌日も残る公算。出た台を下げる動きに備え近い台番へスライドも。</div></div>
+  </section>
+  <section class="card">
+    <h2>🔮 <b>とみー匂わせ本命</b></h2>
+    <div class="machines"><div class="m top"><div class="name">東京喰種<span class="why">2026-07-19 とみー投稿『野生ダチョウが喰らう主食は植物』の</span></div><span class="stars">★★★</span></div><div class="m top"><div class="name">スマスロ獣王<span class="why">投稿で『獣王がスマスロで帰ってくる』と明示＋ダチョウ(サバンナ)＋羽</span></div><span class="flag">要確認</span></div><div class="m"><div class="name">北斗転生2<span class="why">2026-07-19 とみー投稿の締め『おもしろきパチンコスロットラ</span></div><span class="stars">★★</span></div><div class="m"><div class="name">サンダー<span class="why">2026-07-19 とみー投稿『激しくデカい⚡⚡⚡』の雷→サンダー</span></div><span class="stars">★</span></div></div>
+    <div class="hl" style="background:var(--amber-bg);border-color:#4a3110;color:#f0d6a8">⚠️<div>獣王など「要確認」機種は現物未設置の可能性。導入日なら新台初日で最有力、無ければ喰種が実質本命。</div></div>
+  </section>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://p-ark.pt.teramoba2.com/extends/1494/heatmap" target="_blank" rel="noopener">📊 ヒートマップ</a>
+    <button class="btn btn-ghost" id="reload" type="button">↻ 更新</button>
+  </div>
+  <footer>据え置き型（前日好調台＝翌日も好調 <b>r=0.83</b>）＋goraggio実データで自動判定。<br>毎晩23時 <b>ghoul_report</b> が自動更新。生成: 2026/07/19 23:45</footer>
+</div>
+<script>
+  document.getElementById('reload').addEventListener('click',function(){location.reload(true);});
+</script>

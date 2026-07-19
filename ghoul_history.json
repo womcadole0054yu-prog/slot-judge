@@ -1,0 +1,1026 @@
+{
+ "2026-07-18": {
+  "14": {
+   "hot": true,
+   "played": true,
+   "mochi": 4500,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "15": {
+   "hot": true,
+   "played": true,
+   "mochi": 4500,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "7": {
+   "hot": true,
+   "played": true,
+   "mochi": 4500,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "66": {
+   "hot": true,
+   "played": true,
+   "mochi": 4500,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "64": {
+   "hot": true,
+   "played": true,
+   "mochi": 4500,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "38": {
+   "hot": true,
+   "played": true,
+   "mochi": 4500,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "39": {
+   "hot": true,
+   "played": true,
+   "mochi": 4500,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "40": {
+   "hot": true,
+   "played": true,
+   "mochi": 4500,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "16": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "17": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "36": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "37": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "34": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "55": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "56": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "57": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "58": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "59": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "60": {
+   "hot": true,
+   "played": true,
+   "mochi": 3300,
+   "rb": 0,
+   "games": 2000,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "1": {
+   "hot": false,
+   "played": true,
+   "mochi": 0,
+   "rb": 0,
+   "games": 1500,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "2": {
+   "hot": false,
+   "played": true,
+   "mochi": 0,
+   "rb": 0,
+   "games": 1500,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "3": {
+   "hot": false,
+   "played": true,
+   "mochi": 0,
+   "rb": 0,
+   "games": 1500,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "21": {
+   "hot": false,
+   "played": true,
+   "mochi": 0,
+   "rb": 0,
+   "games": 1500,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "24": {
+   "hot": false,
+   "played": true,
+   "mochi": 0,
+   "rb": 0,
+   "games": 1500,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "25": {
+   "hot": false,
+   "played": true,
+   "mochi": 0,
+   "rb": 0,
+   "games": 1500,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "26": {
+   "hot": false,
+   "played": true,
+   "mochi": 0,
+   "rb": 0,
+   "games": 1500,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  },
+  "27": {
+   "hot": false,
+   "played": true,
+   "mochi": 0,
+   "rb": 0,
+   "games": 1500,
+   "samai": null,
+   "synth": "",
+   "src": "heatmap"
+  }
+ },
+ "2026-07-19": {
+  "4": {
+   "hot": true,
+   "played": true,
+   "mochi": 4514,
+   "rb": 12,
+   "games": 3726,
+   "samai": null,
+   "synth": "310.5",
+   "src": "goraggio"
+  },
+  "5": {
+   "hot": false,
+   "played": true,
+   "mochi": 2416,
+   "rb": 15,
+   "games": 3512,
+   "samai": null,
+   "synth": "234.1",
+   "src": "goraggio"
+  },
+  "6": {
+   "hot": false,
+   "played": true,
+   "mochi": 970,
+   "rb": 5,
+   "games": 1472,
+   "samai": null,
+   "synth": "294.4",
+   "src": "goraggio"
+  },
+  "7": {
+   "hot": false,
+   "played": true,
+   "mochi": 1231,
+   "rb": 10,
+   "games": 3205,
+   "samai": null,
+   "synth": "320.5",
+   "src": "goraggio"
+  },
+  "8": {
+   "hot": true,
+   "played": true,
+   "mochi": 6820,
+   "rb": 16,
+   "games": 4399,
+   "samai": null,
+   "synth": "274.9",
+   "src": "goraggio"
+  },
+  "9": {
+   "hot": false,
+   "played": true,
+   "mochi": 1707,
+   "rb": 13,
+   "games": 3702,
+   "samai": null,
+   "synth": "284.8",
+   "src": "goraggio"
+  },
+  "10": {
+   "hot": false,
+   "played": true,
+   "mochi": 878,
+   "rb": 16,
+   "games": 4090,
+   "samai": null,
+   "synth": "255.6",
+   "src": "goraggio"
+  },
+  "11": {
+   "hot": true,
+   "played": true,
+   "mochi": 4741,
+   "rb": 29,
+   "games": 5901,
+   "samai": null,
+   "synth": "203.5",
+   "src": "goraggio"
+  },
+  "12": {
+   "hot": false,
+   "played": true,
+   "mochi": 972,
+   "rb": 17,
+   "games": 4273,
+   "samai": null,
+   "synth": "251.4",
+   "src": "goraggio"
+  },
+  "13": {
+   "hot": false,
+   "played": true,
+   "mochi": 878,
+   "rb": 18,
+   "games": 3854,
+   "samai": null,
+   "synth": "214.1",
+   "src": "goraggio"
+  },
+  "14": {
+   "hot": true,
+   "played": true,
+   "mochi": 3096,
+   "rb": 12,
+   "games": 4413,
+   "samai": null,
+   "synth": "367.8",
+   "src": "goraggio"
+  },
+  "15": {
+   "hot": false,
+   "played": true,
+   "mochi": 2734,
+   "rb": 12,
+   "games": 3458,
+   "samai": null,
+   "synth": "288.2",
+   "src": "goraggio"
+  },
+  "16": {
+   "hot": true,
+   "played": true,
+   "mochi": 8487,
+   "rb": 30,
+   "games": 5337,
+   "samai": null,
+   "synth": "177.9",
+   "src": "goraggio"
+  },
+  "17": {
+   "hot": false,
+   "played": true,
+   "mochi": 2337,
+   "rb": 18,
+   "games": 4800,
+   "samai": null,
+   "synth": "266.7",
+   "src": "goraggio"
+  },
+  "18": {
+   "hot": true,
+   "played": true,
+   "mochi": 5065,
+   "rb": 14,
+   "games": 3603,
+   "samai": null,
+   "synth": "257.4",
+   "src": "goraggio"
+  },
+  "19": {
+   "hot": false,
+   "played": true,
+   "mochi": 754,
+   "rb": 8,
+   "games": 2113,
+   "samai": null,
+   "synth": "264.1",
+   "src": "goraggio"
+  },
+  "20": {
+   "hot": true,
+   "played": true,
+   "mochi": 7819,
+   "rb": 20,
+   "games": 4564,
+   "samai": null,
+   "synth": "228.2",
+   "src": "goraggio"
+  },
+  "21": {
+   "hot": false,
+   "played": true,
+   "mochi": 274,
+   "rb": 12,
+   "games": 3173,
+   "samai": null,
+   "synth": "264.4",
+   "src": "goraggio"
+  },
+  "23": {
+   "hot": false,
+   "played": true,
+   "mochi": 904,
+   "rb": 23,
+   "games": 5863,
+   "samai": null,
+   "synth": "254.9",
+   "src": "goraggio"
+  },
+  "24": {
+   "hot": false,
+   "played": true,
+   "mochi": 398,
+   "rb": 12,
+   "games": 4178,
+   "samai": null,
+   "synth": "348.2",
+   "src": "goraggio"
+  },
+  "25": {
+   "hot": false,
+   "played": true,
+   "mochi": 871,
+   "rb": 12,
+   "games": 3241,
+   "samai": null,
+   "synth": "270.1",
+   "src": "goraggio"
+  },
+  "26": {
+   "hot": false,
+   "played": true,
+   "mochi": 1441,
+   "rb": 23,
+   "games": 5344,
+   "samai": null,
+   "synth": "232.3",
+   "src": "goraggio"
+  },
+  "27": {
+   "hot": true,
+   "played": true,
+   "mochi": 7464,
+   "rb": 20,
+   "games": 4488,
+   "samai": null,
+   "synth": "224.4",
+   "src": "goraggio"
+  },
+  "28": {
+   "hot": false,
+   "played": true,
+   "mochi": 420,
+   "rb": 16,
+   "games": 3860,
+   "samai": null,
+   "synth": "241.3",
+   "src": "goraggio"
+  },
+  "29": {
+   "hot": false,
+   "played": true,
+   "mochi": 1527,
+   "rb": 14,
+   "games": 4071,
+   "samai": null,
+   "synth": "290.8",
+   "src": "goraggio"
+  },
+  "30": {
+   "hot": true,
+   "played": true,
+   "mochi": 10350,
+   "rb": 13,
+   "games": 3267,
+   "samai": null,
+   "synth": "251.3",
+   "src": "goraggio"
+  },
+  "31": {
+   "hot": false,
+   "played": true,
+   "mochi": 899,
+   "rb": 16,
+   "games": 4982,
+   "samai": null,
+   "synth": "311.4",
+   "src": "goraggio"
+  },
+  "32": {
+   "hot": false,
+   "played": true,
+   "mochi": 729,
+   "rb": 18,
+   "games": 5113,
+   "samai": null,
+   "synth": "284.1",
+   "src": "goraggio"
+  },
+  "33": {
+   "hot": false,
+   "played": true,
+   "mochi": 685,
+   "rb": 24,
+   "games": 5002,
+   "samai": null,
+   "synth": "208.4",
+   "src": "goraggio"
+  },
+  "34": {
+   "hot": true,
+   "played": true,
+   "mochi": 5350,
+   "rb": 9,
+   "games": 2390,
+   "samai": null,
+   "synth": "265.6",
+   "src": "goraggio"
+  },
+  "35": {
+   "hot": true,
+   "played": true,
+   "mochi": 7415,
+   "rb": 25,
+   "games": 5644,
+   "samai": null,
+   "synth": "225.8",
+   "src": "goraggio"
+  },
+  "36": {
+   "hot": false,
+   "played": true,
+   "mochi": 387,
+   "rb": 12,
+   "games": 3352,
+   "samai": null,
+   "synth": "279.3",
+   "src": "goraggio"
+  },
+  "37": {
+   "hot": false,
+   "played": true,
+   "mochi": 1151,
+   "rb": 17,
+   "games": 4224,
+   "samai": null,
+   "synth": "248.5",
+   "src": "goraggio"
+  },
+  "38": {
+   "hot": false,
+   "played": true,
+   "mochi": 2270,
+   "rb": 31,
+   "games": 6823,
+   "samai": null,
+   "synth": "220.1",
+   "src": "goraggio"
+  },
+  "39": {
+   "hot": false,
+   "played": true,
+   "mochi": 2399,
+   "rb": 13,
+   "games": 3266,
+   "samai": null,
+   "synth": "251.2",
+   "src": "goraggio"
+  },
+  "40": {
+   "hot": true,
+   "played": true,
+   "mochi": 5875,
+   "rb": 17,
+   "games": 3454,
+   "samai": null,
+   "synth": "203.2",
+   "src": "goraggio"
+  },
+  "41": {
+   "hot": false,
+   "played": true,
+   "mochi": 1417,
+   "rb": 15,
+   "games": 3858,
+   "samai": null,
+   "synth": "257.2",
+   "src": "goraggio"
+  },
+  "42": {
+   "hot": false,
+   "played": true,
+   "mochi": 782,
+   "rb": 13,
+   "games": 3935,
+   "samai": null,
+   "synth": "302.7",
+   "src": "goraggio"
+  },
+  "43": {
+   "hot": true,
+   "played": true,
+   "mochi": 5577,
+   "rb": 25,
+   "games": 5440,
+   "samai": null,
+   "synth": "217.6",
+   "src": "goraggio"
+  },
+  "44": {
+   "hot": true,
+   "played": true,
+   "mochi": 12394,
+   "rb": 21,
+   "games": 4368,
+   "samai": null,
+   "synth": "208.0",
+   "src": "goraggio"
+  },
+  "45": {
+   "hot": true,
+   "played": true,
+   "mochi": 6087,
+   "rb": 18,
+   "games": 4586,
+   "samai": null,
+   "synth": "254.8",
+   "src": "goraggio"
+  },
+  "46": {
+   "hot": false,
+   "played": true,
+   "mochi": 1511,
+   "rb": 16,
+   "games": 4292,
+   "samai": null,
+   "synth": "268.3",
+   "src": "goraggio"
+  },
+  "47": {
+   "hot": false,
+   "played": true,
+   "mochi": 2036,
+   "rb": 21,
+   "games": 4957,
+   "samai": null,
+   "synth": "236.0",
+   "src": "goraggio"
+  },
+  "48": {
+   "hot": false,
+   "played": true,
+   "mochi": 1934,
+   "rb": 16,
+   "games": 5042,
+   "samai": null,
+   "synth": "315.1",
+   "src": "goraggio"
+  },
+  "49": {
+   "hot": false,
+   "played": true,
+   "mochi": 2060,
+   "rb": 16,
+   "games": 4293,
+   "samai": null,
+   "synth": "268.3",
+   "src": "goraggio"
+  },
+  "52": {
+   "hot": true,
+   "played": true,
+   "mochi": 5667,
+   "rb": 17,
+   "games": 4663,
+   "samai": null,
+   "synth": "274.3",
+   "src": "goraggio"
+  },
+  "53": {
+   "hot": true,
+   "played": true,
+   "mochi": 4738,
+   "rb": 14,
+   "games": 3535,
+   "samai": null,
+   "synth": "252.5",
+   "src": "goraggio"
+  },
+  "54": {
+   "hot": true,
+   "played": true,
+   "mochi": 3979,
+   "rb": 17,
+   "games": 4445,
+   "samai": null,
+   "synth": "261.5",
+   "src": "goraggio"
+  },
+  "55": {
+   "hot": false,
+   "played": true,
+   "mochi": 803,
+   "rb": 18,
+   "games": 5380,
+   "samai": null,
+   "synth": "298.9",
+   "src": "goraggio"
+  },
+  "56": {
+   "hot": true,
+   "played": true,
+   "mochi": 3015,
+   "rb": 24,
+   "games": 5518,
+   "samai": null,
+   "synth": "229.9",
+   "src": "goraggio"
+  },
+  "57": {
+   "hot": false,
+   "played": true,
+   "mochi": 1913,
+   "rb": 13,
+   "games": 4144,
+   "samai": null,
+   "synth": "318.8",
+   "src": "goraggio"
+  },
+  "58": {
+   "hot": false,
+   "played": true,
+   "mochi": 729,
+   "rb": 31,
+   "games": 6420,
+   "samai": null,
+   "synth": "207.1",
+   "src": "goraggio"
+  },
+  "59": {
+   "hot": true,
+   "played": true,
+   "mochi": 3403,
+   "rb": 26,
+   "games": 5309,
+   "samai": null,
+   "synth": "204.2",
+   "src": "goraggio"
+  },
+  "60": {
+   "hot": false,
+   "played": true,
+   "mochi": 2049,
+   "rb": 14,
+   "games": 3336,
+   "samai": null,
+   "synth": "238.3",
+   "src": "goraggio"
+  },
+  "61": {
+   "hot": false,
+   "played": true,
+   "mochi": 1614,
+   "rb": 26,
+   "games": 6185,
+   "samai": null,
+   "synth": "237.9",
+   "src": "goraggio"
+  },
+  "62": {
+   "hot": true,
+   "played": true,
+   "mochi": 5485,
+   "rb": 13,
+   "games": 3737,
+   "samai": null,
+   "synth": "287.5",
+   "src": "goraggio"
+  },
+  "63": {
+   "hot": true,
+   "played": true,
+   "mochi": 6341,
+   "rb": 15,
+   "games": 4887,
+   "samai": null,
+   "synth": "325.8",
+   "src": "goraggio"
+  },
+  "64": {
+   "hot": true,
+   "played": true,
+   "mochi": 10812,
+   "rb": 16,
+   "games": 3813,
+   "samai": null,
+   "synth": "238.3",
+   "src": "goraggio"
+  },
+  "65": {
+   "hot": false,
+   "played": true,
+   "mochi": 1747,
+   "rb": 18,
+   "games": 4935,
+   "samai": null,
+   "synth": "274.2",
+   "src": "goraggio"
+  },
+  "66": {
+   "hot": false,
+   "played": true,
+   "mochi": 829,
+   "rb": 26,
+   "games": 6904,
+   "samai": null,
+   "synth": "265.5",
+   "src": "goraggio"
+  },
+  "67": {
+   "hot": true,
+   "played": true,
+   "mochi": 8024,
+   "rb": 19,
+   "games": 4023,
+   "samai": null,
+   "synth": "211.7",
+   "src": "goraggio"
+  },
+  "68": {
+   "hot": false,
+   "played": true,
+   "mochi": 1435,
+   "rb": 28,
+   "games": 6673,
+   "samai": null,
+   "synth": "238.3",
+   "src": "goraggio"
+  },
+  "69": {
+   "hot": true,
+   "played": true,
+   "mochi": 7363,
+   "rb": 24,
+   "games": 5009,
+   "samai": null,
+   "synth": "208.7",
+   "src": "goraggio"
+  },
+  "70": {
+   "hot": true,
+   "played": true,
+   "mochi": 5586,
+   "rb": 34,
+   "games": 5834,
+   "samai": null,
+   "synth": "171.6",
+   "src": "goraggio"
+  },
+  "71": {
+   "hot": true,
+   "played": true,
+   "mochi": 6714,
+   "rb": 23,
+   "games": 5053,
+   "samai": null,
+   "synth": "219.7",
+   "src": "goraggio"
+  },
+  "72": {
+   "hot": false,
+   "played": true,
+   "mochi": 1409,
+   "rb": 21,
+   "games": 4821,
+   "samai": null,
+   "synth": "229.6",
+   "src": "goraggio"
+  },
+  "73": {
+   "hot": true,
+   "played": true,
+   "mochi": 5498,
+   "rb": 10,
+   "games": 3555,
+   "samai": null,
+   "synth": "355.5",
+   "src": "goraggio"
+  },
+  "74": {
+   "hot": true,
+   "played": true,
+   "mochi": 5660,
+   "rb": 16,
+   "games": 3330,
+   "samai": null,
+   "synth": "208.1",
+   "src": "goraggio"
+  },
+  "75": {
+   "hot": false,
+   "played": true,
+   "mochi": 568,
+   "rb": 16,
+   "games": 4559,
+   "samai": null,
+   "synth": "284.9",
+   "src": "goraggio"
+  },
+  "76": {
+   "hot": true,
+   "played": true,
+   "mochi": 4282,
+   "rb": 8,
+   "games": 3025,
+   "samai": null,
+   "synth": "378.1",
+   "src": "goraggio"
+  },
+  "77": {
+   "hot": true,
+   "played": true,
+   "mochi": 5144,
+   "rb": 13,
+   "games": 4086,
+   "samai": null,
+   "synth": "314.3",
+   "src": "goraggio"
+  },
+  "78": {
+   "hot": false,
+   "played": true,
+   "mochi": 2754,
+   "rb": 21,
+   "games": 5208,
+   "samai": null,
+   "synth": "248.0",
+   "src": "goraggio"
+  },
+  "79": {
+   "hot": true,
+   "played": true,
+   "mochi": 3552,
+   "rb": 13,
+   "games": 3600,
+   "samai": null,
+   "synth": "276.9",
+   "src": "goraggio"
+  },
+  "80": {
+   "hot": false,
+   "played": true,
+   "mochi": 954,
+   "rb": 20,
+   "games": 4647,
+   "samai": null,
+   "synth": "232.4",
+   "src": "goraggio"
+  },
+  "81": {
+   "hot": true,
+   "played": true,
+   "mochi": 4928,
+   "rb": 16,
+   "games": 3648,
+   "samai": null,
+   "synth": "228.0",
+   "src": "goraggio"
+  }
+ }
+}

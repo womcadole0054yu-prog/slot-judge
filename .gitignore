@@ -1,2 +1,6 @@
 # Local Netlify folder
 .netlify
+
+__pycache__/
+ghoul_cover.txt
+ghoul_report_v2_bak.py
