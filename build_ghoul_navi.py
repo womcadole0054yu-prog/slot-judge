@@ -23,47 +23,54 @@ def mochi_of(agg_unit_records, unit):
     return 0
 
 
+MIN_GAMES_AT = 1000  # AT確率を信頼する最低スタート数
+
 def collect_targets():
-    """直近N日を集計し、持玉ピークのランクで本命/対抗/避けを広めに返す。
-    据え置き狙い＝『昨日よく出た台』を軸にするため、判定は持玉ピーク主体。"""
+    """直近N日を集計。据え置き狙いの本質＝設定なので、AT初当り(≒CZ突破)確率を主軸に
+    本命/対抗/避けを返す。AT確率が良い(1/Xが小さい)台を上位に。持玉は補助。
+    ※データ蓄積(capture)は毎晩ghoul_report.pyが担当。ここは読むだけ(日付ズレ防止)。"""
     hist = gr.load_history()
-    try:
-        if gr.capture_today(hist):
-            gr.save_history(hist)
-    except Exception as e:
-        print(f"[capture失敗] {e}")
     dates = sorted(hist.keys())[-gr.WINDOW_DAYS:]
     ndays = len(dates)
     latest = dates[-1] if dates else None
 
-    agg = {}  # unit -> {peak, played, hot}
+    info = {}  # unit -> {artp(良い=小), peak, played, games}
     for d in dates:
         for us, r in hist[d].items():
             u = int(us)
-            a = agg.setdefault(u, {'peak': 0, 'played': 0, 'hot': 0})
+            a = info.setdefault(u, {'artp': 0.0, 'peak': 0, 'played': 0, 'games': 0})
+            ap = r.get('artp', 0) or 0
+            g = r.get('games', 0) or 0
+            if g >= MIN_GAMES_AT and ap > 0:
+                a['artp'] = ap if a['artp'] == 0 else min(a['artp'], ap)
             a['peak'] = max(a['peak'], r.get('mochi', 0) or 0)
+            a['games'] = max(a['games'], g)
             if r.get('played'):
                 a['played'] += 1
-            if r.get('hot'):
-                a['hot'] += 1
-    peak = {u: a['peak'] for u, a in agg.items()}
 
-    # 持玉ピーク降順でランク付け → 本命6 / 対抗次の12
-    ranked = sorted([u for u, a in agg.items() if a['peak'] > 0],
-                    key=lambda u: -agg[u]['peak'])
+    # AT確率あり→良い順(昇順) / 無し→持玉降順で後ろに付ける
+    with_at = sorted([u for u, a in info.items() if a['artp'] > 0],
+                     key=lambda u: info[u]['artp'])
+    no_at = sorted([u for u, a in info.items() if a['artp'] == 0 and a['peak'] > 0],
+                   key=lambda u: -info[u]['peak'])
+    ranked = with_at + no_at
     honmei = ranked[:6]
     taikou = ranked[6:18]
-    # 避け: 稼働はあるのに持玉ピークが低い(伸びてない)台
-    sake = sorted([u for u, a in agg.items() if a['played'] >= 1 and a['peak'] < 1200],
-                  key=lambda u: (-agg[u]['played'], agg[u]['peak']))[:12]
-    return ndays, latest, honmei, taikou, sake, peak
+    # 避け: 稼働あるのにAT確率が重い(>120) か、AT無しで持玉も低い
+    sake = sorted([u for u, a in info.items()
+                   if a['played'] >= 1 and ((a['artp'] > 120) or (a['artp'] == 0 and a['peak'] < 1200))],
+                  key=lambda u: (info[u]['artp'] if info[u]['artp'] > 0 else 999, -info[u]['peak']),
+                  reverse=True)[:12]
+    return ndays, latest, honmei, taikou, sake, info
 
 
 def parse_hint_machines():
-    """hint.json から翌日(jissen_date=明日)のチェーンを機種単位に集約。"""
-    tomorrow = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
+    """hint.json から『最新の解読済み実戦日』(今日以降の最大jissen_date)のチェーンを機種単位に集約。"""
+    today = datetime.now().strftime('%Y-%m-%d')
     with open(HINT_PATH, encoding='utf-8') as f:
         data = json.load(f)
+    future = [c.get('jissen_date', '') for c in data.get('chains', []) if c.get('jissen_date', '') >= today]
+    tomorrow = max(future) if future else (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
     seen, out = set(), []
     for ch in data.get('chains', []):
         if ch.get('jissen_date') != tomorrow:
@@ -108,18 +115,24 @@ def zone_block(label, chips):
 
 
 def build():
-    ndays, latest, honmei, taikou, sake, peak = collect_targets()
+    ndays, latest, honmei, taikou, sake, info = collect_targets()
     machines, tomorrow = parse_hint_machines()
     td = datetime.now() + timedelta(days=1)
 
-    # ---- 本命(持玉トップ。上位2つは王冠＋持玉表示) ----
+    def atsub(u):
+        d = info.get(u, {})
+        ap, g = d.get('artp', 0), d.get('games', 0)
+        if ap > 0:
+            gs = f"·{g/1000:.1f}k" if g else ''
+            return f"1/{int(round(ap))}{gs}"     # AT確率·ゲーム数(信頼度)
+        return f"{d.get('peak', 0):,}" if d.get('peak', 0) >= 3000 else ''
+
+    # ---- 本命(AT初当り確率が良い順。上位2つは王冠) ----
     hon_chips = []
     for i, u in enumerate(honmei[:8]):
-        p = peak.get(u, 0)
-        crown = i < 2 and p > 0
-        sub = f"{p:,}" if crown else (f"{p:,}" if p >= 3000 else '')
-        hon_chips.append(chip(u, gr.zone(u), 'n-honmei', crown=crown, sub=sub))
-    honmei_html = (f'<div class="zone"><span class="zlabel">前日持玉上位＝据え置き最有力</span>'
+        crown = i < 2
+        hon_chips.append(chip(u, gr.zone(u), 'n-honmei', crown=crown, sub=atsub(u)))
+    honmei_html = (f'<div class="zone"><span class="zlabel">AT初当り(CZ)確率が良い順＝設定期待</span>'
                    f'<div class="nums">{"".join(hon_chips)}</div></div>'
                    if hon_chips else '<div class="tier-note">本日データ待ち（今夜23時に生成）</div>')
 
@@ -131,7 +144,7 @@ def build():
         us = by_zone(taikou, zlabel)
         if us:
             taikou_zblocks.append(zone_block(f'{zlabel}パネル',
-                [chip(u, zlabel, 'n-taikou') for u in us[:10]]))
+                [chip(u, zlabel, 'n-taikou', sub=atsub(u)) for u in us[:10]]))
     taikou_html = "".join(taikou_zblocks) or '<div class="tier-note">—</div>'
 
     # ---- 避け ----
@@ -223,9 +236,9 @@ TEMPLATE = r"""<title>北綾瀬 喰種狙い台ナビ</title>
   .zone{display:flex;flex-direction:column;gap:5px}
   .zlabel{font-size:10px;letter-spacing:.1em;color:var(--mute);padding-left:2px}
   .nums{display:flex;flex-wrap:wrap;gap:6px}
-  .n{min-width:38px;height:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  .n{min-width:54px;height:42px;padding:0 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;
     border-radius:10px;font-weight:800;font-size:16px;font-variant-numeric:tabular-nums;position:relative}
-  .n small{font-size:8px;font-weight:600;letter-spacing:.02em;opacity:.75;margin-top:1px}
+  .n small{font-size:8.5px;font-weight:600;letter-spacing:.01em;opacity:.78;margin-top:1px;white-space:nowrap}
   .n-honmei{background:linear-gradient(165deg,#d21f2e,#7c1019);color:#fff;box-shadow:0 3px 10px -3px #d21f2e88}
   .n-honmei.crown{background:linear-gradient(165deg,#e6b84a,#a37a1e);color:#241205;box-shadow:0 3px 12px -2px #e6b84a99}
   .n-taikou{background:#241608;color:var(--amber);border:1px solid #4a3110}
@@ -258,7 +271,7 @@ TEMPLATE = r"""<title>北綾瀬 喰種狙い台ナビ</title>
     <div class="tier"><div class="tier-head"><span class="badge b-honmei">本命</span><span class="tier-note">前日持玉上位＝据え置き最有力</span></div>__HONMEI__</div>
     <div class="tier"><div class="tier-head"><span class="badge b-taikou">対抗</span><span class="tier-note">好調ゾーン継続</span></div><div class="rack">__TAIKOU__</div></div>
     <div class="tier"><div class="tier-head"><span class="badge b-sake">避け</span><span class="tier-note">稼働あるのに伸びない台</span></div>__SAKE__</div>
-    <div class="hl">🔥<div>第一狙いは<b>持玉上位の連番</b>。据え置き型(r=0.83)で翌日も残る公算。出た台を下げる動きに備え近い台番へスライドも。</div></div>
+    <div class="hl">🔥<div>順位は<b>AT初当り(CZ)確率</b>基準＝設定を映す指標(<b>1/X</b>が小さいほど期待大)。併記の<b>◯k</b>=総ゲーム数で信頼度(多いほど確か)。据え置き型(r=0.83)で翌日も残る公算。持玉は結果でブレるため補助。</div></div>
   </section>
   <section class="card">
     <h2>🔮 <b>とみー匂わせ本命</b></h2>

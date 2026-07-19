@@ -65,9 +65,18 @@ def parse_ghoul_units(html):
         def num(cid):
             v = re.sub(r'[^\d]', '', cols.get(cid, '') or '')
             return int(v) if v else 0
+
+        def fnum(cid):
+            m = re.search(r'[\d.]+', cols.get(cid, '') or '')
+            try:
+                return float(m.group()) if m else 0.0
+            except ValueError:
+                return 0.0
         out.append({
             'unit': unit, 'mochi': num('5'), 'games': num('1'),
             'bb': num('2'), 'rb': num('3'),
+            'art': num('4'),        # ART(AT)回数 — CZ突破≒AT初当りの設定差指標
+            'artp': fnum('8'),      # ART確率(1/X の X)。小さいほど良い=高設定寄り
             'synth': (cols.get('9', '') or '').strip(),
         })
     return out
@@ -131,6 +140,7 @@ def capture_today(hist):
         rec[str(u['unit'])] = {
             'hot': bool(is_hot), 'played': bool(is_played),
             'mochi': u['mochi'], 'rb': u['rb'], 'games': u['games'],
+            'art': u.get('art', 0), 'artp': u.get('artp', 0.0),
             'samai': sm, 'synth': u['synth'], 'src': 'goraggio',
         }
     hist[today] = rec

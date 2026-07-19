@@ -278,6 +278,8 @@
    "mochi": 4514,
    "rb": 12,
    "games": 3726,
+   "art": 32,
+   "artp": 116.4,
    "samai": null,
    "synth": "310.5",
    "src": "goraggio"
@@ -288,6 +290,8 @@
    "mochi": 2416,
    "rb": 15,
    "games": 3512,
+   "art": 27,
+   "artp": 130.1,
    "samai": null,
    "synth": "234.1",
    "src": "goraggio"
@@ -298,6 +302,8 @@
    "mochi": 970,
    "rb": 5,
    "games": 1472,
+   "art": 10,
+   "artp": 147.2,
    "samai": null,
    "synth": "294.4",
    "src": "goraggio"
@@ -308,6 +314,8 @@
    "mochi": 1231,
    "rb": 10,
    "games": 3205,
+   "art": 12,
+   "artp": 267.1,
    "samai": null,
    "synth": "320.5",
    "src": "goraggio"
@@ -318,6 +326,8 @@
    "mochi": 6820,
    "rb": 16,
    "games": 4399,
+   "art": 26,
+   "artp": 169.2,
    "samai": null,
    "synth": "274.9",
    "src": "goraggio"
@@ -328,6 +338,8 @@
    "mochi": 1707,
    "rb": 13,
    "games": 3702,
+   "art": 20,
+   "artp": 185.1,
    "samai": null,
    "synth": "284.8",
    "src": "goraggio"
@@ -338,6 +350,8 @@
    "mochi": 878,
    "rb": 16,
    "games": 4090,
+   "art": 16,
+   "artp": 255.6,
    "samai": null,
    "synth": "255.6",
    "src": "goraggio"
@@ -348,6 +362,8 @@
    "mochi": 4741,
    "rb": 29,
    "games": 5901,
+   "art": 56,
+   "artp": 105.4,
    "samai": null,
    "synth": "203.5",
    "src": "goraggio"
@@ -358,6 +374,8 @@
    "mochi": 972,
    "rb": 17,
    "games": 4273,
+   "art": 22,
+   "artp": 194.2,
    "samai": null,
    "synth": "251.4",
    "src": "goraggio"
@@ -368,6 +386,8 @@
    "mochi": 878,
    "rb": 18,
    "games": 3854,
+   "art": 19,
+   "artp": 202.8,
    "samai": null,
    "synth": "214.1",
    "src": "goraggio"
@@ -378,6 +398,8 @@
    "mochi": 3096,
    "rb": 12,
    "games": 4413,
+   "art": 28,
+   "artp": 157.6,
    "samai": null,
    "synth": "367.8",
    "src": "goraggio"
@@ -388,6 +410,8 @@
    "mochi": 2734,
    "rb": 12,
    "games": 3458,
+   "art": 24,
+   "artp": 144.1,
    "samai": null,
    "synth": "288.2",
    "src": "goraggio"
@@ -398,6 +422,8 @@
    "mochi": 8487,
    "rb": 30,
    "games": 5337,
+   "art": 78,
+   "artp": 68.4,
    "samai": null,
    "synth": "177.9",
    "src": "goraggio"
@@ -408,6 +434,8 @@
    "mochi": 2337,
    "rb": 18,
    "games": 4800,
+   "art": 20,
+   "artp": 240.0,
    "samai": null,
    "synth": "266.7",
    "src": "goraggio"
@@ -418,6 +446,8 @@
    "mochi": 5065,
    "rb": 14,
    "games": 3603,
+   "art": 41,
+   "artp": 87.9,
    "samai": null,
    "synth": "257.4",
    "src": "goraggio"
@@ -428,6 +458,8 @@
    "mochi": 754,
    "rb": 8,
    "games": 2113,
+   "art": 10,
+   "artp": 211.3,
    "samai": null,
    "synth": "264.1",
    "src": "goraggio"
@@ -438,6 +470,8 @@
    "mochi": 7819,
    "rb": 20,
    "games": 4564,
+   "art": 57,
+   "artp": 80.1,
    "samai": null,
    "synth": "228.2",
    "src": "goraggio"
@@ -448,6 +482,8 @@
    "mochi": 274,
    "rb": 12,
    "games": 3173,
+   "art": 9,
+   "artp": 352.6,
    "samai": null,
    "synth": "264.4",
    "src": "goraggio"
@@ -458,6 +494,8 @@
    "mochi": 904,
    "rb": 23,
    "games": 5863,
+   "art": 19,
+   "artp": 308.6,
    "samai": null,
    "synth": "254.9",
    "src": "goraggio"
@@ -468,6 +506,8 @@
    "mochi": 398,
    "rb": 12,
    "games": 4178,
+   "art": 14,
+   "artp": 298.4,
    "samai": null,
    "synth": "348.2",
    "src": "goraggio"
@@ -478,6 +518,8 @@
    "mochi": 871,
    "rb": 12,
    "games": 3241,
+   "art": 19,
+   "artp": 170.6,
    "samai": null,
    "synth": "270.1",
    "src": "goraggio"
@@ -488,6 +530,8 @@
    "mochi": 1441,
    "rb": 23,
    "games": 5344,
+   "art": 24,
+   "artp": 222.7,
    "samai": null,
    "synth": "232.3",
    "src": "goraggio"
@@ -498,6 +542,8 @@
    "mochi": 7464,
    "rb": 20,
    "games": 4488,
+   "art": 48,
+   "artp": 93.5,
    "samai": null,
    "synth": "224.4",
    "src": "goraggio"
@@ -508,6 +554,8 @@
    "mochi": 420,
    "rb": 16,
    "games": 3860,
+   "art": 13,
+   "artp": 296.9,
    "samai": null,
    "synth": "241.3",
    "src": "goraggio"
@@ -518,6 +566,8 @@
    "mochi": 1527,
    "rb": 14,
    "games": 4071,
+   "art": 23,
+   "artp": 177.0,
    "samai": null,
    "synth": "290.8",
    "src": "goraggio"
@@ -528,6 +578,8 @@
    "mochi": 10350,
    "rb": 13,
    "games": 3267,
+   "art": 55,
+   "artp": 59.4,
    "samai": null,
    "synth": "251.3",
    "src": "goraggio"
@@ -538,6 +590,8 @@
    "mochi": 899,
    "rb": 16,
    "games": 4982,
+   "art": 19,
+   "artp": 262.2,
    "samai": null,
    "synth": "311.4",
    "src": "goraggio"
@@ -548,6 +602,8 @@
    "mochi": 729,
    "rb": 18,
    "games": 5113,
+   "art": 14,
+   "artp": 365.2,
    "samai": null,
    "synth": "284.1",
    "src": "goraggio"
@@ -558,6 +614,8 @@
    "mochi": 685,
    "rb": 24,
    "games": 5002,
+   "art": 19,
+   "artp": 263.3,
    "samai": null,
    "synth": "208.4",
    "src": "goraggio"
@@ -568,6 +626,8 @@
    "mochi": 5350,
    "rb": 9,
    "games": 2390,
+   "art": 23,
+   "artp": 103.9,
    "samai": null,
    "synth": "265.6",
    "src": "goraggio"
@@ -578,6 +638,8 @@
    "mochi": 7415,
    "rb": 25,
    "games": 5644,
+   "art": 61,
+   "artp": 92.5,
    "samai": null,
    "synth": "225.8",
    "src": "goraggio"
@@ -588,6 +650,8 @@
    "mochi": 387,
    "rb": 12,
    "games": 3352,
+   "art": 11,
+   "artp": 304.7,
    "samai": null,
    "synth": "279.3",
    "src": "goraggio"
@@ -598,6 +662,8 @@
    "mochi": 1151,
    "rb": 17,
    "games": 4224,
+   "art": 26,
+   "artp": 162.5,
    "samai": null,
    "synth": "248.5",
    "src": "goraggio"
@@ -608,6 +674,8 @@
    "mochi": 2270,
    "rb": 31,
    "games": 6823,
+   "art": 39,
+   "artp": 174.9,
    "samai": null,
    "synth": "220.1",
    "src": "goraggio"
@@ -618,6 +686,8 @@
    "mochi": 2399,
    "rb": 13,
    "games": 3266,
+   "art": 20,
+   "artp": 163.3,
    "samai": null,
    "synth": "251.2",
    "src": "goraggio"
@@ -628,6 +698,8 @@
    "mochi": 5875,
    "rb": 17,
    "games": 3454,
+   "art": 35,
+   "artp": 98.7,
    "samai": null,
    "synth": "203.2",
    "src": "goraggio"
@@ -638,6 +710,8 @@
    "mochi": 1417,
    "rb": 15,
    "games": 3858,
+   "art": 12,
+   "artp": 321.5,
    "samai": null,
    "synth": "257.2",
    "src": "goraggio"
@@ -648,6 +722,8 @@
    "mochi": 782,
    "rb": 13,
    "games": 3935,
+   "art": 16,
+   "artp": 245.9,
    "samai": null,
    "synth": "302.7",
    "src": "goraggio"
@@ -658,6 +734,8 @@
    "mochi": 5577,
    "rb": 25,
    "games": 5440,
+   "art": 54,
+   "artp": 100.7,
    "samai": null,
    "synth": "217.6",
    "src": "goraggio"
@@ -668,6 +746,8 @@
    "mochi": 12394,
    "rb": 21,
    "games": 4368,
+   "art": 73,
+   "artp": 59.8,
    "samai": null,
    "synth": "208.0",
    "src": "goraggio"
@@ -678,6 +758,8 @@
    "mochi": 6087,
    "rb": 18,
    "games": 4586,
+   "art": 60,
+   "artp": 76.4,
    "samai": null,
    "synth": "254.8",
    "src": "goraggio"
@@ -688,6 +770,8 @@
    "mochi": 1511,
    "rb": 16,
    "games": 4292,
+   "art": 25,
+   "artp": 171.7,
    "samai": null,
    "synth": "268.3",
    "src": "goraggio"
@@ -698,6 +782,8 @@
    "mochi": 2036,
    "rb": 21,
    "games": 4957,
+   "art": 24,
+   "artp": 206.5,
    "samai": null,
    "synth": "236.0",
    "src": "goraggio"
@@ -708,6 +794,8 @@
    "mochi": 1934,
    "rb": 16,
    "games": 5042,
+   "art": 21,
+   "artp": 240.1,
    "samai": null,
    "synth": "315.1",
    "src": "goraggio"
@@ -718,6 +806,8 @@
    "mochi": 2060,
    "rb": 16,
    "games": 4293,
+   "art": 31,
+   "artp": 138.5,
    "samai": null,
    "synth": "268.3",
    "src": "goraggio"
@@ -728,6 +818,8 @@
    "mochi": 5667,
    "rb": 17,
    "games": 4663,
+   "art": 40,
+   "artp": 116.6,
    "samai": null,
    "synth": "274.3",
    "src": "goraggio"
@@ -738,6 +830,8 @@
    "mochi": 4738,
    "rb": 14,
    "games": 3535,
+   "art": 33,
+   "artp": 107.1,
    "samai": null,
    "synth": "252.5",
    "src": "goraggio"
@@ -748,6 +842,8 @@
    "mochi": 3979,
    "rb": 17,
    "games": 4445,
+   "art": 32,
+   "artp": 138.9,
    "samai": null,
    "synth": "261.5",
    "src": "goraggio"
@@ -758,6 +854,8 @@
    "mochi": 803,
    "rb": 18,
    "games": 5380,
+   "art": 19,
+   "artp": 283.2,
    "samai": null,
    "synth": "298.9",
    "src": "goraggio"
@@ -768,6 +866,8 @@
    "mochi": 3015,
    "rb": 24,
    "games": 5518,
+   "art": 38,
+   "artp": 145.2,
    "samai": null,
    "synth": "229.9",
    "src": "goraggio"
@@ -778,6 +878,8 @@
    "mochi": 1913,
    "rb": 13,
    "games": 4144,
+   "art": 22,
+   "artp": 188.4,
    "samai": null,
    "synth": "318.8",
    "src": "goraggio"
@@ -788,6 +890,8 @@
    "mochi": 729,
    "rb": 31,
    "games": 6420,
+   "art": 18,
+   "artp": 356.7,
    "samai": null,
    "synth": "207.1",
    "src": "goraggio"
@@ -798,6 +902,8 @@
    "mochi": 3403,
    "rb": 26,
    "games": 5309,
+   "art": 32,
+   "artp": 165.9,
    "samai": null,
    "synth": "204.2",
    "src": "goraggio"
@@ -808,6 +914,8 @@
    "mochi": 2049,
    "rb": 14,
    "games": 3336,
+   "art": 27,
+   "artp": 123.6,
    "samai": null,
    "synth": "238.3",
    "src": "goraggio"
@@ -818,6 +926,8 @@
    "mochi": 1614,
    "rb": 26,
    "games": 6185,
+   "art": 36,
+   "artp": 171.8,
    "samai": null,
    "synth": "237.9",
    "src": "goraggio"
@@ -828,6 +938,8 @@
    "mochi": 5485,
    "rb": 13,
    "games": 3737,
+   "art": 43,
+   "artp": 86.9,
    "samai": null,
    "synth": "287.5",
    "src": "goraggio"
@@ -838,6 +950,8 @@
    "mochi": 6341,
    "rb": 15,
    "games": 4887,
+   "art": 28,
+   "artp": 174.5,
    "samai": null,
    "synth": "325.8",
    "src": "goraggio"
@@ -848,6 +962,8 @@
    "mochi": 10812,
    "rb": 16,
    "games": 3813,
+   "art": 59,
+   "artp": 64.6,
    "samai": null,
    "synth": "238.3",
    "src": "goraggio"
@@ -858,6 +974,8 @@
    "mochi": 1747,
    "rb": 18,
    "games": 4935,
+   "art": 28,
+   "artp": 176.3,
    "samai": null,
    "synth": "274.2",
    "src": "goraggio"
@@ -868,6 +986,8 @@
    "mochi": 829,
    "rb": 26,
    "games": 6904,
+   "art": 35,
+   "artp": 197.3,
    "samai": null,
    "synth": "265.5",
    "src": "goraggio"
@@ -878,6 +998,8 @@
    "mochi": 8024,
    "rb": 19,
    "games": 4023,
+   "art": 56,
+   "artp": 71.8,
    "samai": null,
    "synth": "211.7",
    "src": "goraggio"
@@ -888,6 +1010,8 @@
    "mochi": 1435,
    "rb": 28,
    "games": 6673,
+   "art": 31,
+   "artp": 215.3,
    "samai": null,
    "synth": "238.3",
    "src": "goraggio"
@@ -898,6 +1022,8 @@
    "mochi": 7363,
    "rb": 24,
    "games": 5009,
+   "art": 61,
+   "artp": 82.1,
    "samai": null,
    "synth": "208.7",
    "src": "goraggio"
@@ -908,6 +1034,8 @@
    "mochi": 5586,
    "rb": 34,
    "games": 5834,
+   "art": 46,
+   "artp": 126.8,
    "samai": null,
    "synth": "171.6",
    "src": "goraggio"
@@ -918,6 +1046,8 @@
    "mochi": 6714,
    "rb": 23,
    "games": 5053,
+   "art": 64,
+   "artp": 79.0,
    "samai": null,
    "synth": "219.7",
    "src": "goraggio"
@@ -928,6 +1058,8 @@
    "mochi": 1409,
    "rb": 21,
    "games": 4821,
+   "art": 30,
+   "artp": 160.7,
    "samai": null,
    "synth": "229.6",
    "src": "goraggio"
@@ -938,6 +1070,8 @@
    "mochi": 5498,
    "rb": 10,
    "games": 3555,
+   "art": 23,
+   "artp": 154.6,
    "samai": null,
    "synth": "355.5",
    "src": "goraggio"
@@ -948,6 +1082,8 @@
    "mochi": 5660,
    "rb": 16,
    "games": 3330,
+   "art": 34,
+   "artp": 97.9,
    "samai": null,
    "synth": "208.1",
    "src": "goraggio"
@@ -958,6 +1094,8 @@
    "mochi": 568,
    "rb": 16,
    "games": 4559,
+   "art": 17,
+   "artp": 268.2,
    "samai": null,
    "synth": "284.9",
    "src": "goraggio"
@@ -968,6 +1106,8 @@
    "mochi": 4282,
    "rb": 8,
    "games": 3025,
+   "art": 31,
+   "artp": 97.6,
    "samai": null,
    "synth": "378.1",
    "src": "goraggio"
@@ -978,6 +1118,8 @@
    "mochi": 5144,
    "rb": 13,
    "games": 4086,
+   "art": 42,
+   "artp": 97.3,
    "samai": null,
    "synth": "314.3",
    "src": "goraggio"
@@ -988,6 +1130,8 @@
    "mochi": 2754,
    "rb": 21,
    "games": 5208,
+   "art": 29,
+   "artp": 179.6,
    "samai": null,
    "synth": "248.0",
    "src": "goraggio"
@@ -998,6 +1142,8 @@
    "mochi": 3552,
    "rb": 13,
    "games": 3600,
+   "art": 25,
+   "artp": 144.0,
    "samai": null,
    "synth": "276.9",
    "src": "goraggio"
@@ -1008,6 +1154,8 @@
    "mochi": 954,
    "rb": 20,
    "games": 4647,
+   "art": 19,
+   "artp": 244.6,
    "samai": null,
    "synth": "232.4",
    "src": "goraggio"
@@ -1018,6 +1166,8 @@
    "mochi": 4928,
    "rb": 16,
    "games": 3648,
+   "art": 37,
+   "artp": 98.6,
    "samai": null,
    "synth": "228.0",
    "src": "goraggio"
