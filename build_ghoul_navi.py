@@ -34,32 +34,34 @@ def collect_targets():
     ndays = len(dates)
     latest = dates[-1] if dates else None
 
-    info = {}  # unit -> {artp(良い=小), peak, played, games}
+    # 喰種はgoraggio表記の"RB"が実質CZ。CZ(RB)確率=総ゲーム数/RB回数。小さい=CZ頻繁=高設定寄り。
+    info = {}  # unit -> {cz(良い=小), peak, played, games}
     for d in dates:
         for us, r in hist[d].items():
             u = int(us)
-            a = info.setdefault(u, {'artp': 0.0, 'peak': 0, 'played': 0, 'games': 0})
-            ap = r.get('artp', 0) or 0
+            a = info.setdefault(u, {'cz': 0.0, 'peak': 0, 'played': 0, 'games': 0})
             g = r.get('games', 0) or 0
-            if g >= MIN_GAMES_AT and ap > 0:
-                a['artp'] = ap if a['artp'] == 0 else min(a['artp'], ap)
+            rb = r.get('rb', 0) or 0
+            if g >= MIN_GAMES_AT and rb > 0:
+                czp = g / rb
+                a['cz'] = czp if a['cz'] == 0 else min(a['cz'], czp)
             a['peak'] = max(a['peak'], r.get('mochi', 0) or 0)
             a['games'] = max(a['games'], g)
             if r.get('played'):
                 a['played'] += 1
 
-    # AT確率あり→良い順(昇順) / 無し→持玉降順で後ろに付ける
-    with_at = sorted([u for u, a in info.items() if a['artp'] > 0],
-                     key=lambda u: info[u]['artp'])
-    no_at = sorted([u for u, a in info.items() if a['artp'] == 0 and a['peak'] > 0],
+    # CZ(RB)確率あり→良い順(昇順) / 無し→持玉降順で後ろに付ける
+    with_cz = sorted([u for u, a in info.items() if a['cz'] > 0],
+                     key=lambda u: info[u]['cz'])
+    no_cz = sorted([u for u, a in info.items() if a['cz'] == 0 and a['peak'] > 0],
                    key=lambda u: -info[u]['peak'])
-    ranked = with_at + no_at
+    ranked = with_cz + no_cz
     honmei = ranked[:6]
     taikou = ranked[6:18]
-    # 避け: 稼働あるのにAT確率が重い(>120) か、AT無しで持玉も低い
+    # 避け: 稼働あるのにCZが重い(1/300超) か、CZ無しで持玉も低い
     sake = sorted([u for u, a in info.items()
-                   if a['played'] >= 1 and ((a['artp'] > 120) or (a['artp'] == 0 and a['peak'] < 1200))],
-                  key=lambda u: (info[u]['artp'] if info[u]['artp'] > 0 else 999, -info[u]['peak']),
+                   if a['played'] >= 1 and ((a['cz'] > 300) or (a['cz'] == 0 and a['peak'] < 1200))],
+                  key=lambda u: (info[u]['cz'] if info[u]['cz'] > 0 else 9999, -info[u]['peak']),
                   reverse=True)[:12]
     return ndays, latest, honmei, taikou, sake, info
 
@@ -121,18 +123,18 @@ def build():
 
     def atsub(u):
         d = info.get(u, {})
-        ap, g = d.get('artp', 0), d.get('games', 0)
-        if ap > 0:
+        cz, g = d.get('cz', 0), d.get('games', 0)
+        if cz > 0:
             gs = f"·{g/1000:.1f}k" if g else ''
-            return f"1/{int(round(ap))}{gs}"     # AT確率·ゲーム数(信頼度)
+            return f"1/{int(round(cz))}{gs}"     # CZ(RB)確率·ゲーム数(信頼度)
         return f"{d.get('peak', 0):,}" if d.get('peak', 0) >= 3000 else ''
 
-    # ---- 本命(AT初当り確率が良い順。上位2つは王冠) ----
+    # ---- 本命(CZ(RB)確率が良い順。上位2つは王冠) ----
     hon_chips = []
     for i, u in enumerate(honmei[:8]):
         crown = i < 2
         hon_chips.append(chip(u, gr.zone(u), 'n-honmei', crown=crown, sub=atsub(u)))
-    honmei_html = (f'<div class="zone"><span class="zlabel">AT初当り(CZ)確率が良い順＝設定期待</span>'
+    honmei_html = (f'<div class="zone"><span class="zlabel">CZ(RB)確率が良い順＝設定期待</span>'
                    f'<div class="nums">{"".join(hon_chips)}</div></div>'
                    if hon_chips else '<div class="tier-note">本日データ待ち（今夜23時に生成）</div>')
 
@@ -271,7 +273,7 @@ TEMPLATE = r"""<title>北綾瀬 喰種狙い台ナビ</title>
     <div class="tier"><div class="tier-head"><span class="badge b-honmei">本命</span><span class="tier-note">前日持玉上位＝据え置き最有力</span></div>__HONMEI__</div>
     <div class="tier"><div class="tier-head"><span class="badge b-taikou">対抗</span><span class="tier-note">好調ゾーン継続</span></div><div class="rack">__TAIKOU__</div></div>
     <div class="tier"><div class="tier-head"><span class="badge b-sake">避け</span><span class="tier-note">稼働あるのに伸びない台</span></div>__SAKE__</div>
-    <div class="hl">🔥<div>順位は<b>AT初当り(CZ)確率</b>基準＝設定を映す指標(<b>1/X</b>が小さいほど期待大)。併記の<b>◯k</b>=総ゲーム数で信頼度(多いほど確か)。据え置き型(r=0.83)で翌日も残る公算。持玉は結果でブレるため補助。</div></div>
+    <div class="hl">🔥<div>順位は<b>CZ(RB)確率</b>基準＝設定を映す指標(<b>1/X</b>が小さいほどCZ頻繁＝期待大)。※喰種はgoraggio表記のRBが実質CZ。併記の<b>◯k</b>=総ゲーム数で信頼度(多いほど確か)。据え置き型(r=0.83)で翌日も残る公算。持玉は補助。</div></div>
   </section>
   <section class="card">
     <h2>🔮 <b>とみー匂わせ本命</b></h2>
