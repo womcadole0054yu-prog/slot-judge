@@ -23,7 +23,7 @@ def mochi_of(agg_unit_records, unit):
     return 0
 
 
-MIN_GAMES_AT = 1000  # AT確率を信頼する最低スタート数
+MIN_GAMES_AT = 1000  # CZ(RB)確率を信頼する最低スタート数
 
 def collect_targets():
     """直近N日を集計。据え置き狙いの本質＝設定なので、AT初当り(≒CZ突破)確率を主軸に
@@ -35,6 +35,9 @@ def collect_targets():
     latest = dates[-1] if dates else None
 
     # 喰種はgoraggio表記の"RB"が実質CZ。CZ(RB)確率=総ゲーム数/RB回数。小さい=CZ頻繁=高設定寄り。
+    # ※CZ_PROB/AT_PROB尤度でのフル設定推定(絶対値)も試したが、goraggioのRB/ART回数は判別アプリの
+    #   「初当り」確率定義より多くカウントされ較正が合わず全台が設定6に張り付くため不採用。
+    #   観測CZ(RB)確率の"相対ランク"＋ゲーム数ゲートを採用(方向性は正しく、絶対値は主張しない)。
     info = {}  # unit -> {cz(良い=小), peak, played, games}
     for d in dates:
         for us, r in hist[d].items():
@@ -50,19 +53,14 @@ def collect_targets():
             if r.get('played'):
                 a['played'] += 1
 
-    # CZ(RB)確率あり→良い順(昇順) / 無し→持玉降順で後ろに付ける
-    with_cz = sorted([u for u, a in info.items() if a['cz'] > 0],
-                     key=lambda u: info[u]['cz'])
-    no_cz = sorted([u for u, a in info.items() if a['cz'] == 0 and a['peak'] > 0],
-                   key=lambda u: -info[u]['peak'])
+    with_cz = sorted([u for u, a in info.items() if a['cz'] > 0], key=lambda u: info[u]['cz'])
+    no_cz = sorted([u for u, a in info.items() if a['cz'] == 0 and a['peak'] > 0], key=lambda u: -info[u]['peak'])
     ranked = with_cz + no_cz
     honmei = ranked[:6]
     taikou = ranked[6:18]
-    # 避け: 稼働あるのにCZが重い(1/300超) か、CZ無しで持玉も低い
     sake = sorted([u for u, a in info.items()
                    if a['played'] >= 1 and ((a['cz'] > 300) or (a['cz'] == 0 and a['peak'] < 1200))],
-                  key=lambda u: (info[u]['cz'] if info[u]['cz'] > 0 else 9999, -info[u]['peak']),
-                  reverse=True)[:12]
+                  key=lambda u: (info[u]['cz'] if info[u]['cz'] > 0 else 9999, -info[u]['peak']), reverse=True)[:12]
     return ndays, latest, honmei, taikou, sake, info
 
 
@@ -134,7 +132,7 @@ def build():
     for i, u in enumerate(honmei[:8]):
         crown = i < 2
         hon_chips.append(chip(u, gr.zone(u), 'n-honmei', crown=crown, sub=atsub(u)))
-    honmei_html = (f'<div class="zone"><span class="zlabel">CZ(RB)確率が良い順＝設定期待</span>'
+    honmei_html = (f'<div class="zone"><span class="zlabel">CZ(RB)確率が良い順＝高設定寄り</span>'
                    f'<div class="nums">{"".join(hon_chips)}</div></div>'
                    if hon_chips else '<div class="tier-note">本日データ待ち（今夜23時に生成）</div>')
 
@@ -273,7 +271,7 @@ TEMPLATE = r"""<title>北綾瀬 喰種狙い台ナビ</title>
     <div class="tier"><div class="tier-head"><span class="badge b-honmei">本命</span><span class="tier-note">前日持玉上位＝据え置き最有力</span></div>__HONMEI__</div>
     <div class="tier"><div class="tier-head"><span class="badge b-taikou">対抗</span><span class="tier-note">好調ゾーン継続</span></div><div class="rack">__TAIKOU__</div></div>
     <div class="tier"><div class="tier-head"><span class="badge b-sake">避け</span><span class="tier-note">稼働あるのに伸びない台</span></div>__SAKE__</div>
-    <div class="hl">🔥<div>順位は<b>CZ(RB)確率</b>基準＝設定を映す指標(<b>1/X</b>が小さいほどCZ頻繁＝期待大)。※喰種はgoraggio表記のRBが実質CZ。併記の<b>◯k</b>=総ゲーム数で信頼度(多いほど確か)。据え置き型(r=0.83)で翌日も残る公算。持玉は補助。</div></div>
+    <div class="hl">🔥<div>順位は前日の<b>CZ(RB)確率</b>(<b>1/X</b>が小さいほどCZ頻繁＝高設定寄り)の相対ランク。併記の<b>◯k</b>=総ゲーム数で信頼度(少ない台は上げない)。※goraggioの回数は初当り定義と異なり絶対的な設定値化はできないため相対比較。据え置き型(r=0.83)で翌日も残る公算。</div></div>
   </section>
   <section class="card">
     <h2>🔮 <b>とみー匂わせ本命</b></h2>
