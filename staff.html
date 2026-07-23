@@ -44,141 +44,212 @@ pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
 .hero .talk .line1 { font-size:17px; font-weight:700; margin-bottom:4px; }
 .hero .talk .line2 { font-size:13px; color:#9aa0c0; line-height:1.6; }
 .mascot { flex:none; overflow:visible; }
-.mascot .shadow { fill:#000; opacity:.28; }
-.mascot .hair-back, .mascot .hair { fill:#d8d2ea; }
-.mascot .face { fill:#fdeee4; }
-.mascot .dress { fill:#7d8fd6; }
-.mascot .arm rect { fill:#fdeee4; }
-.mascot .wings path { fill:#bcd8f5; opacity:.55; }
-.mascot .eye { fill:#7b5fc4; }
-.mascot .glint { fill:#fff; }
-.mascot .cheek { fill:#f7b5bd; opacity:.75; }
-.mascot .mouth { fill:none; stroke:#c78c8c; stroke-width:2; stroke-linecap:round; }
-.mascot .flower circle { fill:#f2f2f8; }
-.mascot .flower .flower-c { fill:#f2c14e; }
-.mascot .eyes-happy path, .mascot .eyes-sad path {
-  fill:none; stroke:#7b5fc4; stroke-width:2.4; stroke-linecap:round; }
-.mascot .sparks circle { fill:#8fe3c2; }
-.mascot .zzz text { fill:#8a8ba0; font-size:13px; font-weight:700; }
-.mascot .sweat path { fill:#8fc7f5; }
 
-/* 既定は全部隠す */
-.mascot .eyes-happy, .mascot .eyes-sad, .mascot .sparks, .mascot .zzz, .mascot .sweat { display:none; }
+/* 表情は既定で本体の目だけ出す */
+.mascot .b-eyes-happy, .mascot .b-eyes-error, .mascot .b-eyes-sleep { display:none; }
+.mascot .b-eyes-happy path { fill:none; stroke:#7fe9ff; stroke-width:5; stroke-linecap:round; }
+.mascot .b-eyes-error path { fill:none; stroke:#ff6b6b; stroke-width:5; stroke-linecap:round; }
+.mascot .b-eyes-sleep path { fill:none; stroke:#5c6a86; stroke-width:5; stroke-linecap:round; }
 
-/* --- 稼働中：ふわふわ浮いて羽ばたく --- */
-.st-work .mascot .body { animation: float 1.6s ease-in-out infinite; transform-origin:70px 120px; }
-.st-work .mascot .wings { animation: flap .28s ease-in-out infinite alternate; transform-origin:70px 82px; }
-.st-work .mascot .arm-r { animation: wave .7s ease-in-out infinite alternate; transform-origin:92px 96px; }
-.st-work .mascot .eyes { animation: blink 3.4s infinite; transform-origin:70px 60px; }
-.st-work .mascot .sparks { display:block; animation: twinkle 1.4s ease-in-out infinite; }
-.st-work .mascot .shadow { animation: shrink 1.6s ease-in-out infinite; }
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
-@keyframes flap  { from{transform:scaleX(1) scaleY(1)} to{transform:scaleX(.72) scaleY(1.12)} }
-@keyframes wave  { from{transform:rotate(0deg)} to{transform:rotate(-38deg)} }
-@keyframes blink { 0%,92%,100%{transform:scaleY(1)} 96%{transform:scaleY(.1)} }
-@keyframes twinkle { 0%,100%{opacity:.25; transform:translateY(0)} 50%{opacity:1; transform:translateY(-4px)} }
-@keyframes shrink { 0%,100%{rx:30; opacity:.28} 50%{rx:24; opacity:.18} }
+/* --- 稼働中：きびきび浮遊、噴射強め、ランプ速い点滅 --- */
+.st-work .mascot .b-float { animation: rFloat 1.5s ease-in-out infinite; transform-origin:110px 200px; }
+.st-work .mascot .b-arm-l { animation: rArmL 1.5s ease-in-out infinite; transform-origin:70px 176px; }
+.st-work .mascot .b-arm-r { animation: rArmR 1.5s ease-in-out infinite; transform-origin:150px 176px; }
+.st-work .mascot .b-antenna-light { animation: rPulse .55s ease-in-out infinite; }
+.st-work .mascot .b-core { animation: rPulse .8s ease-in-out infinite; }
+.st-work .mascot .b-thrust { animation: rThrust 1.5s ease-in-out infinite; }
+.st-work .mascot .b-dots { animation: rDots 1.6s ease-in-out infinite; }
+.st-work .mascot .b-shadow { animation: rShadow 1.5s ease-in-out infinite; }
+.st-work .mascot .b-eyes { animation: rBlink 3.6s infinite; }
 
-/* --- 完了：にこにこ呼吸 --- */
-.st-done .mascot .eyes { display:none; }
-.st-done .mascot .eyes-happy { display:block; }
-.st-done .mascot .body { animation: breathe 3s ease-in-out infinite; transform-origin:70px 128px; }
-@keyframes breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.028)} }
+/* --- 完了：にこっとしてゆっくり浮く --- */
+.st-done .mascot .b-eyes { display:none; }
+.st-done .mascot .b-eyes-happy { display:block; }
+.st-done .mascot .b-float { animation: rFloat 3.4s ease-in-out infinite; transform-origin:110px 200px; }
+.st-done .mascot .b-core { animation: rPulse 2.6s ease-in-out infinite; }
+.st-done .mascot .b-thrust { opacity:.35; }
 
-/* --- 失敗：しょんぼり＋汗 --- */
-.st-fail .mascot .eyes { display:none; }
-.st-fail .mascot .eyes-sad { display:block; }
-.st-fail .mascot .sweat { display:block; animation: drip 1.8s ease-in infinite; }
-.st-fail .mascot .mouth { d:path("M66 73 Q70 69 74 73"); }
-.st-fail .mascot .body { animation: shiver 2.6s ease-in-out infinite; transform-origin:70px 128px; }
-@keyframes drip { 0%{opacity:0; transform:translateY(-6px)} 30%{opacity:1} 100%{opacity:0; transform:translateY(10px)} }
-@keyframes shiver { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-2deg)} 75%{transform:rotate(2deg)} }
+/* --- 失敗：目が×、赤く警告して小刻みに揺れる --- */
+.st-fail .mascot .b-eyes { display:none; }
+.st-fail .mascot .b-eyes-error { display:block; animation: rAlert .7s steps(1) infinite; }
+.st-fail .mascot .b-antenna-light { fill:#ff6b6b; animation: rAlert .7s steps(1) infinite; }
+.st-fail .mascot .b-core { fill:#ff6b6b; animation: rAlert .7s steps(1) infinite; }
+.st-fail .mascot .b-float { animation: rShiver 2.4s ease-in-out infinite; transform-origin:110px 230px; }
+.st-fail .mascot .b-thrust { opacity:.2; }
 
-/* --- 待機：寝てる --- */
-.st-idle .mascot { opacity:.85; }
-.st-idle .mascot .eyes { display:none; }
-.st-idle .mascot .eyes-happy { display:block; }
-.st-idle .mascot .zzz { display:block; animation: zfloat 2.6s ease-in-out infinite; }
-.st-idle .mascot .body { animation: breathe 4.5s ease-in-out infinite; transform-origin:70px 128px; }
-@keyframes zfloat { 0%{opacity:0; transform:translate(0,4px)} 40%{opacity:1} 100%{opacity:0; transform:translate(6px,-10px)} }
+/* --- 待機：スリープ。ランプは暗く、ゆっくり上下 --- */
+.st-idle .mascot { opacity:.9; }
+.st-idle .mascot .b-eyes { display:none; }
+.st-idle .mascot .b-eyes-sleep { display:block; }
+.st-idle .mascot .b-float { animation: rFloat 5.5s ease-in-out infinite; transform-origin:110px 200px; }
+.st-idle .mascot .b-core { fill:#3f4a63; animation: rPulse 3.6s ease-in-out infinite; }
+.st-idle .mascot .b-antenna-light { fill:#6b7590; }
+.st-idle .mascot .b-thrust { opacity:0; }
+.st-idle .mascot .b-dots { opacity:.15; }
+
+@keyframes rFloat  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-11px)} }
+@keyframes rArmL   { 0%,100%{transform:rotate(6deg)} 50%{transform:rotate(-9deg)} }
+@keyframes rArmR   { 0%,100%{transform:rotate(-6deg)} 50%{transform:rotate(9deg)} }
+@keyframes rPulse  { 0%,100%{opacity:1} 50%{opacity:.35} }
+@keyframes rThrust { 0%,100%{opacity:.6; transform:scaleY(1)} 50%{opacity:1; transform:scaleY(1.45)} }
+@keyframes rDots   { 0%,100%{opacity:.25; transform:translateY(0)} 50%{opacity:1; transform:translateY(-7px)} }
+@keyframes rShadow { 0%,100%{rx:38; opacity:.16} 50%{rx:30; opacity:.09} }
+@keyframes rBlink  { 0%,93%,100%{opacity:1} 95%{opacity:0} }
+@keyframes rAlert  { 0%,49%{opacity:1} 50%,100%{opacity:.25} }
+@keyframes rShiver { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-2.5deg)} 75%{transform:rotate(2.5deg)} }
 
 @media (prefers-reduced-motion: reduce) { .mascot * { animation:none !important; } }
 @media (max-width:520px) { .hero { flex-direction:column; text-align:center; } }
 
 </style></head><body>
 <h1>🤖 AIスタッフ稼働状況</h1>
-<div class="now">最終更新 2026-07-24 00:30:01（60秒ごとに自動リロード）</div>
-<div class="hero st-work">
-<svg class="mascot" viewBox="0 0 140 150" width="150" height="160" aria-hidden="true">
-  <ellipse class="shadow" cx="70" cy="140" rx="30" ry="6"/>
-  <g class="body">
-    <!-- 羽 -->
-    <g class="wings">
-      <path d="M42 74 C18 58 12 82 26 92 C34 98 42 90 42 82 Z"/>
-      <path d="M98 74 C122 58 128 82 114 92 C106 98 98 90 98 82 Z"/>
+<div class="now">最終更新 2026-07-24 00:31:40（60秒ごとに自動リロード）</div>
+<div class="hero st-done"><svg class="mascot" viewBox="0 0 220 260" width="150" height="172" aria-hidden="true">
+  <defs>
+    <linearGradient id="b-shell" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#eef1f7"/>
+      <stop offset="1" stop-color="#ccd4e2"/>
+    </linearGradient>
+    <linearGradient id="b-visor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a4256"/>
+      <stop offset="0.5" stop-color="#222838"/>
+      <stop offset="1" stop-color="#161b28"/>
+    </linearGradient>
+    <linearGradient id="b-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f9fc"/>
+      <stop offset="1" stop-color="#c6cfdf"/>
+    </linearGradient>
+    <radialGradient id="b-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7fe9ff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#7fe9ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="b-thrust" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8ef0ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#4dd0e1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse class="b-shadow" cx="110" cy="246" rx="38" ry="7" fill="#000" opacity="0.16"/>
+
+  <!-- 浮遊の噴射光 -->
+  <g class="b-thrust">
+    <ellipse cx="92" cy="222" rx="9" ry="18" fill="url(#b-thrust)"/>
+    <ellipse cx="128" cy="222" rx="9" ry="18" fill="url(#b-thrust)"/>
+  </g>
+
+  <g class="b-float">
+    <!-- アンテナ -->
+    <g class="b-antenna">
+      <path d="M110 40 L110 20" stroke="#b8c2d4" stroke-width="4" stroke-linecap="round"/>
+      <circle class="b-antenna-light" cx="110" cy="16" r="7" fill="#ffd54f"/>
+      <circle cx="110" cy="16" r="14" fill="url(#b-glow)" opacity="0.5"/>
+      <circle cx="108" cy="14" r="2.4" fill="#fff" opacity="0.9"/>
     </g>
-    <!-- 髪(後ろ) -->
-    <path class="hair-back" d="M70 16 C40 16 30 40 32 66 C33 82 38 92 42 96 L98 96 C102 92 107 82 108 66 C110 40 100 16 70 16 Z"/>
+
+    <!-- 耳パーツ -->
+    <g class="b-ears">
+      <circle cx="42" cy="96" r="15" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
+      <circle cx="42" cy="96" r="6" fill="#4dd0e1"/>
+      <circle cx="178" cy="96" r="15" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
+      <circle cx="178" cy="96" r="6" fill="#4dd0e1"/>
+    </g>
+
+    <!-- 頭 -->
+    <rect x="46" y="40" width="128" height="112" rx="46" fill="url(#b-shell)"/>
+    <rect x="46" y="40" width="128" height="112" rx="46" fill="none" stroke="#b8c2d4" stroke-width="2"/>
+    <!-- 頭のハイライト -->
+    <path d="M66 62 C78 50 108 46 128 50 C110 52 84 58 72 74 Z" fill="#fff" opacity="0.85"/>
+
+    <!-- バイザー -->
+    <rect x="60" y="66" width="100" height="62" rx="31" fill="url(#b-visor)"/>
+    <rect x="60" y="66" width="100" height="62" rx="31" fill="none" stroke="#39415a" stroke-width="2"/>
+    <ellipse cx="110" cy="80" rx="42" ry="10" fill="#fff" opacity="0.09"/>
+
+    <!-- 目（通常） -->
+    <g class="b-eyes">
+      <ellipse cx="88" cy="98" rx="11" ry="12" fill="#7fe9ff"/>
+      <ellipse cx="132" cy="98" rx="11" ry="12" fill="#7fe9ff"/>
+      <circle cx="88" cy="98" r="18" fill="url(#b-glow)" opacity="0.55"/>
+      <circle cx="132" cy="98" r="18" fill="url(#b-glow)" opacity="0.55"/>
+      <circle cx="91" cy="93" r="3.4" fill="#fff"/>
+      <circle cx="135" cy="93" r="3.4" fill="#fff"/>
+    </g>
+    <!-- 目（にこっ） -->
+    <g class="b-eyes-happy">
+      <path d="M76 102 Q88 88 100 102"/>
+      <path d="M120 102 Q132 88 144 102"/>
+    </g>
+    <!-- 目（エラー：×） -->
+    <g class="b-eyes-error">
+      <path d="M80 90 L96 106 M96 90 L80 106"/>
+      <path d="M124 90 L140 106 M140 90 L124 106"/>
+    </g>
+    <!-- 目（スリープ：細い線） -->
+    <g class="b-eyes-sleep">
+      <path d="M78 98 L98 98"/>
+      <path d="M122 98 L142 98"/>
+    </g>
+    <!-- ほっぺランプ -->
+    <ellipse class="b-cheeks" cx="70" cy="116" rx="7" ry="4.5" fill="#ff8fa6" opacity="0.75"/>
+    <ellipse class="b-cheeks" cx="150" cy="116" rx="7" ry="4.5" fill="#ff8fa6" opacity="0.75"/>
+
+    <!-- 首 -->
+    <rect x="100" y="150" width="20" height="12" rx="5" fill="#b8c2d4"/>
+
     <!-- 体 -->
-    <path class="dress" d="M70 88 C56 88 46 104 44 122 C56 128 84 128 96 122 C94 104 84 88 70 88 Z"/>
-    <!-- 腕 -->
-    <g class="arm arm-l"><rect x="44" y="94" width="8" height="20" rx="4"/></g>
-    <g class="arm arm-r"><rect x="88" y="94" width="8" height="20" rx="4"/></g>
-    <!-- 顔 -->
-    <ellipse class="face" cx="70" cy="58" rx="30" ry="29"/>
-    <!-- 前髪 -->
-    <path class="hair" d="M40 56 C40 30 52 20 70 20 C88 20 100 30 100 56 C96 42 88 36 78 40 C72 30 58 32 52 42 C46 44 42 50 40 56 Z"/>
-    <!-- 花飾り -->
-    <g class="flower">
-      <circle cx="97" cy="36" r="4.5"/><circle cx="104" cy="31" r="3.5"/><circle cx="104" cy="41" r="3.5"/>
-      <circle class="flower-c" cx="100" cy="36" r="2"/>
+    <path d="M110 158 C86 158 74 174 72 196 C71 208 72 216 74 222
+             C90 230 130 230 146 222 C148 216 149 208 148 196
+             C146 174 134 158 110 158 Z" fill="url(#b-body)" stroke="#b8c2d4" stroke-width="2"/>
+    <!-- 胸のコア -->
+    <circle cx="110" cy="192" r="14" fill="#2b3244"/>
+    <circle class="b-core" cx="110" cy="192" r="9" fill="#4dd0e1"/>
+    <circle cx="110" cy="192" r="18" fill="url(#b-glow)" opacity="0.5"/>
+    <circle cx="107" cy="188" r="2.6" fill="#fff" opacity="0.9"/>
+    <!-- パネルの線 -->
+    <path d="M84 212 h18 M136 212 h-18" stroke="#aab5c8" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- 腕（球関節） -->
+    <g class="b-arm-l">
+      <circle cx="70" cy="176" r="8" fill="#b8c2d4"/>
+      <rect x="52" y="180" width="16" height="30" rx="8" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
+      <circle cx="60" cy="214" r="9" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
     </g>
-    <!-- 目 -->
-    <g class="eyes">
-      <ellipse class="eye" cx="59" cy="60" rx="4.6" ry="5.6"/>
-      <ellipse class="eye" cx="81" cy="60" rx="4.6" ry="5.6"/>
-      <circle class="glint" cx="60.6" cy="58" r="1.7"/>
-      <circle class="glint" cx="82.6" cy="58" r="1.7"/>
+    <g class="b-arm-r">
+      <circle cx="150" cy="176" r="8" fill="#b8c2d4"/>
+      <rect x="152" y="180" width="16" height="30" rx="8" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
+      <circle cx="160" cy="214" r="9" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
     </g>
-    <!-- 閉じ目(完了時) -->
-    <g class="eyes-happy">
-      <path d="M54 61 Q59 55 64 61"/><path d="M76 61 Q81 55 86 61"/>
-    </g>
-    <!-- 困り目(失敗時) -->
-    <g class="eyes-sad">
-      <path d="M54 56 L64 61"/><path d="M86 56 L76 61"/>
-    </g>
-    <!-- ほっぺ -->
-    <ellipse class="cheek" cx="52" cy="68" rx="4.5" ry="3"/>
-    <ellipse class="cheek" cx="88" cy="68" rx="4.5" ry="3"/>
-    <!-- 口 -->
-    <path class="mouth" d="M66 70 Q70 74 74 70"/>
+
+    <!-- 足（浮いてるので短い） -->
+    <ellipse cx="92" cy="228" rx="13" ry="9" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
+    <ellipse cx="128" cy="228" rx="13" ry="9" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
   </g>
-  <!-- 稼働中エフェクト -->
-  <g class="sparks">
-    <circle cx="24" cy="46" r="2.6"/><circle cx="118" cy="54" r="2"/><circle cx="30" cy="112" r="2.2"/>
+
+  <!-- まわりの粒子 -->
+  <g class="b-dots" fill="#7fe9ff">
+    <circle cx="26" cy="60" r="3"/>
+    <circle cx="196" cy="52" r="2.4"/>
+    <circle cx="200" cy="180" r="2.6"/>
+    <circle cx="22" cy="168" r="2.2"/>
   </g>
-  <!-- 寝てるzzz -->
-  <g class="zzz"><text x="102" y="34">z</text><text x="112" y="22">z</text></g>
-  <!-- 汗 -->
-  <g class="sweat"><path d="M100 50 q4 7 0 10 q-4 -3 0 -10 Z"/></g>
 </svg>
-  <div class="talk"><div class="line1">hint-decoder が働いてるよ！</div><div class="line2">いま作業中。終わったらDiscordにも報告するね✨</div></div>
+  <div class="talk"><div class="line1">本日 1 件 完了</div><div class="line2">最終稼働 hint-decoder（00:30）</div></div>
 </div>
 <div class="stats">
-  <div class="stat"><b>1</b><span>稼働中</span></div>
-  <div class="stat"><b>0</b><span>今日 完了</span></div>
+  <div class="stat"><b>0</b><span>稼働中</span></div>
+  <div class="stat"><b>1</b><span>今日 完了</span></div>
   <div class="stat"><b>0</b><span>今日 失敗</span></div>
   <div class="stat"><b>5</b><span>総実行数</span></div>
 </div>
 
-    <div class="card run">
+    <div class="card done">
       <div class="head">
-        <span class="badge">🟢 稼働中</span>
+        <span class="badge">✅ 完了</span>
         <span class="agent">hint-decoder</span>
-        <span class="meta">2026-07-24T00:30:00 / —</span>
+        <span class="meta">2026-07-24T00:30:00 / 100秒</span>
       </div>
-      
+      <div class="cnt">ツール 1回</div>
       
     </div>
 
