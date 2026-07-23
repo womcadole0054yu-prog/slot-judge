@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="60">
+<title>AIスタッフ稼働状況</title>
+<style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin:0; padding:20px; background:#12131a; color:#e6e6ef;
+  font-family:"Segoe UI","Yu Gothic UI",sans-serif; }
+h1 { font-size:19px; margin:0 0 4px; }
+.now { color:#8a8ba0; font-size:12px; margin-bottom:16px; }
+.stats { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
+.stat { background:#1c1e29; border:1px solid #2a2d3d; border-radius:10px;
+  padding:10px 16px; min-width:96px; }
+.stat b { display:block; font-size:22px; }
+.stat span { font-size:11px; color:#8a8ba0; }
+.card { background:#1a1c26; border:1px solid #2a2d3d; border-left:4px solid #444;
+  border-radius:10px; padding:12px 14px; margin-bottom:10px; }
+.card.run { border-left-color:#3ddc84; }
+.card.done { border-left-color:#4a90d9; }
+.card.fail { border-left-color:#e5534b; }
+.card.stale { border-left-color:#d9a441; }
+.head { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; }
+.badge { font-size:12px; }
+.agent { font-weight:700; }
+.meta { color:#8a8ba0; font-size:11px; margin-left:auto; }
+code { color:#7f8296; }
+details { margin-top:8px; }
+summary { cursor:pointer; font-size:12px; color:#9aa0c0; }
+ul.tools { list-style:none; margin:8px 0 0; padding:0; font-size:12px; }
+ul.tools li { padding:3px 0; border-bottom:1px solid #23263200; display:flex; gap:8px; }
+ul.tools .t { color:#6f7288; }
+ul.tools .d { color:#9aa0c0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
+  font-size:12px; line-height:1.6; white-space:pre-wrap; word-break:break-word;
+  max-height:260px; overflow:auto; }
+.empty { color:#8a8ba0; }
+.cnt { margin-top:6px; font-size:12px; color:#6f7288; }
+
+.hero { display:flex; align-items:center; gap:18px; background:#1a1c26;
+  border:1px solid #2a2d3d; border-radius:14px; padding:14px 18px; margin-bottom:18px; }
+.hero .talk { flex:1; }
+.hero .talk .line1 { font-size:17px; font-weight:700; margin-bottom:4px; }
+.hero .talk .line2 { font-size:13px; color:#9aa0c0; line-height:1.6; }
+.mascot { flex:none; overflow:visible; }
+.mascot .shadow { fill:#000; opacity:.28; }
+.mascot .hair-back, .mascot .hair { fill:#d8d2ea; }
+.mascot .face { fill:#fdeee4; }
+.mascot .dress { fill:#7d8fd6; }
+.mascot .arm rect { fill:#fdeee4; }
+.mascot .wings path { fill:#bcd8f5; opacity:.55; }
+.mascot .eye { fill:#7b5fc4; }
+.mascot .glint { fill:#fff; }
+.mascot .cheek { fill:#f7b5bd; opacity:.75; }
+.mascot .mouth { fill:none; stroke:#c78c8c; stroke-width:2; stroke-linecap:round; }
+.mascot .flower circle { fill:#f2f2f8; }
+.mascot .flower .flower-c { fill:#f2c14e; }
+.mascot .eyes-happy path, .mascot .eyes-sad path {
+  fill:none; stroke:#7b5fc4; stroke-width:2.4; stroke-linecap:round; }
+.mascot .sparks circle { fill:#8fe3c2; }
+.mascot .zzz text { fill:#8a8ba0; font-size:13px; font-weight:700; }
+.mascot .sweat path { fill:#8fc7f5; }
+
+/* 既定は全部隠す */
+.mascot .eyes-happy, .mascot .eyes-sad, .mascot .sparks, .mascot .zzz, .mascot .sweat { display:none; }
+
+/* --- 稼働中：ふわふわ浮いて羽ばたく --- */
+.st-work .mascot .body { animation: float 1.6s ease-in-out infinite; transform-origin:70px 120px; }
+.st-work .mascot .wings { animation: flap .28s ease-in-out infinite alternate; transform-origin:70px 82px; }
+.st-work .mascot .arm-r { animation: wave .7s ease-in-out infinite alternate; transform-origin:92px 96px; }
+.st-work .mascot .eyes { animation: blink 3.4s infinite; transform-origin:70px 60px; }
+.st-work .mascot .sparks { display:block; animation: twinkle 1.4s ease-in-out infinite; }
+.st-work .mascot .shadow { animation: shrink 1.6s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+@keyframes flap  { from{transform:scaleX(1) scaleY(1)} to{transform:scaleX(.72) scaleY(1.12)} }
+@keyframes wave  { from{transform:rotate(0deg)} to{transform:rotate(-38deg)} }
+@keyframes blink { 0%,92%,100%{transform:scaleY(1)} 96%{transform:scaleY(.1)} }
+@keyframes twinkle { 0%,100%{opacity:.25; transform:translateY(0)} 50%{opacity:1; transform:translateY(-4px)} }
+@keyframes shrink { 0%,100%{rx:30; opacity:.28} 50%{rx:24; opacity:.18} }
+
+/* --- 完了：にこにこ呼吸 --- */
+.st-done .mascot .eyes { display:none; }
+.st-done .mascot .eyes-happy { display:block; }
+.st-done .mascot .body { animation: breathe 3s ease-in-out infinite; transform-origin:70px 128px; }
+@keyframes breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.028)} }
+
+/* --- 失敗：しょんぼり＋汗 --- */
+.st-fail .mascot .eyes { display:none; }
+.st-fail .mascot .eyes-sad { display:block; }
+.st-fail .mascot .sweat { display:block; animation: drip 1.8s ease-in infinite; }
+.st-fail .mascot .mouth { d:path("M66 73 Q70 69 74 73"); }
+.st-fail .mascot .body { animation: shiver 2.6s ease-in-out infinite; transform-origin:70px 128px; }
+@keyframes drip { 0%{opacity:0; transform:translateY(-6px)} 30%{opacity:1} 100%{opacity:0; transform:translateY(10px)} }
+@keyframes shiver { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-2deg)} 75%{transform:rotate(2deg)} }
+
+/* --- 待機：寝てる --- */
+.st-idle .mascot { opacity:.85; }
+.st-idle .mascot .eyes { display:none; }
+.st-idle .mascot .eyes-happy { display:block; }
+.st-idle .mascot .zzz { display:block; animation: zfloat 2.6s ease-in-out infinite; }
+.st-idle .mascot .body { animation: breathe 4.5s ease-in-out infinite; transform-origin:70px 128px; }
+@keyframes zfloat { 0%{opacity:0; transform:translate(0,4px)} 40%{opacity:1} 100%{opacity:0; transform:translate(6px,-10px)} }
+
+@media (prefers-reduced-motion: reduce) { .mascot * { animation:none !important; } }
+@media (max-width:520px) { .hero { flex-direction:column; text-align:center; } }
+
+</style></head><body>
+<h1>🤖 AIスタッフ稼働状況</h1>
+<div class="now">最終更新 2026-07-24 00:11:03（60秒ごとに自動リロード）</div>
+<div class="hero st-idle">
+<svg class="mascot" viewBox="0 0 140 150" width="150" height="160" aria-hidden="true">
+  <ellipse class="shadow" cx="70" cy="140" rx="30" ry="6"/>
+  <g class="body">
+    <!-- 羽 -->
+    <g class="wings">
+      <path d="M42 74 C18 58 12 82 26 92 C34 98 42 90 42 82 Z"/>
+      <path d="M98 74 C122 58 128 82 114 92 C106 98 98 90 98 82 Z"/>
+    </g>
+    <!-- 髪(後ろ) -->
+    <path class="hair-back" d="M70 16 C40 16 30 40 32 66 C33 82 38 92 42 96 L98 96 C102 92 107 82 108 66 C110 40 100 16 70 16 Z"/>
+    <!-- 体 -->
+    <path class="dress" d="M70 88 C56 88 46 104 44 122 C56 128 84 128 96 122 C94 104 84 88 70 88 Z"/>
+    <!-- 腕 -->
+    <g class="arm arm-l"><rect x="44" y="94" width="8" height="20" rx="4"/></g>
+    <g class="arm arm-r"><rect x="88" y="94" width="8" height="20" rx="4"/></g>
+    <!-- 顔 -->
+    <ellipse class="face" cx="70" cy="58" rx="30" ry="29"/>
+    <!-- 前髪 -->
+    <path class="hair" d="M40 56 C40 30 52 20 70 20 C88 20 100 30 100 56 C96 42 88 36 78 40 C72 30 58 32 52 42 C46 44 42 50 40 56 Z"/>
+    <!-- 花飾り -->
+    <g class="flower">
+      <circle cx="97" cy="36" r="4.5"/><circle cx="104" cy="31" r="3.5"/><circle cx="104" cy="41" r="3.5"/>
+      <circle class="flower-c" cx="100" cy="36" r="2"/>
+    </g>
+    <!-- 目 -->
+    <g class="eyes">
+      <ellipse class="eye" cx="59" cy="60" rx="4.6" ry="5.6"/>
+      <ellipse class="eye" cx="81" cy="60" rx="4.6" ry="5.6"/>
+      <circle class="glint" cx="60.6" cy="58" r="1.7"/>
+      <circle class="glint" cx="82.6" cy="58" r="1.7"/>
+    </g>
+    <!-- 閉じ目(完了時) -->
+    <g class="eyes-happy">
+      <path d="M54 61 Q59 55 64 61"/><path d="M76 61 Q81 55 86 61"/>
+    </g>
+    <!-- 困り目(失敗時) -->
+    <g class="eyes-sad">
+      <path d="M54 56 L64 61"/><path d="M86 56 L76 61"/>
+    </g>
+    <!-- ほっぺ -->
+    <ellipse class="cheek" cx="52" cy="68" rx="4.5" ry="3"/>
+    <ellipse class="cheek" cx="88" cy="68" rx="4.5" ry="3"/>
+    <!-- 口 -->
+    <path class="mouth" d="M66 70 Q70 74 74 70"/>
+  </g>
+  <!-- 稼働中エフェクト -->
+  <g class="sparks">
+    <circle cx="24" cy="46" r="2.6"/><circle cx="118" cy="54" r="2"/><circle cx="30" cy="112" r="2.2"/>
+  </g>
+  <!-- 寝てるzzz -->
+  <g class="zzz"><text x="102" y="34">z</text><text x="112" y="22">z</text></g>
+  <!-- 汗 -->
+  <g class="sweat"><path d="M100 50 q4 7 0 10 q-4 -3 0 -10 Z"/></g>
+</svg>
+  <div class="talk"><div class="line1">いまは待機中…</div><div class="line2">次の出番までおやすみ中</div></div>
+</div>
+<div class="stats">
+  <div class="stat"><b>0</b><span>稼働中</span></div>
+  <div class="stat"><b>0</b><span>今日 完了</span></div>
+  <div class="stat"><b>0</b><span>今日 失敗</span></div>
+  <div class="stat"><b>4</b><span>総実行数</span></div>
+</div>
+
+    <div class="card done">
+      <div class="head">
+        <span class="badge">✅ 完了</span>
+        <span class="agent">openchat-analyst</span>
+        <span class="meta">2026-07-23T23:57:48 / 289秒</span>
+      </div>
+      <div class="cnt">ツール 8回</div>
+      
+    </div>
+
+    <div class="card done">
+      <div class="head">
+        <span class="badge">✅ 完了</span>
+        <span class="agent">hint-decoder</span>
+        <span class="meta">2026-07-23T23:11:39 / 332秒</span>
+      </div>
+      <div class="cnt">ツール 8回</div>
+      
+    </div>
+
+    <div class="card done">
+      <div class="head">
+        <span class="badge">✅ 完了</span>
+        <span class="agent">hint-decoder</span>
+        <span class="meta">2026-07-23T23:06:13 / 67秒</span>
+      </div>
+      <div class="cnt">ツール 2回</div>
+      
+    </div>
+
+    <div class="card fail">
+      <div class="head">
+        <span class="badge">❌ 失敗</span>
+        <span class="agent">hint-decoder</span>
+        <span class="meta">2026-07-23T23:05:52 / 0秒</span>
+      </div>
+      
+      
+    </div>
+</body></html>
