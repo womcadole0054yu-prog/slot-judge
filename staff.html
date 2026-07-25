@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="60">
+<meta http-equiv="refresh" content="10">
 <title>AIスタッフ稼働状況</title>
 <style>
 :root { color-scheme: dark; }
@@ -103,7 +103,7 @@ pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
 
 </style></head><body>
 <h1>🤖 AIスタッフ稼働状況</h1>
-<div class="now">最終更新 2026-07-25 17:09:06（60秒ごとに自動リロード）</div>
+<div class="now">最終更新 2026-07-25 17:23:49（10秒ごとに自動リロード）</div>
 <div class="hero st-done" data-start=""><svg class="mascot" viewBox="0 0 220 260" width="150" height="172" aria-hidden="true">
   <defs>
     <linearGradient id="b-shell" x1="0.2" y1="0" x2="0.8" y2="1">
@@ -440,6 +440,45 @@ pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
     var sc = document.querySelector('b.live-active');
     if(sc){ var n = (parseInt(sc.textContent,10)||0) - staleCards; sc.textContent = n>0?n:0; }
   }
+})();
+
+/* 10秒ごとの自動リロードでも、スクロール位置と開いた詳細(details)を保つ。
+   details の識別は「エージェント名＋実行メタ」なので、新しい実行が積まれても取り違えない。 */
+(function(){
+  var KEY = 'aistaff_view';
+  function keyOf(d){
+    var c = d.closest('.card');
+    if(!c) return '';
+    var a = c.querySelector('.agent'), m = c.querySelector('.meta');
+    return (a ? a.textContent : '') + '|' + (m ? m.textContent : '');
+  }
+  try {
+    var s = JSON.parse(sessionStorage.getItem(KEY) || '{}');
+    if (s.open && s.open.length) {
+      document.querySelectorAll('details').forEach(function(d){
+        if (s.open.indexOf(keyOf(d)) >= 0) d.open = true;
+      });
+    }
+    if (s.y) window.scrollTo(0, s.y);
+  } catch(e) {}
+  var timer = null;
+  function save(){
+    try {
+      var open = [];
+      document.querySelectorAll('details').forEach(function(d){
+        if (d.open) open.push(keyOf(d));
+      });
+      sessionStorage.setItem(KEY, JSON.stringify({ y: window.scrollY, open: open }));
+    } catch(e) {}
+  }
+  function saveSoon(){
+    if (timer) return;
+    timer = setTimeout(function(){ timer = null; save(); }, 400);
+  }
+  window.addEventListener('scroll', saveSoon, {passive:true});
+  document.addEventListener('toggle', save, true);
+  window.addEventListener('pagehide', save);
+  window.addEventListener('beforeunload', save);
 })();
 </script>
 </body></html>
