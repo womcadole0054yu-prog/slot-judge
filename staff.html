@@ -55,6 +55,11 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
 .w-id { font-size:11px; color:#6f7288; margin-top:2px; }
 .w-role { font-size:12px; color:#9aa0c0; margin:6px 0 7px; line-height:1.5; }
 .w-time { font-size:11px; color:#8a8ba0; }
+.w-rate { font-size:11px; color:#8a8ba0; margin-top:6px;
+  display:flex; align-items:center; gap:7px; }
+.w-bar { flex:1; height:4px; border-radius:3px; background:#2a2d3d; overflow:hidden; }
+.w-bar i { display:block; height:100%; background:#4a90d9; }
+.who.fail .w-bar i, .who.stale .w-bar i { background:#d9a441; }
 .w-note { font-size:11px; color:#d9a441; margin-top:5px; }
 .who.fail .w-note { color:#e5534b; }
 
@@ -123,7 +128,7 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
 
 </style></head><body>
 <h1>🤖 AIスタッフ稼働状況</h1>
-<div class="now">最終更新 2026-07-29 19:17:01（10秒ごとに自動リロード）</div>
+<div class="now">最終更新 2026-07-29 20:42:36（10秒ごとに自動リロード）</div>
 <div class="hero st-done" data-start=""><svg class="mascot" viewBox="0 0 220 260" width="150" height="172" aria-hidden="true">
   <defs>
     <linearGradient id="b-shell" x1="0.2" y1="0" x2="0.8" y2="1">
@@ -269,49 +274,49 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">openchat-analyst</div>
       <div class="w-role">オプチャを読んで当日の実戦報告</div>
-      <div class="w-time">最終 07-28 23:50（19時間27分前）・451秒</div><div class="w-time">次回 今日 23:50</div>
+      <div class="w-time">最終 07-28 23:50（<span class="ago" data-ts="2026-07-28T23:50:01">20時間52分前</span>）・451秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-29T23:50:00">今日 23:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 6/6</div>
     </div>
     <div class="who idle" data-start="2026-07-29T00:10:01">
       <div class="w-head"><span class="w-name">📊 ベアトリス</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">daidata-analyst</div>
       <div class="w-role">台データから狙い台を台番つきで</div>
-      <div class="w-time">最終 07-29 00:10（19時間7分前）・421秒</div><div class="w-time">次回 明日 00:10</div>
+      <div class="w-time">最終 07-29 00:10（<span class="ago" data-ts="2026-07-29T00:10:01">20時間32分前</span>）・421秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:10:00">明日 00:10</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 6/6</div>
     </div>
     <div class="who idle" data-start="2026-07-29T00:30:01">
       <div class="w-head"><span class="w-name">🔮 エキドナ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">hint-decoder</div>
       <div class="w-role">匂わせ×オプチャ×台データで最終見解</div>
-      <div class="w-time">最終 07-29 00:30（18時間47分前）・533秒</div><div class="w-time">次回 明日 00:30</div>
+      <div class="w-time">最終 07-29 00:30（<span class="ago" data-ts="2026-07-29T00:30:01">20時間12分前</span>）・533秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:30:00">明日 00:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:93%"></i></span>7日 13/14</div>
     </div>
     <div class="who idle" data-start="2026-07-29T00:50:01">
       <div class="w-head"><span class="w-name">🎭 ロズワール</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">daily-picks</div>
       <div class="w-role">翌日の狙いを機種＋台番で自動生成</div>
-      <div class="w-time">最終 07-29 00:50（18時間27分前）</div><div class="w-time">次回 明日 00:50</div>
+      <div class="w-time">最終 07-29 00:50（<span class="ago" data-ts="2026-07-29T00:50:01">19時間52分前</span>）</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:50:00">明日 00:50</span></div>
     </div>
     <div class="who idle" data-start="2026-07-29T01:00:01">
       <div class="w-head"><span class="w-name">🍃 クルシュ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">coverage-check</div>
       <div class="w-role">3情報源のズレ・取得漏れを点検</div>
-      <div class="w-time">最終 07-29 01:00（18時間17分前）</div><div class="w-time">次回 明日 01:00</div>
+      <div class="w-time">最終 07-29 01:00（<span class="ago" data-ts="2026-07-29T01:00:01">19時間42分前</span>）</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T01:00:00">明日 01:00</span></div>
     </div>
     <div class="who idle" data-start="2026-07-29T10:00:01">
       <div class="w-head"><span class="w-name">💙 レム</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">koto-comment-reply</div>
       <div class="w-role">ことちゃんねるのコメント返信</div>
-      <div class="w-time">最終 07-29 10:00（9時間17分前）・141秒</div><div class="w-time">次回 今日 23:15</div>
+      <div class="w-time">最終 07-29 10:00（<span class="ago" data-ts="2026-07-29T10:00:01">10時間42分前</span>）・141秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-29T23:15:00">今日 23:15</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 7/7</div>
     </div>
     <div class="who idle" data-start="2026-07-26T23:00:00">
       <div class="w-head"><span class="w-name">🌸 ラム</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">koto-optimizer</div>
       <div class="w-role">動画の伸びを見て台本の型を改善</div>
-      <div class="w-time">最終 07-26 23:00（2日前）・349秒</div><div class="w-time">次回 08-02 23:00</div>
+      <div class="w-time">最終 07-26 23:00（<span class="ago" data-ts="2026-07-26T23:00:00">2日前</span>）・349秒</div><div class="w-time">次回 <span class="when" data-ts="2026-08-02T23:00:00">08-02 23:00</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 2/2</div>
     </div></div>
 <h2 class="sec">実行履歴</h2>
 
@@ -710,6 +715,32 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
       var b = w.querySelector('.w-badge'); if(b) b.textContent = '⚠️ 不明';
     }
   });
+  /* 「〜前」「次回」は生成時刻で焼き込まれるので、閲覧側の時計で計算し直す。
+     スタッフ欄は日次タスクが走るまで再生成されない＝スナップショットが半日古いこともあるため。 */
+  function ago(m){
+    if(m < 0) return 'これから';
+    if(m < 1) return 'たった今';
+    if(m < 60) return Math.floor(m) + '分前';
+    if(m < 1440) return Math.floor(m/60) + '時間' + Math.floor(m%60) + '分前';
+    return Math.floor(m/1440) + '日前';
+  }
+  document.querySelectorAll('.ago[data-ts]').forEach(function(e){
+    var m = mins(e.getAttribute('data-ts'));
+    if(m < 1e9) e.textContent = ago(m);
+  });
+  var d0 = new Date(); d0.setHours(0,0,0,0);
+  document.querySelectorAll('.when[data-ts]').forEach(function(e){
+    var t = Date.parse(e.getAttribute('data-ts').replace(' ','T'));
+    if(isNaN(t)) return;
+    var dt = new Date(t);
+    var hm = ('0'+dt.getHours()).slice(-2) + ':' + ('0'+dt.getMinutes()).slice(-2);
+    var d = Math.floor((dt - d0) / 86400000);
+    e.textContent = d < 0 ? ('経過 ' + hm)
+                  : d === 0 ? ('今日 ' + hm)
+                  : d === 1 ? ('明日 ' + hm)
+                  : (('0'+(dt.getMonth()+1)).slice(-2) + '-' + ('0'+dt.getDate()).slice(-2) + ' ' + hm);
+  });
+
   var hero = document.querySelector('.hero[data-start]');
   if(hero && hero.classList.contains('st-work') &&
      mins(hero.getAttribute('data-start')) > STALE_MIN){
