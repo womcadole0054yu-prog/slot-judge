@@ -9,3 +9,24 @@ ghoul_navi.html
 ghoul_history.json
 build_ghoul_navi.py
 ghoul_report.py
+stores.py
+ghoul_history_oyama.json
+oyama*.html
+cj.txt
+oyama_data.html
+
+# 2026-07-23 追加ぶん。goraggio(台データオンライン)の利用規約により
+# 収集データも取得スクリプトも公開リポジトリには置かない(個人利用ローカルのみ)。
+ghoul_history_*.json
+ghoul_judge.py
+verify_theory.py
+list_models.py
+check_parse.py
+navi_server.py
+notify_fail.py
+build_bat.py
+run_ghoul_*.bat
+run_ghoul_nightly*.txt
+start_navi_server.bat
+ptown.html
+pt_slot.html
