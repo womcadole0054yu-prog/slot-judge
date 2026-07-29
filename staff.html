@@ -39,6 +39,24 @@ pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
   max-height:260px; overflow:auto; }
 .empty { color:#8a8ba0; }
 .cnt { margin-top:6px; font-size:12px; color:#6f7288; }
+h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
+  letter-spacing:.06em; }
+.roster { display:grid; gap:10px; margin-bottom:24px;
+  grid-template-columns:repeat(auto-fill, minmax(232px,1fr)); }
+.who { background:#1a1c26; border:1px solid #2a2d3d; border-left:4px solid #444;
+  border-radius:10px; padding:11px 13px; }
+.who.run { border-left-color:#3ddc84; }
+.who.idle { border-left-color:#4a90d9; }
+.who.fail { border-left-color:#e5534b; }
+.who.stale { border-left-color:#d9a441; }
+.w-head { display:flex; align-items:baseline; gap:8px; }
+.w-name { font-weight:700; font-size:15px; }
+.w-badge { font-size:11px; margin-left:auto; white-space:nowrap; }
+.w-id { font-size:11px; color:#6f7288; margin-top:2px; }
+.w-role { font-size:12px; color:#9aa0c0; margin:6px 0 7px; line-height:1.5; }
+.w-time { font-size:11px; color:#8a8ba0; }
+.w-note { font-size:11px; color:#d9a441; margin-top:5px; }
+.who.fail .w-note { color:#e5534b; }
 
 .hero { display:flex; align-items:center; gap:18px; background:#1a1c26;
   border:1px solid #2a2d3d; border-radius:14px; padding:14px 18px; margin-bottom:18px; }
@@ -105,7 +123,7 @@ pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
 
 </style></head><body>
 <h1>🤖 AIスタッフ稼働状況</h1>
-<div class="now">最終更新 2026-07-29 10:02:23（10秒ごとに自動リロード）</div>
+<div class="now">最終更新 2026-07-29 19:17:01（10秒ごとに自動リロード）</div>
 <div class="hero st-done" data-start=""><svg class="mascot" viewBox="0 0 220 260" width="150" height="172" aria-hidden="true">
   <defs>
     <linearGradient id="b-shell" x1="0.2" y1="0" x2="0.8" y2="1">
@@ -236,14 +254,66 @@ pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
     <circle cx="22" cy="168" r="2.2"/>
   </g>
 </svg>
-  <div class="talk"><div class="line1">本日 3 件 完了</div><div class="line2">最終稼働 💙 レム（10:00）</div></div>
+  <div class="talk"><div class="line1">本日 3 件 完了</div><div class="line2">最終稼働 💙 レム（10:00）。次は 今日 23:15 に 💙 レム が起動するよ</div></div>
 </div>
 <div class="stats">
   <div class="stat"><b class="live-active">0</b><span>稼働中</span></div>
   <div class="stat"><b>3</b><span>今日 完了</span></div>
   <div class="stat"><b>0</b><span>今日 失敗</span></div>
+  <div class="stat"><b>0</b><span>要注意</span></div>
   <div class="stat"><b>37</b><span>総実行数</span></div>
 </div>
+<h2 class="sec">スタッフ</h2><div class="roster">
+    <div class="who idle" data-start="2026-07-28T23:50:01">
+      <div class="w-head"><span class="w-name">📣 オットー</span>
+        <span class="w-badge">✅ 正常</span></div>
+      <div class="w-id">openchat-analyst</div>
+      <div class="w-role">オプチャを読んで当日の実戦報告</div>
+      <div class="w-time">最終 07-28 23:50（19時間27分前）・451秒</div><div class="w-time">次回 今日 23:50</div>
+    </div>
+    <div class="who idle" data-start="2026-07-29T00:10:01">
+      <div class="w-head"><span class="w-name">📊 ベアトリス</span>
+        <span class="w-badge">✅ 正常</span></div>
+      <div class="w-id">daidata-analyst</div>
+      <div class="w-role">台データから狙い台を台番つきで</div>
+      <div class="w-time">最終 07-29 00:10（19時間7分前）・421秒</div><div class="w-time">次回 明日 00:10</div>
+    </div>
+    <div class="who idle" data-start="2026-07-29T00:30:01">
+      <div class="w-head"><span class="w-name">🔮 エキドナ</span>
+        <span class="w-badge">✅ 正常</span></div>
+      <div class="w-id">hint-decoder</div>
+      <div class="w-role">匂わせ×オプチャ×台データで最終見解</div>
+      <div class="w-time">最終 07-29 00:30（18時間47分前）・533秒</div><div class="w-time">次回 明日 00:30</div>
+    </div>
+    <div class="who idle" data-start="2026-07-29T00:50:01">
+      <div class="w-head"><span class="w-name">🎭 ロズワール</span>
+        <span class="w-badge">✅ 正常</span></div>
+      <div class="w-id">daily-picks</div>
+      <div class="w-role">翌日の狙いを機種＋台番で自動生成</div>
+      <div class="w-time">最終 07-29 00:50（18時間27分前）</div><div class="w-time">次回 明日 00:50</div>
+    </div>
+    <div class="who idle" data-start="2026-07-29T01:00:01">
+      <div class="w-head"><span class="w-name">🍃 クルシュ</span>
+        <span class="w-badge">✅ 正常</span></div>
+      <div class="w-id">coverage-check</div>
+      <div class="w-role">3情報源のズレ・取得漏れを点検</div>
+      <div class="w-time">最終 07-29 01:00（18時間17分前）</div><div class="w-time">次回 明日 01:00</div>
+    </div>
+    <div class="who idle" data-start="2026-07-29T10:00:01">
+      <div class="w-head"><span class="w-name">💙 レム</span>
+        <span class="w-badge">✅ 正常</span></div>
+      <div class="w-id">koto-comment-reply</div>
+      <div class="w-role">ことちゃんねるのコメント返信</div>
+      <div class="w-time">最終 07-29 10:00（9時間17分前）・141秒</div><div class="w-time">次回 今日 23:15</div>
+    </div>
+    <div class="who idle" data-start="2026-07-26T23:00:00">
+      <div class="w-head"><span class="w-name">🌸 ラム</span>
+        <span class="w-badge">✅ 正常</span></div>
+      <div class="w-id">koto-optimizer</div>
+      <div class="w-role">動画の伸びを見て台本の型を改善</div>
+      <div class="w-time">最終 07-26 23:00（2日前）・349秒</div><div class="w-time">次回 08-02 23:00</div>
+    </div></div>
+<h2 class="sec">実行履歴</h2>
 
     <div class="card done" data-start="2026-07-29T10:00:02">
       <div class="head">
@@ -631,6 +701,13 @@ pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
       c.classList.remove('run'); c.classList.add('stale');
       var b = c.querySelector('.badge'); if(b) b.textContent = '⚠️ 不明';
       staleCards++;
+    }
+  });
+  /* スタッフ欄も同じく、古いスナップショットの「稼働中」を落とす */
+  document.querySelectorAll('.who.run[data-start]').forEach(function(w){
+    if(mins(w.getAttribute('data-start')) > STALE_MIN){
+      w.classList.remove('run'); w.classList.add('stale');
+      var b = w.querySelector('.w-badge'); if(b) b.textContent = '⚠️ 不明';
     }
   });
   var hero = document.querySelector('.hero[data-start]');
