@@ -67,9 +67,10 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
 .w-jump { display:inline-block; margin-top:7px; font-size:11px; color:#6f8fc0;
   text-decoration:none; }
 .w-jump:hover { text-decoration:underline; }
-/* ジャンプ先を見失わないように、対象の実行を光らせる */
+/* ジャンプ先を見失わないように、対象の実行を光らせる。
+   .jumped は10秒リロードでハッシュが消えても残るようJSが付け直す */
 .card { scroll-margin-top:14px; }
-.card:target { border-color:#4a90d9; box-shadow:0 0 0 2px rgba(74,144,217,.35); }
+.card:target, .card.jumped { border-color:#4a90d9; box-shadow:0 0 0 2px rgba(74,144,217,.35); }
 
 .hero { display:flex; align-items:center; gap:18px; background:#1a1c26;
   border:1px solid #2a2d3d; border-radius:14px; padding:14px 18px; margin-bottom:18px; }
@@ -136,7 +137,7 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
 
 </style></head><body>
 <h1>🤖 AIスタッフ稼働状況</h1>
-<div class="now">最終更新 2026-07-29 21:14:07（10秒ごとに自動リロード）</div>
+<div class="now">最終更新 2026-07-29 21:16:08（10秒ごとに自動リロード）</div>
 <div class="hero st-done" data-start=""><svg class="mascot" viewBox="0 0 220 260" width="150" height="172" aria-hidden="true">
   <defs>
     <linearGradient id="b-shell" x1="0.2" y1="0" x2="0.8" y2="1">
@@ -282,42 +283,42 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">openchat-analyst</div>
       <div class="w-role">オプチャを読んで当日の実戦報告</div>
-      <div class="w-time">最終 07-28 23:50（<span class="ago" data-ts="2026-07-28T23:50:01">21時間24分前</span>）・451秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-29T23:50:00">今日 23:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 6/6</div><a class="w-jump" href="#run-3802996d">直近の実行を見る →</a>
+      <div class="w-time">最終 07-28 23:50（<span class="ago" data-ts="2026-07-28T23:50:01">21時間26分前</span>）・451秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-29T23:50:00">今日 23:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 6/6</div><a class="w-jump" href="#run-3802996d">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-07-29T00:10:01">
       <div class="w-head"><span class="w-name">📊 ベアトリス</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">daidata-analyst</div>
       <div class="w-role">台データから狙い台を台番つきで</div>
-      <div class="w-time">最終 07-29 00:10（<span class="ago" data-ts="2026-07-29T00:10:01">21時間4分前</span>）・421秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:10:00">明日 00:10</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 6/6</div><a class="w-jump" href="#run-4de4d312">直近の実行を見る →</a>
+      <div class="w-time">最終 07-29 00:10（<span class="ago" data-ts="2026-07-29T00:10:01">21時間6分前</span>）・421秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:10:00">明日 00:10</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 6/6</div><a class="w-jump" href="#run-4de4d312">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-07-29T00:30:01">
       <div class="w-head"><span class="w-name">🔮 エキドナ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">hint-decoder</div>
       <div class="w-role">匂わせ×オプチャ×台データで最終見解</div>
-      <div class="w-time">最終 07-29 00:30（<span class="ago" data-ts="2026-07-29T00:30:01">20時間44分前</span>）・533秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:30:00">明日 00:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:93%"></i></span>7日 13/14</div><a class="w-jump" href="#run-7fe7ac18">直近の実行を見る →</a>
+      <div class="w-time">最終 07-29 00:30（<span class="ago" data-ts="2026-07-29T00:30:01">20時間46分前</span>）・533秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:30:00">明日 00:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:93%"></i></span>7日 13/14</div><a class="w-jump" href="#run-7fe7ac18">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-07-29T00:50:01">
       <div class="w-head"><span class="w-name">🎭 ロズワール</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">daily-picks</div>
       <div class="w-role">翌日の狙いを機種＋台番で自動生成</div>
-      <div class="w-time">最終 07-29 00:50（<span class="ago" data-ts="2026-07-29T00:50:01">20時間24分前</span>）</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:50:00">明日 00:50</span></div>
+      <div class="w-time">最終 07-29 00:50（<span class="ago" data-ts="2026-07-29T00:50:01">20時間26分前</span>）</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T00:50:00">明日 00:50</span></div>
     </div>
     <div class="who idle" data-start="2026-07-29T01:00:01">
       <div class="w-head"><span class="w-name">🍃 クルシュ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">coverage-check</div>
       <div class="w-role">3情報源のズレ・取得漏れを点検</div>
-      <div class="w-time">最終 07-29 01:00（<span class="ago" data-ts="2026-07-29T01:00:01">20時間14分前</span>）</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T01:00:00">明日 01:00</span></div>
+      <div class="w-time">最終 07-29 01:00（<span class="ago" data-ts="2026-07-29T01:00:01">20時間16分前</span>）</div><div class="w-time">次回 <span class="when" data-ts="2026-07-30T01:00:00">明日 01:00</span></div>
     </div>
     <div class="who idle" data-start="2026-07-29T10:00:01">
       <div class="w-head"><span class="w-name">💙 レム</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">koto-comment-reply</div>
       <div class="w-role">ことちゃんねるのコメント返信</div>
-      <div class="w-time">最終 07-29 10:00（<span class="ago" data-ts="2026-07-29T10:00:01">11時間14分前</span>）・141秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-29T23:15:00">今日 23:15</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 7/7</div><a class="w-jump" href="#run-e330a256">直近の実行を見る →</a>
+      <div class="w-time">最終 07-29 10:00（<span class="ago" data-ts="2026-07-29T10:00:01">11時間16分前</span>）・141秒</div><div class="w-time">次回 <span class="when" data-ts="2026-07-29T23:15:00">今日 23:15</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>7日 7/7</div><a class="w-jump" href="#run-e330a256">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-07-26T23:00:00">
       <div class="w-head"><span class="w-name">🌸 ラム</span>
@@ -778,7 +779,25 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
       });
     }
     if (s.y) window.scrollTo(0, s.y);
+    /* リロードでハッシュが落ちるので、ジャンプ先の印はこちらで付け直す */
+    var h = location.hash || s.hash;
+    if (h) {
+      var el = document.querySelector(h.replace(/[^#\w-]/g, ''));
+      if (el) el.classList.add('jumped');
+    }
   } catch(e) {}
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest && ev.target.closest('.w-jump');
+    if (!a) return;
+    try {
+      var s = JSON.parse(sessionStorage.getItem(KEY) || '{}');
+      s.hash = a.getAttribute('href');
+      sessionStorage.setItem(KEY, JSON.stringify(s));
+    } catch(e) {}
+    document.querySelectorAll('.card.jumped').forEach(function(c){ c.classList.remove('jumped'); });
+    var el = document.querySelector(a.getAttribute('href'));
+    if (el) el.classList.add('jumped');
+  });
   var timer = null;
   function save(){
     try {
@@ -786,7 +805,9 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
       document.querySelectorAll('details').forEach(function(d){
         if (d.open) open.push(keyOf(d));
       });
-      sessionStorage.setItem(KEY, JSON.stringify({ y: window.scrollY, open: open }));
+      var el = document.querySelector('.card.jumped');
+      sessionStorage.setItem(KEY, JSON.stringify(
+        { y: window.scrollY, open: open, hash: el ? ('#' + el.id) : '' }));
     } catch(e) {}
   }
   function saveSoon(){
