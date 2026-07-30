@@ -16,7 +16,7 @@ DB_PATH = Path(r"C:\Users\womca\slot-judge\char_birthdays.json")
 def notify(msg: str):
     sys.path.insert(0, r'C:\Users\womca')
     from notify_discord import notify as _notify
-    _notify(msg)
+    _notify(msg, category='SLOT')
 
 def main():
     tomorrow = datetime.now() + timedelta(days=1)
