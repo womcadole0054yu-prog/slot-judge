@@ -3,7 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#17181a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="SLOT JUDGE">
 <title>SLOT JUDGE</title>
+<script>
+/* PWA: サービスワーカー登録（対応環境のみ・失敗しても無視） */
+try {
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  }
+} catch (e) {}
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
 
