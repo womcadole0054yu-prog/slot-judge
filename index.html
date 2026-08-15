@@ -313,6 +313,16 @@ try {
   .stat-big .sb-label { font-size: 0.65em; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-top: 4px; }
 
   /* 実戦メモ */
+  .field-entry-row { display: flex; gap: 8px; margin-bottom: 14px; }
+  .field-entry-btn {
+    flex: 1; padding: 13px 10px;
+    background: var(--dark3); color: var(--gray);
+    border: 1px solid var(--gray2);
+    font-size: 0.82em; letter-spacing: 1px; font-family: inherit;
+    cursor: pointer;
+  }
+  .field-entry-btn.primary { background: var(--red); color: #fff; border-color: var(--red); font-weight: 700; }
+  .field-entry-btn:active { opacity: .75; }
   .field-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
   .field-row label { flex: 0 0 96px; font-size: 0.78em; letter-spacing: 1px; color: var(--gray); }
   .field-row input, .field-row select {
@@ -340,13 +350,13 @@ try {
 
 <div id="header">
   <h1>SLOT <span>JUDGE</span></h1>
-  <div class="sub-btn-row" style="justify-content:center;margin-top:10px">
-    <button class="sub-btn red" onclick="openFieldLog()">実戦メモ</button>
-    <button class="sub-btn" onclick="showFieldList()">メモ一覧</button>
-  </div>
 </div>
 
 <div class="container">
+  <div class="field-entry-row">
+    <button class="field-entry-btn primary" onclick="openFieldLog()">＋ 実戦メモ</button>
+    <button class="field-entry-btn" onclick="showFieldList()">メモ一覧</button>
+  </div>
   <select class="machine-select" id="machine-select" onchange="onMachineChange()">
     <option value="">— SELECT MACHINE —</option>
     <option value="tokyoghoul">L 東京喰種</option>
