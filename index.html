@@ -311,6 +311,22 @@ try {
   }
   .stat-big .sb-val { font-size: 2em; font-weight: 700; color: var(--red); }
   .stat-big .sb-label { font-size: 0.65em; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-top: 4px; }
+
+  /* 実戦メモ */
+  .field-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .field-row label { flex: 0 0 96px; font-size: 0.78em; letter-spacing: 1px; color: var(--gray); }
+  .field-row input, .field-row select {
+    flex: 1; min-width: 0; background: var(--dark3); color: inherit;
+    border: 1px solid var(--gray2); padding: 11px 10px; font-size: 16px; font-family: inherit;
+  }
+  .fl-events-wrap { background: var(--dark3); padding: 12px; margin: 16px 0; }
+  .fl-label { font-size: 0.72em; letter-spacing: 1px; color: var(--gray); margin-bottom: 10px; }
+  .fl-ev { display: block; padding: 9px 4px; font-size: 0.84em; border-bottom: 1px solid rgba(255,255,255,.06); cursor: pointer; }
+  .fl-ev input { margin-right: 9px; transform: scale(1.3); }
+  .fl-none { font-size: 0.8em; color: var(--gray); }
+  .fl-verdict { margin-top: 12px; padding: 11px; text-align: center; font-size: 0.9em; letter-spacing: 1px; background: rgba(255,255,255,.04); color: var(--gray); }
+  .fl-verdict.ok { color: var(--red); font-weight: 700; background: rgba(255,0,0,.08); }
+  .fl-verdict.bad { color: #ffb300; }
 </style>
 </head>
 <body>
@@ -324,6 +340,10 @@ try {
 
 <div id="header">
   <h1>SLOT <span>JUDGE</span></h1>
+  <div class="sub-btn-row" style="justify-content:center;margin-top:10px">
+    <button class="sub-btn red" onclick="openFieldLog()">実戦メモ</button>
+    <button class="sub-btn" onclick="showFieldList()">メモ一覧</button>
+  </div>
 </div>
 
 <div class="container">
@@ -368,6 +388,28 @@ try {
       <button class="modal-close" onclick="closeModal('stats-modal')">CLOSE</button>
     </div>
     <div id="stats-content"></div>
+  </div>
+</div>
+
+<!-- 実戦メモ入力 -->
+<div id="field-modal" class="modal">
+  <div class="modal-inner">
+    <div class="modal-header">
+      <h2>実戦メモ</h2>
+      <button class="modal-close" onclick="closeModal('field-modal')">CLOSE</button>
+    </div>
+    <div id="field-form"></div>
+  </div>
+</div>
+
+<!-- 実戦メモ一覧 -->
+<div id="field-list-modal" class="modal">
+  <div class="modal-inner">
+    <div class="modal-header">
+      <h2>実戦メモ一覧</h2>
+      <button class="modal-close" onclick="closeModal('field-list-modal')">CLOSE</button>
+    </div>
+    <div id="field-list"></div>
   </div>
 </div>
 
@@ -1060,6 +1102,141 @@ async function showStats() {
 
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
 function toggleHelp(id) { const el = document.getElementById(id); if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none'; }
+
+// ========== 実戦メモ (2026-08-15) ==========
+// 店で打った台と確定示唆をその場で残す。PC側 slot-judge/import_reports.py が取り込んで
+// confirmed_settings.json に反映し、CZ(初当り)判定の精度検証に使う。
+// 示唆を選ぶと設定範囲が自動で決まるので、入力漏れ・判断ミスが起きにくい。
+const FIELD_STORES = [
+  ['kitaayase', 'ピーアーク北綾瀬'],
+  ['oyama', 'YASUDA5 大山'],
+  ['higashiikebukuro', 'YASUDA7×9 東池袋'],
+  ['other', 'その他'],
+];
+
+function businessDateStr() {
+  const d = new Date();
+  if (d.getHours() < 5) d.setDate(d.getDate() - 1);   // 深夜は前日の営業ぶん
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function openFieldLog() {
+  const machineOpts = Object.keys(MACHINES)
+    .map(k => `<option value="${k}"${k === 'tokyoghoul' ? ' selected' : ''}>${MACHINES[k].name}</option>`).join('');
+  const storeOpts = FIELD_STORES.map(([v, n]) => `<option value="${v}">${n}</option>`).join('');
+  document.getElementById('field-form').innerHTML = `
+    <div class="field-row"><label>日付</label><input type="date" id="fl-date" value="${businessDateStr()}"></div>
+    <div class="field-row"><label>店</label><select id="fl-store">${storeOpts}</select></div>
+    <div class="field-row"><label>機種</label><select id="fl-machine" onchange="renderFieldEvents()">${machineOpts}</select></div>
+    <div class="field-row"><label>台番</label><input type="number" id="fl-unit" inputmode="numeric" placeholder="例 36"></div>
+    <div class="field-row"><label>自分で打った?</label>
+      <select id="fl-played"><option value="1">打った</option><option value="0">見ただけ/人の台</option></select></div>
+    <div class="field-row"><label>差枚(任意)</label><input type="number" id="fl-samai" inputmode="numeric" placeholder="+3000 / -1500"></div>
+    <div class="fl-events-wrap">
+      <div class="fl-label">出た示唆（複数選択可・選ぶと設定範囲が自動で決まる）</div>
+      <div id="fl-events"></div>
+      <div class="fl-verdict" id="fl-verdict">示唆を選ぶとここに設定範囲が出る</div>
+    </div>
+    <div class="field-row"><label>メモ</label><input type="text" id="fl-memo" placeholder="やめた時刻・挙動など"></div>
+    <button class="save-session-btn" onclick="saveFieldLog()">この内容で記録する</button>
+    <div class="saved-msg" id="fl-msg"></div>`;
+  renderFieldEvents();
+  document.getElementById('field-modal').style.display = 'block';
+}
+
+function renderFieldEvents() {
+  const m = MACHINES[document.getElementById('fl-machine').value];
+  const ev = (m && m.EVENTS) || {};
+  const keys = Object.keys(ev);
+  document.getElementById('fl-events').innerHTML = keys.length
+    ? keys.map((k, i) => `<label class="fl-ev"><input type="checkbox" value="${k}" onchange="updateFieldVerdict()"> ${k}</label>`).join('')
+    : '<div class="fl-none">この機種は示唆データが未登録</div>';
+  updateFieldVerdict();
+}
+
+function fieldSelectedEvents() {
+  return [...document.querySelectorAll('#fl-events input:checked')].map(el => el.value);
+}
+
+// 選んだ示唆の設定候補の積集合をとる = 一番強い示唆が自動で効く
+function fieldSettingRange() {
+  const m = MACHINES[document.getElementById('fl-machine').value];
+  const ev = (m && m.EVENTS) || {};
+  const chosen = fieldSelectedEvents();
+  if (!chosen.length) return null;
+  let cand = [1,2,3,4,5,6];
+  for (const c of chosen) {
+    const allow = ev[c] || [];
+    cand = cand.filter(s => allow.includes(s));
+  }
+  return cand;
+}
+
+function updateFieldVerdict() {
+  const cand = fieldSettingRange();
+  const el = document.getElementById('fl-verdict');
+  if (!cand) { el.textContent = '示唆を選ぶとここに設定範囲が出る'; el.className = 'fl-verdict'; return; }
+  if (!cand.length) { el.textContent = '⚠ 示唆の組み合わせが矛盾している(選び直して)'; el.className = 'fl-verdict bad'; return; }
+  el.textContent = cand.length === 1 ? `設定${cand[0]} 確定` : `設定 ${cand.join('/')} のいずれか`;
+  el.className = 'fl-verdict ok';
+}
+
+async function saveFieldLog() {
+  const msg = document.getElementById('fl-msg');
+  const unit = parseInt(document.getElementById('fl-unit').value, 10);
+  if (!unit) { msg.textContent = '台番を入れて'; return; }
+  const cand = fieldSettingRange();
+  const samaiRaw = document.getElementById('fl-samai').value;
+  const rec = {
+    date: document.getElementById('fl-date').value || businessDateStr(),
+    store: document.getElementById('fl-store').value,
+    machine: document.getElementById('fl-machine').value,
+    machineName: MACHINES[document.getElementById('fl-machine').value].name,
+    unit,
+    played: document.getElementById('fl-played').value === '1',
+    samai: samaiRaw === '' ? null : parseInt(samaiRaw, 10),
+    events: fieldSelectedEvents(),
+    settingCandidates: cand || null,
+    settingExact: (cand && cand.length === 1) ? cand[0] : null,
+    settingMin: (cand && cand.length) ? Math.min(...cand) : null,
+    memo: document.getElementById('fl-memo').value.trim(),
+    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    imported: false,
+  };
+  try {
+    msg.textContent = '保存中…';
+    await db.collection('field_reports').add(rec);
+    msg.textContent = '■ 記録した（PC側で自動的に取り込まれる）';
+    setTimeout(() => closeModal('field-modal'), 1200);
+  } catch (e) {
+    msg.textContent = 'ERROR: ' + e.message;
+  }
+}
+
+async function showFieldList() {
+  const el = document.getElementById('field-list');
+  document.getElementById('field-list-modal').style.display = 'block';
+  el.innerHTML = '<div class="no-history">LOADING...</div>';
+  try {
+    const snap = await db.collection('field_reports').orderBy('createdAt', 'desc').limit(50).get();
+    const rows = [];
+    snap.forEach(d => rows.push(d.data()));
+    if (!rows.length) { el.innerHTML = '<div class="no-history">まだ記録がない</div>'; return; }
+    el.innerHTML = rows.map(r => {
+      const st = (FIELD_STORES.find(s => s[0] === r.store) || [null, r.store])[1];
+      const setting = r.settingExact ? `設定${r.settingExact}確定`
+        : (r.settingMin ? `設定${r.settingMin}以上` : '示唆なし');
+      const samai = (r.samai === null || r.samai === undefined) ? '' : ` / ${r.samai > 0 ? '+' : ''}${r.samai}枚`;
+      return `<div class="stat-card"><div class="sc-name">${r.date} ${st} ${r.unit}番<br>
+        <span style="font-size:.8em;color:var(--gray)">${r.machineName || ''} ${r.played ? '(自分で実戦)' : '(見ただけ)'}${samai}</span>
+        ${r.memo ? `<br><span style="font-size:.8em;color:var(--gray)">${r.memo}</span>` : ''}</div>
+        <div class="sc-nums"><div class="sc-avg" style="font-size:.9em">${setting}</div>
+        <div class="sc-count">${(r.events || []).length}件の示唆</div></div></div>`;
+    }).join('');
+  } catch (e) {
+    el.innerHTML = `<div class="no-history">ERROR: ${e.message}</div>`;
+  }
+}
 </script>
 </body>
 </html>

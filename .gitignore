@@ -30,3 +30,13 @@ run_ghoul_nightly*.txt
 start_navi_server.bat
 ptown.html
 pt_slot.html
+
+# 2026-08-15 追加ぶん。同じくgoraggio由来のデータ・取得ロジックを含むので公開しない。
+# ※index.html の「実戦メモ」UI は手入力の記録だけを扱うので公開してよい。
+confirm.py
+confirmed_settings.json
+import_reports.py
+realtime_navi.py
+verify_freq_cz.py
+going_today.flag
+*.bak_*
