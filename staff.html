@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%233ddc84%27%2F%3E%3Crect%20x%3D%275%27%20y%3D%276.5%27%20width%3D%2722%27%20height%3D%2719%27%20rx%3D%276.5%27%20fill%3D%27%23ffffff%27%2F%3E%3Ccircle%20cx%3D%2711.8%27%20cy%3D%2716%27%20r%3D%273.2%27%20fill%3D%27%2312131a%27%2F%3E%3Ccircle%20cx%3D%2720.2%27%20cy%3D%2716%27%20r%3D%273.2%27%20fill%3D%27%2312131a%27%2F%3E%3C%2Fsvg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%234a90d9%27%2F%3E%3Crect%20x%3D%275%27%20y%3D%276.5%27%20width%3D%2722%27%20height%3D%2719%27%20rx%3D%276.5%27%20fill%3D%27%23ffffff%27%2F%3E%3Ccircle%20cx%3D%2711.8%27%20cy%3D%2716%27%20r%3D%273.2%27%20fill%3D%27%2312131a%27%2F%3E%3Ccircle%20cx%3D%2720.2%27%20cy%3D%2716%27%20r%3D%273.2%27%20fill%3D%27%2312131a%27%2F%3E%3C%2Fsvg%3E">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <meta name="theme-color" content="#241f31">
@@ -10,219 +10,272 @@
 <meta name="apple-mobile-web-app-title" content="AIスタッフ">
 <title>AIスタッフ稼働状況</title>
 <script>
-/* PWA: サービスワーカー登録（127.0.0.1配信時のみ有効。file://等では黙ってスキップ） */
+/* PWA: サービスワーカー登録（https か、このPCから配信したときだけ。file://等では黙ってスキップ） */
 try {
-  if ("serviceWorker" in navigator && (location.protocol === "https:" || ["localhost", "127.0.0.1"].includes(location.hostname))) {
+  if ("serviceWorker" in navigator && (location.protocol === "https:")) {
     navigator.serviceWorker.register("sw.js").catch(function () {});
   }
 } catch (e) {}
 </script>
 <style>
-:root { color-scheme: dark; }
-* { box-sizing: border-box; }
-body { margin:0; padding:20px; background:#12131a; color:#e6e6ef;
-  font-family:"Segoe UI","Yu Gothic UI",sans-serif; }
-h1 { font-size:19px; margin:0 0 4px; }
-.now { color:#8a8ba0; font-size:12px; margin-bottom:16px; }
-.stats { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
-.stat { background:#1c1e29; border:1px solid #2a2d3d; border-radius:10px;
-  padding:10px 16px; min-width:96px; }
-.stat b { display:block; font-size:22px; }
-.stat span { font-size:11px; color:#8a8ba0; }
-.card { background:#1a1c26; border:1px solid #2a2d3d; border-left:4px solid #444;
-  border-radius:10px; padding:12px 14px; margin-bottom:10px; }
-.card.run { border-left-color:#3ddc84; }
-.card.done { border-left-color:#4a90d9; }
-.card.fail { border-left-color:#e5534b; }
-.card.stale { border-left-color:#d9a441; }
-.head { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; }
-.badge { font-size:12px; }
-.agent { font-weight:700; }
-.meta { color:#8a8ba0; font-size:11px; margin-left:auto; }
-code { color:#7f8296; }
-details { margin-top:8px; }
-summary { cursor:pointer; font-size:12px; color:#9aa0c0; }
-ul.tools { list-style:none; margin:8px 0 0; padding:0; font-size:12px; }
-ul.tools li { padding:3px 0; border-bottom:1px solid #23263200; display:flex; gap:8px; }
-ul.tools .t { color:#6f7288; }
-ul.tools .d { color:#9aa0c0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-pre.sum { background:#14161f; border-radius:8px; padding:10px; margin:8px 0 0;
-  font-size:12px; line-height:1.6; white-space:pre-wrap; word-break:break-word;
-  max-height:260px; overflow:auto; }
-.empty { color:#8a8ba0; }
-.cnt { margin-top:6px; font-size:12px; color:#6f7288; }
-.director { background:#1d1a2b; border:1px solid #3a3257; border-left:4px solid #b69ae0;
-  border-radius:10px; padding:11px 13px; margin-bottom:24px; }
-.director.run { border-left-color:#3ddc84; }
-.orders { margin-top:8px; }
-.o-row { display:flex; flex-wrap:wrap; gap:3px 10px; align-items:baseline; padding:6px 0;
-  border-top:1px solid #2a2d3d; font-size:12px; }
-.o-time { color:#8a8ba0; font-variant-numeric:tabular-nums; }
-.o-who { font-weight:700; }
-.o-badge { font-size:11px; }
-.o-sec { color:#6f7288; font-size:11px; margin-left:auto; }
-.o-head { flex-basis:100%; color:#9aa0c0; line-height:1.5; word-break:break-word; }
-.o-pb { margin-left:8px; font-size:10px; color:#b69ae0; border:1px solid #3a3257;
-  border-radius:6px; padding:0 5px; white-space:nowrap; }
-.o-jump { margin-left:8px; font-size:11px; color:#7fb0ff; white-space:nowrap; }
-.by { font-size:11px; color:#b69ae0; }
-h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
-  letter-spacing:.06em; }
-.roster { display:grid; gap:10px; margin-bottom:24px;
-  grid-template-columns:repeat(auto-fill, minmax(232px,1fr)); }
-.who { background:#1a1c26; border:1px solid #2a2d3d; border-left:4px solid #444;
-  border-radius:10px; padding:11px 13px; }
-.who.run { border-left-color:#3ddc84; }
-.who.idle { border-left-color:#4a90d9; }
-.who.fail { border-left-color:#e5534b; }
-.who.stale { border-left-color:#d9a441; }
-.w-head { display:flex; align-items:baseline; gap:8px; }
-.w-name { font-weight:700; font-size:15px; }
-.w-badge { font-size:11px; margin-left:auto; white-space:nowrap; }
-.w-id { font-size:11px; color:#6f7288; margin-top:2px; }
-.w-role { font-size:12px; color:#9aa0c0; margin:6px 0 7px; line-height:1.5; }
-.w-time { font-size:11px; color:#8a8ba0; }
-.w-rate { font-size:11px; color:#8a8ba0; margin-top:6px;
-  display:flex; align-items:center; gap:7px; }
-.w-bar { flex:1; height:4px; border-radius:3px; background:#2a2d3d; overflow:hidden; }
-.w-bar i { display:block; height:100%; background:#4a90d9; }
-.who.fail .w-bar i, .who.stale .w-bar i { background:#d9a441; }
-/* 稼働中の進捗。成功率バー(.w-rate)と見分けがつくよう緑＋うっすら流れる縞にする */
-.w-prog { display:flex; align-items:center; flex-wrap:wrap; gap:7px;
-  font-size:11px; color:#8a8ba0; margin:0 0 7px; }
-.w-prog .w-bar { flex:1 1 100%; height:6px; }
-.w-bar.run i { background:#3ddc84;
-  background-image:linear-gradient(90deg,rgba(255,255,255,.22) 25%,transparent 25%,
-    transparent 50%,rgba(255,255,255,.22) 50%,rgba(255,255,255,.22) 75%,transparent 75%);
-  background-size:14px 14px; animation:flow 1s linear infinite; transition:width .6s ease; }
-@keyframes flow { from { background-position:0 0; } to { background-position:14px 0; } }
-.w-pct { color:#3ddc84; font-weight:700; font-size:12px; }
-.w-tools { color:#9aa0c0; }
-.w-eta { color:#6f7288; }
-.w-note { font-size:11px; color:#d9a441; margin-top:5px; }
-.who.fail .w-note { color:#e5534b; }
-.w-resolved { font-size:11px; color:#6fbf8a; margin-top:4px; }
-.w-said { font-size:11px; color:#c8cbe0; background:#14161f; border-radius:6px;
-  padding:6px 8px; margin-bottom:7px; line-height:1.5; }
-.w-jump { display:inline-block; margin-top:7px; font-size:11px; color:#6f8fc0;
-  text-decoration:none; }
-.w-jump:hover { text-decoration:underline; }
-.w-run { display:block; width:100%; margin-top:9px; padding:7px; font-size:12px;
-  font-family:inherit; color:#cfe3ff; background:#243449; border:1px solid #35507a;
-  border-radius:7px; cursor:pointer; }
-.w-run:hover { background:#2c4160; }
-.w-run:disabled { opacity:.5; cursor:default; }
-.w-run.stop { color:#ffd7d4; background:#492a28; border-color:#7a3a35; }
-.w-run.stop:hover { background:#5c3431; }
-.w-run.armed { background:#7a2f28; border-color:#c0554c; color:#fff; font-weight:700; }
-.card.stop { border-left-color:#8a8ba0; }
-.who.stop { border-left-color:#8a8ba0; }
-.w-run .cost { margin-left:7px; padding:1px 6px; font-size:10px; border-radius:9px;
-  background:#3a2f46; color:#d9b3ff; border:1px solid #55406b; }
-#toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%);
-  background:#1f2433; border:1px solid #3a4058; border-radius:10px; padding:11px 16px;
-  font-size:13px; color:#e6e6ef; box-shadow:0 6px 24px rgba(0,0,0,.45);
-  max-width:90vw; opacity:0; pointer-events:none; transition:opacity .2s; z-index:9; }
-#toast.on { opacity:1; }
-#toast.ng { border-color:#e5534b; }
-/* ジャンプ先を見失わないように、対象の実行を光らせる。
-   .jumped は10秒リロードでハッシュが消えても残るようJSが付け直す */
-.card { scroll-margin-top:14px; }
-.card:target, .card.jumped { border-color:#4a90d9; box-shadow:0 0 0 2px rgba(74,144,217,.35); }
-.officelink { font-size:13px; font-weight:normal; text-decoration:none; padding:3px 10px;
-  border:1px solid #4a90d9; border-radius:6px; color:#4a90d9; vertical-align:middle; margin-left:8px; }
 
-.sysgrid { display:grid; gap:10px; margin-bottom:24px; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); }
-.sysc { background:#1a1c26; border:1px solid #2a2d3d; border-left:4px solid #3ddc84; border-radius:10px;
-  padding:11px 13px; min-width:0; }
-.sysc.warn { border-left-color:#d9a441; }
-.sysc.bad { border-left-color:#e5534b; }
-h2.sec small { font-weight:normal; color:#6f7288; font-size:11px; }
-ul.syl { list-style:none; margin:6px 0 0; padding:0; font-size:12px; }
-ul.syl li { display:flex; gap:8px; align-items:baseline; padding:3px 0; border-top:1px solid #23263a; min-width:0; }
-ul.syl .sn { flex:none; color:#c8cbe0; }
-ul.syl .sv { color:#9aa0c0; min-width:0; overflow-wrap:anywhere; }
-ul.syl.bad .sn { color:#e5534b; }
-ul.syl.warn .sn { color:#d9a441; }
-.dot { flex:none; width:8px; height:8px; border-radius:50%; background:#3ddc84; align-self:center; }
-.dot.warn { background:#d9a441; }
-.dot.bad { background:#e5534b; }
-.scnt { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12px; color:#9aa0c0; margin-top:6px; }
-.scnt b { color:#e6e6ef; font-size:15px; }
-.scnt .c-bad b { color:#e5534b; }
-.scnt .c-warn b { color:#d9a441; }
-.ssub { font-size:11px; color:#6f7288; margin-top:9px; }
-table.stab { width:100%; border-collapse:collapse; font-size:11px; margin-top:6px; table-layout:fixed; }
-table.stab th, table.stab td { text-align:left; padding:3px 4px; border-top:1px solid #23263a; vertical-align:top;
+* { box-sizing:border-box; }
+body { margin:0; background:#14161f; color:#22242e; font-family:"MS Gothic","Osaka-Mono",monospace;
+  -webkit-font-smoothing:none; }
+.floor { background:
+    linear-gradient(90deg, rgba(0,0,0,.055) 1px, transparent 1px) 0 0 / 30px 30px,
+    linear-gradient(rgba(0,0,0,.055) 1px, transparent 1px) 0 0 / 30px 30px, #e8dcc0;
+  padding:22px 14px 40px; min-height:calc(100vh - 36px); }
+.wrapc { max-width:1180px; margin:0 auto; }
+.room { background:#dfe9f8; border:3px solid #22242e; padding:16px 12px 12px; margin:14px 0 24px; position:relative; min-width:0; }
+.room > h2.sec { position:relative; display:table; max-width:100%; margin:-31px 0 8px; background:#2a2f52; color:#f2e9c8;
+  font-size:12px; font-weight:normal; line-height:1.25; padding:3px 8px; border:2px solid #22242e; letter-spacing:0; }
+.room > h2.sec small { color:#c8cbe0; font-size:10px; margin-left:6px; }
+.lamp { display:inline-block; width:8px; height:8px; background:#8fd89a; border:1px solid rgba(0,0,0,.35); flex:none;
+  vertical-align:middle; }
+.lp-ok .lamp { background:#3ddc84; }
+.lp-run .lamp { background:#3ddc84; animation:blink .8s steps(2) infinite; }
+.lp-warn .lamp { background:#f0b429; }
+.lp-bad .lamp { background:#e5534b; animation:blink .6s steps(2) infinite; }
+.lp-off .lamp { background:#9a9aa8; }
+@keyframes blink { 50% { opacity:.25; } }
+#toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:#2a2f52; color:#f2e9c8;
+  border:2px solid #11132a; padding:8px 14px; font-size:12px; max-width:90vw; opacity:0; pointer-events:none;
+  transition:opacity .2s; z-index:9; }
+#toast.on { opacity:1; }
+#toast.ng { background:#8a2a2a; }
+@media (max-width:480px) { .floor { padding:18px 8px 30px; } .room { padding:14px 8px 8px; } }
+
+
+header.nav { background:#2a2f52; color:#f2e9c8; padding:6px 10px; display:flex; align-items:center; gap:10px;
+  border-bottom:3px solid #11132a; position:sticky; top:0; z-index:5;
+  font-family:"MS Gothic","Osaka-Mono",monospace; }
+header.nav .logo { width:14px; height:14px; flex:none; background:#f2c14e; box-shadow:4px 0 0 #f2c14e, 0 4px 0 #c89a2e; }
+header.nav h1 { font-size:15px; margin:0; letter-spacing:2px; font-weight:bold; white-space:nowrap; color:#f2e9c8; }
+header.nav .tabs { display:flex; gap:4px; flex:1; align-items:center; min-width:0; }
+header.nav .tabs > a, header.nav .tabs > span { font-size:11px; line-height:1.3; padding:3px 10px; text-decoration:none;
+  color:#cdd2e8; background:#1c2040; border:2px solid #11132a; white-space:nowrap; }
+header.nav .tabs > .on { background:#f2c14e; color:#3a2a00; }
+/* Claude使用量の小バッジ。押すと詳細ページのグラフへ */
+header.nav .tabs > a.usage { margin-left:8px; background:transparent; border:1px solid #5a5a6e; }
+header.nav .tabs > a.usage.warn { border-color:#fab219; }
+header.nav .tabs > a.usage.crit { border-color:#d03b3b; }
+header.nav .clock { font-size:14px; white-space:nowrap; }
+header.nav .next { background:#f2c14e; color:#3a2a00; font-size:11px; padding:2px 6px; white-space:nowrap; }
+header.nav .h-short { display:none; }
+/* スマホ幅：使用量だけヘッダーの2段目（細い帯）。1段目はロゴ・タブ・時計（5hのリセット時刻・Fable%は消さない） */
+@media (max-width:640px) {
+  header.nav { gap:4px 6px; padding:5px 8px 4px; flex-wrap:wrap; }
+  header.nav .tabs { display:contents; }
+  header.nav .tabs > a, header.nav .tabs > span { padding:3px 6px; }
+  header.nav .tabs > a.usage { order:9; flex:1 0 100%; margin:0; padding:1px 4px; text-align:center;
+    overflow:hidden; text-overflow:ellipsis; }
+  header.nav .clock { font-size:12px; margin-left:auto; }
+  header.nav h1 { font-size:13px; letter-spacing:1px; }
+  header.nav .next { display:none; }
+}
+@media (max-width:480px) {
+  header.nav .h-long { display:none; }
+  header.nav .h-short { display:inline; }
+  header.nav .tabs > a, header.nav .tabs > span { padding:3px 4px; }
+}
+/* 4タブ＋時計で390pxに収めるため、狭い画面ではロゴの文字を出さない */
+@media (max-width:430px) { header.nav h1 { display:none; } }
+
+
+.r-dir { background:#ece4fb; }
+.r-staff { background:#d9f0e2; }
+.r-hist { background:#f1e8d4; }
+.stats { display:flex; gap:8px; flex-wrap:wrap; }
+.stat { background:#fffbe8; border:3px solid #22242e; padding:4px 10px 5px; min-width:84px; box-shadow:3px 3px 0 rgba(0,0,0,.15); }
+.stat b { display:block; font-size:20px; line-height:1.2; }
+.stat span { font-size:10px; color:#4a4a56; }
+.sysline { display:flex; flex-wrap:wrap; gap:6px 10px; margin-top:10px; font-size:11px; }
+.sysline a, .sysline .sl { display:inline-flex; align-items:center; gap:5px; background:#fdfdf8; border:2px solid #6b6b78;
+  padding:2px 8px; color:#22242e; text-decoration:none; max-width:100%; }
+.sysline a:hover { background:#fff3c4; }
+/* 名札（名前）とランプ。状態は左のランプの色 */
+.w-head { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.w-head::before { content:''; width:8px; height:8px; background:#7ab8e0; border:1px solid rgba(0,0,0,.35); flex:none; }
+.run > .w-head::before { background:#3ddc84; animation:blink .8s steps(2) infinite; }
+.fail > .w-head::before { background:#e5534b; animation:blink .6s steps(2) infinite; }
+.stale > .w-head::before { background:#f0b429; }
+.stop > .w-head::before { background:#9a9aa8; }
+.w-name { font-weight:bold; font-size:13px; background:#fffbe8; border:2px solid #22242e; padding:1px 5px; min-width:0;
   overflow-wrap:anywhere; }
-table.stab th:nth-child(1) { width:34%; }
-table.stab .t-fail td { color:#e5534b; }
-table.stab .t-miss td { color:#d9a441; }
-table.stab .t-off td { color:#6f7288; }
+.w-badge { font-size:11px; margin-left:auto; white-space:nowrap; }
+.w-id { font-size:10px; color:#6b6b78; margin-top:3px; }
+.w-role { font-size:11px; color:#4a4a56; margin:4px 0 6px; line-height:1.5; }
+/* 吹き出し（オフィスの席の上と同じ形） */
+.w-said { position:relative; font-size:11px; color:#22242e; background:#fff; border:2px solid #22242e; padding:4px 6px;
+  margin:4px 0 12px; line-height:1.5; overflow-wrap:anywhere; }
+.w-said::after { content:''; position:absolute; left:14px; bottom:-8px; width:8px; height:6px; background:#fff;
+  border:2px solid #22242e; border-top:none; }
+.director { min-width:0; }
+.orders { margin-top:8px; background:#fdfdf8; border:3px solid #6b6b78; padding:2px 8px; }
+.o-row { display:flex; flex-wrap:wrap; gap:2px 8px; align-items:baseline; padding:5px 0; border-top:1px dashed #c9bfa0; font-size:11px; }
+.o-row:first-child { border-top:none; }
+.o-row::before { content:''; width:7px; height:7px; background:#9a9aa8; border:1px solid rgba(0,0,0,.35); flex:none; align-self:center; }
+.o-row.run::before { background:#3ddc84; animation:blink .8s steps(2) infinite; }
+.o-row.done::before { background:#7ab8e0; }
+.o-row.fail::before { background:#e5534b; }
+.o-row.stale::before { background:#f0b429; }
+.o-time { color:#6b6b78; font-variant-numeric:tabular-nums; }
+.o-who { font-weight:bold; }
+.o-badge { font-size:10px; }
+.o-sec { color:#6b6b78; font-size:10px; margin-left:auto; }
+.o-head { flex-basis:100%; color:#4a4a56; line-height:1.5; overflow-wrap:anywhere; }
+.o-pb { margin-left:6px; font-size:10px; color:#5a3a8a; border:1px solid #9b7fd0; background:#f3edff; padding:0 4px; white-space:nowrap; }
+.o-jump { margin-left:6px; font-size:11px; color:#2f5fa8; white-space:nowrap; }
+/* スタッフのカード */
+.roster { display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(232px,1fr)); }
+.who { background:#fffbe8; border:3px solid #22242e; padding:8px 10px 10px; box-shadow:3px 3px 0 rgba(0,0,0,.15); min-width:0; }
+.who.run { background:#effbef; }
+.who.fail { background:#fff0ee; }
+.who.stale { background:#fff6de; }
+.who.stop { background:#efeff3; }
+.w-time { font-size:11px; color:#4a4a56; }
+.w-rate { font-size:11px; color:#4a4a56; margin-top:5px; display:flex; align-items:center; gap:6px; }
+.w-bar { flex:1; height:7px; background:#e0d6bc; border:1px solid #22242e; overflow:hidden; }
+.w-bar i { display:block; height:100%; background:#7ab8e0; }
+.who.fail .w-bar i, .who.stale .w-bar i { background:#f0b429; }
+/* 稼働中の進捗。成功率バーと見分けがつくよう緑＋流れる縞 */
+.w-prog { display:flex; align-items:center; flex-wrap:wrap; gap:6px; font-size:11px; color:#4a4a56; margin:0 0 7px; }
+.w-prog .w-bar { flex:1 1 100%; height:9px; }
+.w-bar.run i { background:#7ee08a;
+  background-image:linear-gradient(90deg,rgba(255,255,255,.35) 25%,transparent 25%,
+    transparent 50%,rgba(255,255,255,.35) 50%,rgba(255,255,255,.35) 75%,transparent 75%);
+  background-size:12px 12px; animation:flow 1s steps(6) infinite; transition:width .6s steps(4); }
+@keyframes flow { from { background-position:0 0; } to { background-position:12px 0; } }
+.w-pct { color:#1f7a3e; font-weight:bold; font-size:12px; }
+.w-tools { color:#4a4a56; }
+.w-eta { color:#6b6b78; }
+.w-note { font-size:11px; color:#9a6a00; margin-top:5px; overflow-wrap:anywhere; }
+.who.fail .w-note { color:#b8322b; }
+.w-resolved { font-size:11px; color:#2a7a4a; margin-top:4px; overflow-wrap:anywhere; }
+.w-jump { display:inline-block; margin-top:6px; font-size:11px; color:#2f5fa8; }
+.w-run { display:block; width:100%; margin-top:9px; padding:5px; font-size:12px; font-family:inherit; color:#22242e;
+  background:#9ef0a8; border:2px solid #22242e; box-shadow:2px 2px 0 #22242e; cursor:pointer; }
+.w-run:hover { background:#b8f6c0; }
+.w-run:active { transform:translate(2px,2px); box-shadow:none; }
+.w-run:disabled { opacity:.5; cursor:default; }
+.w-run.stop { background:#ff9a9a; }
+.w-run.stop:hover { background:#ffb4b4; }
+.w-run.armed { background:#e5534b; color:#fff; font-weight:bold; }
+.w-run .cost { margin-left:6px; padding:0 4px; font-size:10px; color:#5a3a8a; background:#f3edff; border:1px solid #9b7fd0; }
+/* 実行履歴 */
+.card { background:#fdfbf0; border:3px solid #22242e; border-left-width:8px; padding:7px 10px; margin-bottom:8px;
+  scroll-margin-top:60px; min-width:0; }
+.card.run { border-left-color:#3ddc84; }
+.card.done { border-left-color:#7ab8e0; }
+.card.fail { border-left-color:#e5534b; }
+.card.stale { border-left-color:#f0b429; }
+.card.stop { border-left-color:#9a9aa8; }
+.card:target, .card.jumped { box-shadow:0 0 0 3px #f2c14e; }
+.head { display:flex; gap:3px 10px; align-items:baseline; flex-wrap:wrap; font-size:12px; }
+.badge { font-size:11px; }
+.agent { font-weight:bold; overflow-wrap:anywhere; }
+.by { font-size:10px; color:#5a3a8a; border:1px solid #9b7fd0; background:#f3edff; padding:0 4px; }
+.meta { color:#6b6b78; font-size:10px; margin-left:auto; }
+details { margin-top:6px; }
+summary { cursor:pointer; font-size:11px; color:#4a4a56; }
+ul.tools { list-style:none; margin:6px 0 0; padding:0; font-size:11px; }
+ul.tools li { padding:2px 0; display:flex; gap:6px; min-width:0; border-bottom:1px dashed #e0d6bc; }
+ul.tools .t { color:#6b6b78; flex:none; }
+ul.tools b { flex:none; }
+ul.tools .d { color:#4a4a56; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
+pre.sum { background:#fff; border:2px solid #d8d2bc; padding:8px; margin:6px 0 0; font-size:11px; line-height:1.6;
+  white-space:pre-wrap; word-break:break-word; max-height:260px; overflow:auto; font-family:inherit; }
+.empty { color:#4a4a56; font-size:12px; }
+.cnt { margin-top:4px; font-size:11px; color:#6b6b78; }
+code { color:#4a4a56; }
+@media (max-width:480px) { .roster { grid-template-columns:minmax(0,1fr); } .uz-tiles { grid-template-columns:minmax(0,1fr); } }
 
 
 </style></head><body>
-<h1>🤖 AIスタッフ稼働状況 <a class="officelink" href="/" hidden>🏢 オフィスに戻る</a></h1>
-<div class="now">最終更新 2026-09-15 13:57:11（10秒ごとに自動リロード）</div>
+<header class="nav"><div class="logo"></div><h1><span class="h-long">AI STAFF</span><span class="h-short">AI</span></h1><nav class="tabs"><span class="on">稼働状況</span></nav><div class="clock" id="clock">14:13:05</div><div class="next" id="cd" data-reload="10">next 10s</div></header>
+<script>
+(function () {
+  var m = location.search.match(/[?&](t=[^&#]*)/), T = m ? m[1] : '';
+  /* ページ内リンク・画面遷移に t= を足す（既に付いていれば何もしない＝二重に付かない） */
+  window.withToken = function (u) {
+    if (!T || !u || /[?&]t=/.test(u)) return u;
+    var h = u.split('#');
+    return h[0] + (h[0].indexOf('?') >= 0 ? '&' : '?') + T + (h.length > 1 ? '#' + h.slice(1).join('#') : '');
+  };
+  function start() {
+    if (T) {
+      document.querySelectorAll('a[href^="/"]').forEach(function (a) { a.setAttribute('href', withToken(a.getAttribute('href'))); });
+      var mf = document.querySelector('link[rel="manifest"]');   /* PWAで追加したときも403にしない */
+      if (mf) mf.setAttribute('href', withToken(mf.getAttribute('href')));
+    }
+    var c = document.getElementById('clock'), cd = document.getElementById('cd');
+    var every = cd ? parseInt(cd.getAttribute('data-reload') || '0', 10) : 0, left = every;
+    function p2(n) { return ('0' + n).slice(-2); }
+    setInterval(function () {
+      var d = new Date();
+      if (c) c.textContent = p2(d.getHours()) + ':' + p2(d.getMinutes()) + ':' + p2(d.getSeconds());
+      if (every) { left = left <= 1 ? every : left - 1; cd.textContent = 'next ' + left + 's'; }
+    }, 1000);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+</script>
+<div class="floor"><div class="wrapc">
+<section class="room r-stats"><h2 class="sec">いまの様子<small>最終更新 2026-09-15 14:13:05（10秒ごとに自動リロード）</small></h2>
 <div class="stats">
-  <div class="stat"><b class="live-active">1</b><span>稼働中</span></div>
-  <div class="stat"><b>12</b><span>今日 完了</span></div>
+  <div class="stat"><b class="live-active">0</b><span>稼働中</span></div>
+  <div class="stat"><b>13</b><span>今日 完了</span></div>
   <div class="stat"><b>0</b><span>今日 失敗</span></div>
-  <div class="stat"><b>1</b><span>要注意</span></div>
+  <div class="stat"><b>0</b><span>要注意</span></div>
   <div class="stat"><b>474</b><span>総実行数</span></div>
 </div>
-<h2 class="sec">指示系統　🧑 ゆうし → 👑 エミリア（監督） → スタッフ</h2><div class="director run"><div class="w-head"><span class="w-name">👑 エミリア</span><span class="w-badge">📨 指示中・✍️ 作業中</span></div><div class="w-role">監督：仕事の切り出し・検証・報告　今日の指示 6件</div><div class="w-said">✍️ 作業中（最後の操作 13:57）</div><div class="orders"><div class="o-row run"><span class="o-time">09-15 13:57</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">🟢 稼働中</span><span class="o-sec"></span><div class="o-head"><a class="o-jump" href="#run-8369668e-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-15 13:53</span><span class="o-who">👑 エミリア → 🩺 フェリス</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">170秒</span><div class="o-head"><a class="o-jump" href="#run-ab989f7a-system-medic">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-15 13:39</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">806秒</span><div class="o-head"><a class="o-jump" href="#run-d95d17cb-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-15 00:36</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">456秒</span><div class="o-head"><a class="o-jump" href="#run-d83cd51a-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-15 00:15</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">380秒</span><div class="o-head"><a class="o-jump" href="#run-162c05d5-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-15 00:01</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">450秒</span><div class="o-head"><a class="o-jump" href="#run-603e1f66-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:46</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">808秒</span><div class="o-head"><a class="o-jump" href="#run-c7046d1f-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:39</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">362秒</span><div class="o-head"><a class="o-jump" href="#run-724e684c-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:06</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">151秒</span><div class="o-head"><a class="o-jump" href="#run-207c423e-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 22:57</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">169秒</span><div class="o-head"><a class="o-jump" href="#run-688151cf-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-14 16:46</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">479秒</span><div class="o-head"><a class="o-jump" href="#run-1d24f987-koto-analyst">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 17:39</span><span class="o-who">👑 エミリア → 📅 ペトラ</span><span class="o-badge">✅ 完了</span><span class="o-sec">53秒</span><div class="o-head"><a class="o-jump" href="#run-d93be595-avalink-pm">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-13 17:26</span><span class="o-who">👑 エミリア → 📅 ペトラ</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">73秒</span><div class="o-head"><a class="o-jump" href="#run-5729a388-avalink-pm">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:35</span><span class="o-who">👑 エミリア → 💼 ユリウス</span><span class="o-badge">✅ 完了</span><span class="o-sec">43秒</span><div class="o-head"><a class="o-jump" href="#run-e9ba68e2-avalink-staff">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:21</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">✅ 完了</span><span class="o-sec">45秒</span><div class="o-head"><a class="o-jump" href="#run-c17f406a-koto-analyst">報告 →</a></div></div></div></div>
-<h2 class="sec">機械室・スケジューラー　<small>取得 13:56:32</small></h2><div class="sysgrid"><div class="sysc ok"><div class="w-head"><span class="w-name">🗄 機械室</span><span class="w-badge">🟢 正常</span></div><ul class="syl"><li><i class="dot ok"></i><span class="sn">🎰 喰種ナビ配信</span><span class="sv">稼働中</span></li><li><i class="dot ok"></i><span class="sn">🎛 スタッフ操作ボタン</span><span class="sv">稼働中</span></li><li><i class="dot ok"></i><span class="sn">📨 会社LINE転送</span><span class="sv">稼働中</span></li><li><i class="dot ok"></i><span class="sn">🖥 PC</span><span class="sv">空き容量OK</span></li><li><i class="dot ok"></i><span class="sn">🧮 Claude使用量監視</span><span class="sv">取得OK</span></li></ul></div><div class="sysc bad"><div class="w-head"><span class="w-name">⏰ スケジューラー</span><span class="w-badge">🔴 異常</span></div><div class="scnt"><span>3時間以内 <b>7</b></span><span class="c-bad">失敗 <b>1</b></span><span class="c-warn">未実行 <b>0</b></span><span>無効 <b>9</b></span><span>全 <b>66</b></span></div><div class="ssub">これから3時間</div><ul class="syl"><li><span class="sn">14:00</span><span class="sv">CryptoMonitor</span></li><li><span class="sn">14:02</span><span class="sv">ClaudeUsageMonitor</span></li><li><span class="sn">15:00</span><span class="sv">KotoUpload_Daily</span></li><li><span class="sn">15:30</span><span class="sv">AutoSessionLog</span></li><li><span class="sn">15:30</span><span class="sv">IgPost_Daily</span></li><li><span class="sn">16:30</span><span class="sv">IgSurge_Daily</span></li><li><span class="sn">16:45</span><span class="sv">SystemHealthCheck</span></li></ul><div class="ssub">失敗</div><ul class="syl bad"><li><span class="sn">エラー(2)</span><span class="sv">MCVideo_EpisodeWeekly</span></li></ul></div></div>
+<div class="sysline"><span class="sl lp-ok"><i class="lamp"></i>🗄 機械室 🟢 正常</span><span class="sl lp-ok"><i class="lamp"></i>⏰ スケジューラー 失敗0・未実行0・3h以内6</span></div>
+</section>
+<section class="room r-dir"><h2 class="sec">指示系統　🧑 ゆうし → 👑 エミリア（監督） → スタッフ</h2><div class="director idle"><div class="w-head"><span class="w-name">👑 エミリア</span><span class="w-badge">👀 監督中</span></div><div class="w-role">監督：仕事の切り出し・検証・報告　今日の指示 6件</div><div class="orders"><div class="o-row done"><span class="o-time">09-15 13:57</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">954秒</span><div class="o-head"><a class="o-jump" href="#run-8369668e-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-15 13:53</span><span class="o-who">👑 エミリア → 🩺 フェリス</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">170秒</span><div class="o-head"><a class="o-jump" href="#run-ab989f7a-system-medic">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-15 13:39</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">806秒</span><div class="o-head"><a class="o-jump" href="#run-d95d17cb-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-15 00:36</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">456秒</span><div class="o-head"><a class="o-jump" href="#run-d83cd51a-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-15 00:15</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">380秒</span><div class="o-head"><a class="o-jump" href="#run-162c05d5-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-15 00:01</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">450秒</span><div class="o-head"><a class="o-jump" href="#run-603e1f66-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:46</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">808秒</span><div class="o-head"><a class="o-jump" href="#run-c7046d1f-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:39</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">362秒</span><div class="o-head"><a class="o-jump" href="#run-724e684c-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:06</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">151秒</span><div class="o-head"><a class="o-jump" href="#run-207c423e-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 22:57</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">169秒</span><div class="o-head"><a class="o-jump" href="#run-688151cf-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-14 16:46</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">479秒</span><div class="o-head"><a class="o-jump" href="#run-1d24f987-koto-analyst">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 17:39</span><span class="o-who">👑 エミリア → 📅 ペトラ</span><span class="o-badge">✅ 完了</span><span class="o-sec">53秒</span><div class="o-head"><a class="o-jump" href="#run-d93be595-avalink-pm">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-13 17:26</span><span class="o-who">👑 エミリア → 📅 ペトラ</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">73秒</span><div class="o-head"><a class="o-jump" href="#run-5729a388-avalink-pm">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:35</span><span class="o-who">👑 エミリア → 💼 ユリウス</span><span class="o-badge">✅ 完了</span><span class="o-sec">43秒</span><div class="o-head"><a class="o-jump" href="#run-e9ba68e2-avalink-staff">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:21</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">✅ 完了</span><span class="o-sec">45秒</span><div class="o-head"><a class="o-jump" href="#run-c17f406a-koto-analyst">報告 →</a></div></div></div></div></section>
 
-<h2 class="sec">スタッフ</h2><div class="roster">
-    <div class="who stale" data-start="2026-09-15T13:53:36">
-      <div class="w-head"><span class="w-name">🩺 フェリス</span>
-        <span class="w-badge">⚠️ 要対応あり</span></div>
-      <div class="w-id">system-medic</div>
-      <div class="w-role">障害の一次対応（原因特定・定型の復旧）</div>
-      <div class="w-time">最終 09-15 13:53（<span class="ago" data-ts="2026-09-15T13:53:36">3分前</span>）・170秒</div><div class="w-time">次回予定（朝の点検） <span class="when" data-ts="2026-09-16T08:05:00">明日 08:05</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 1/1</div><div class="w-note">要対応1件：MCVideo_EpisodeWeekly は `mc_bot/auto/gen_city.py` の EPISODES に第7話以降の区画を足さな…</div><a class="w-jump" href="#run-ab989f7a-system-medic">直近の実行を見る →</a>
-    </div>
+<section class="room r-staff"><h2 class="sec">スタッフ</h2><div class="roster">
     <div class="who idle" data-start="2026-09-14T23:50:01">
       <div class="w-head"><span class="w-name">📣 オットー</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">openchat-analyst</div>
       <div class="w-role">オプチャを読んで当日の実戦報告</div>
-      <div class="w-time">最終 09-14 23:50（<span class="ago" data-ts="2026-09-14T23:50:01">14時間7分前</span>）・396秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-15T23:50:00">今日 23:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-53ebf27e-openchat-analyst">直近の実行を見る →</a>
+      <div class="w-time">最終 09-14 23:50（<span class="ago" data-ts="2026-09-14T23:50:01">14時間23分前</span>）・396秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-15T23:50:00">今日 23:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-53ebf27e-openchat-analyst">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T00:10:01">
       <div class="w-head"><span class="w-name">📊 ベアトリス</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">daidata-analyst</div>
       <div class="w-role">台データから狙い台を台番つきで</div>
-      <div class="w-time">最終 09-15 00:10（<span class="ago" data-ts="2026-09-15T00:10:01">13時間47分前</span>）・323秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:10:00">明日 00:10</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-ba1a14df-daidata-analyst">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 00:10（<span class="ago" data-ts="2026-09-15T00:10:01">14時間3分前</span>）・323秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:10:00">明日 00:10</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-ba1a14df-daidata-analyst">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T00:30:01">
       <div class="w-head"><span class="w-name">🔮 エキドナ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">hint-decoder</div>
       <div class="w-role">匂わせ×オプチャ×台データで最終見解</div>
-      <div class="w-time">最終 09-15 00:30（<span class="ago" data-ts="2026-09-15T00:30:01">13時間27分前</span>）・365秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:30:00">明日 00:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-b60ef033-hint-decoder">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 00:30（<span class="ago" data-ts="2026-09-15T00:30:01">13時間43分前</span>）・365秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:30:00">明日 00:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-b60ef033-hint-decoder">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T00:50:02">
       <div class="w-head"><span class="w-name">🎭 ロズワール</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">daily-picks</div>
       <div class="w-role">翌日の狙いを機種＋台番で自動生成</div>
-      <div class="w-time">最終 09-15 00:50（<span class="ago" data-ts="2026-09-15T00:50:02">13時間7分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:50:00">明日 00:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-80bbd688-daily-picks">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 00:50（<span class="ago" data-ts="2026-09-15T00:50:02">13時間23分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:50:00">明日 00:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-80bbd688-daily-picks">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T01:00:02">
       <div class="w-head"><span class="w-name">🍃 クルシュ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">coverage-check</div>
       <div class="w-role">3情報源のズレ・取得漏れを点検</div>
-      <div class="w-time">最終 09-15 01:00（<span class="ago" data-ts="2026-09-15T01:00:02">12時間57分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T01:00:00">明日 01:00</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-22b94551-coverage-check">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 01:00（<span class="ago" data-ts="2026-09-15T01:00:02">13時間13分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T01:00:00">明日 01:00</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-22b94551-coverage-check">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T10:00:02">
       <div class="w-head"><span class="w-name">💙 レム</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">koto-comment-reply</div>
       <div class="w-role">ことちゃんねるのコメント返信</div>
-      <div class="w-time">最終 09-15 10:00（<span class="ago" data-ts="2026-09-15T10:00:02">3時間57分前</span>）・45秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-15T23:15:00">今日 23:15</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-6bb4fd49-koto-comment-reply">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 10:00（<span class="ago" data-ts="2026-09-15T10:00:02">4時間13分前</span>）・45秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-15T23:15:00">今日 23:15</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-6bb4fd49-koto-comment-reply">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-13T23:00:00">
       <div class="w-head"><span class="w-name">🌸 ラム</span>
@@ -236,14 +289,21 @@ table.stab .t-off td { color:#6f7288; }
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">koto-analyst</div>
       <div class="w-role">枠の配分・尺・本数を数字で見て提案</div>
-      <div class="w-time">最終 09-14 16:46（<span class="ago" data-ts="2026-09-14T16:46:42">21時間10分前</span>）・479秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T22:30:00">明日 22:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:90%"></i></span>直近 9/10</div><a class="w-jump" href="#run-1d24f987-koto-analyst">直近の実行を見る →</a>
+      <div class="w-time">最終 09-14 16:46（<span class="ago" data-ts="2026-09-14T16:46:42">21時間26分前</span>）・479秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T22:30:00">明日 22:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:90%"></i></span>直近 9/10</div><a class="w-jump" href="#run-1d24f987-koto-analyst">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T07:05:01">
       <div class="w-head"><span class="w-name">🔔 フレデリカ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">todo-tracker</div>
       <div class="w-role">みんなの「要対応」を片付くまで追う</div>
-      <div class="w-time">最終 09-15 07:05（<span class="ago" data-ts="2026-09-15T07:05:01">6時間52分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T07:05:00">明日 07:05</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-dca14287-todo-tracker">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 07:05（<span class="ago" data-ts="2026-09-15T07:05:01">7時間8分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T07:05:00">明日 07:05</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-dca14287-todo-tracker">直近の実行を見る →</a>
+    </div>
+    <div class="who idle" data-start="2026-09-15T13:53:36">
+      <div class="w-head"><span class="w-name">🩺 フェリス</span>
+        <span class="w-badge">💤 依頼待ち</span></div>
+      <div class="w-id">system-medic</div>
+      <div class="w-role">障害の一次対応（原因特定・定型の復旧）</div>
+      <div class="w-time">最終 09-15 13:53（<span class="ago" data-ts="2026-09-15T13:53:36">19分前</span>）・170秒</div><div class="w-time">次回予定（朝の点検） <span class="when" data-ts="2026-09-16T08:05:00">明日 08:05</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 1/1</div><a class="w-jump" href="#run-ab989f7a-system-medic">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-13T16:35:00">
       <div class="w-head"><span class="w-name">💼 ユリウス</span>
@@ -266,12 +326,12 @@ table.stab .t-off td { color:#6f7288; }
       <div class="w-role">制作スケジュール(ガント)・社内資料</div>
       <div class="w-time">最終 09-13 17:39（<span class="ago" data-ts="2026-09-13T17:39:52">1日前</span>）・53秒</div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 2/2</div><a class="w-jump" href="#run-d93be595-avalink-pm">直近の実行を見る →</a>
     </div>
-    <div class="who run" data-start="2026-09-15T13:57:10">
+    <div class="who idle" data-start="2026-09-15T13:57:10">
       <div class="w-head"><span class="w-name">🔧 ガーフィール</span>
-        <span class="w-badge">🟢 稼働中</span></div>
+        <span class="w-badge">💤 依頼待ち</span></div>
       <div class="w-id">system-dev</div>
       <div class="w-role">システム開発（新規作成・根本修正）</div>
-      <div class="w-prog" data-start="2026-09-15T13:57:10" data-eta="415"><span class="w-bar run"><i style="width:0%"></i></span><span class="w-pct">推定 0%</span><span class="w-eta">いつもは6分55秒（2〜14分・直近8回）</span></div><div class="w-time">最終 09-15 13:57（<span class="ago" data-ts="2026-09-15T13:57:10">たった今</span>）</div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 8/8</div><a class="w-jump" href="#run-8369668e-system-dev">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 13:57（<span class="ago" data-ts="2026-09-15T13:57:10">15分前</span>）・954秒</div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 9/9</div><a class="w-jump" href="#run-8369668e-system-dev">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="">
       <div class="w-head"><span class="w-name">📚 リリアナ</span>
@@ -286,16 +346,16 @@ table.stab .t-off td { color:#6f7288; }
       <div class="w-id">game-qa</div>
       <div class="w-role">『ことの家』のQA・プレイ動画の収録</div>
       <div class="w-note">依頼制（まだ一度も呼ばれていない）</div>
-    </div></div>
-<h2 class="sec">実行履歴</h2>
+    </div></div></section>
+<section class="room r-hist"><h2 class="sec">実行履歴</h2>
 
-    <div class="card run" id="run-8369668e-system-dev" data-start="2026-09-15T13:57:10">
+    <div class="card done" id="run-8369668e-system-dev" data-start="2026-09-15T13:57:10">
       <div class="head">
-        <span class="badge">🟢 稼働中</span>
+        <span class="badge">✅ 完了</span>
         <span class="agent">🔧 ガーフィール（system-dev）</span><span class="by">👑 エミリアから</span>
-        <span class="meta">2026-09-15T13:57:10 / —</span>
+        <span class="meta">2026-09-15T13:57:10 / 954秒</span>
       </div>
-      
+      <div class="cnt">ツール 19回</div>
       
     </div>
 
@@ -888,9 +948,11 @@ table.stab .t-off td { color:#6f7288; }
       
       
     </div>
+</section>
+</div></div>
 <div id="toast"></div>
 <script>
-/* 手動起動ボタン。staff_server.py が配信したページ（http）でだけ出す。
+/* 手動起動ボタン。スタッフ操作サーバーが配信したページ（http）でだけ出す。
    file:// で開いたときは押しても届かないので、そもそも表示しない。 */
 (function(){
   if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
@@ -913,13 +975,6 @@ table.stab .t-off td { color:#6f7288; }
       timer = setTimeout(function(){ toast.className = ''; }, 8000 - (Date.now() - s.at));
     }
   } catch(e) {}
-  /* オフィス表示へのリンク。staff_server.py 経由で開いたときだけ出す
-     （公開版の staff.html には /office が無いので隠したままにする）。
-     ⚠️ LAN/VPN越しは ?t=トークン が要るので引き継ぐ。でないと押した瞬間403 */
-  document.querySelectorAll('.officelink').forEach(function(a){
-    a.hidden = false;
-    if (location.search) a.href = a.getAttribute('href') + location.search;
-  });
   document.querySelectorAll('.w-run').forEach(function(b){
     b.hidden = false;
     b.addEventListener('click', function(){
@@ -950,7 +1005,7 @@ table.stab .t-off td { color:#6f7288; }
                      body: JSON.stringify({agent: agent})})
         .then(function(r){ return r.json(); })
         .then(function(d){ say(d.message, !d.ok); })
-        .catch(function(e){ say('サーバーに届かなかった（staff_server.py は動いてる？）', true); })
+        .catch(function(e){ say('サーバーに届かなかった（スタッフ操作サーバーは動いてる？）', true); })
         .then(function(){ b.disabled = false; b.innerHTML = label; });
     });
   });
