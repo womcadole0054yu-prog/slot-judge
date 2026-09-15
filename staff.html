@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%233ddc84%27%2F%3E%3Crect%20x%3D%275%27%20y%3D%276.5%27%20width%3D%2722%27%20height%3D%2719%27%20rx%3D%276.5%27%20fill%3D%27%23ffffff%27%2F%3E%3Ccircle%20cx%3D%2711.8%27%20cy%3D%2716%27%20r%3D%273.2%27%20fill%3D%27%2312131a%27%2F%3E%3Ccircle%20cx%3D%2720.2%27%20cy%3D%2716%27%20r%3D%273.2%27%20fill%3D%27%2312131a%27%2F%3E%3C%2Fsvg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%234a90d9%27%2F%3E%3Crect%20x%3D%275%27%20y%3D%276.5%27%20width%3D%2722%27%20height%3D%2719%27%20rx%3D%276.5%27%20fill%3D%27%23ffffff%27%2F%3E%3Ccircle%20cx%3D%2711.8%27%20cy%3D%2716%27%20r%3D%273.2%27%20fill%3D%27%2312131a%27%2F%3E%3Ccircle%20cx%3D%2720.2%27%20cy%3D%2716%27%20r%3D%273.2%27%20fill%3D%27%2312131a%27%2F%3E%3C%2Fsvg%3E">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <meta name="theme-color" content="#241f31">
@@ -97,7 +97,6 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
   background-size:14px 14px; animation:flow 1s linear infinite; transition:width .6s ease; }
 @keyframes flow { from { background-position:0 0; } to { background-position:14px 0; } }
 .w-pct { color:#3ddc84; font-weight:700; font-size:12px; }
-.hero-pct { color:#3ddc84; font-weight:700; }
 .w-tools { color:#9aa0c0; }
 .w-eta { color:#6f7288; }
 .w-note { font-size:11px; color:#d9a441; margin-top:5px; }
@@ -133,255 +132,97 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
 .officelink { font-size:13px; font-weight:normal; text-decoration:none; padding:3px 10px;
   border:1px solid #4a90d9; border-radius:6px; color:#4a90d9; vertical-align:middle; margin-left:8px; }
 
-.hero { display:flex; align-items:center; gap:18px; background:#1a1c26;
-  border:1px solid #2a2d3d; border-radius:14px; padding:14px 18px; margin-bottom:18px; }
-.hero .talk { flex:1; }
-.hero .talk .line1 { font-size:17px; font-weight:700; margin-bottom:4px; }
-.hero .talk .line2 { font-size:13px; color:#9aa0c0; line-height:1.6; }
-.mascot { flex:none; overflow:visible; }
-
-/* 表情は既定で本体の目だけ出す */
-.mascot .b-eyes-happy, .mascot .b-eyes-error, .mascot .b-eyes-sleep { display:none; }
-.mascot .b-eyes-happy path { fill:none; stroke:#7fe9ff; stroke-width:5; stroke-linecap:round; }
-.mascot .b-eyes-error path { fill:none; stroke:#ff6b6b; stroke-width:5; stroke-linecap:round; }
-.mascot .b-eyes-sleep path { fill:none; stroke:#5c6a86; stroke-width:5; stroke-linecap:round; }
-
-/* --- 稼働中：きびきび浮遊、噴射強め、ランプ速い点滅 --- */
-.st-work .mascot .b-float { animation: rFloat 1.5s ease-in-out infinite; transform-origin:110px 200px; }
-.st-work .mascot .b-arm-l { animation: rArmL 1.5s ease-in-out infinite; transform-origin:70px 176px; }
-.st-work .mascot .b-arm-r { animation: rArmR 1.5s ease-in-out infinite; transform-origin:150px 176px; }
-.st-work .mascot .b-antenna-light { animation: rPulse .55s ease-in-out infinite; }
-.st-work .mascot .b-core { animation: rPulse .8s ease-in-out infinite; }
-.st-work .mascot .b-thrust { animation: rThrust 1.5s ease-in-out infinite; }
-.st-work .mascot .b-dots { animation: rDots 1.6s ease-in-out infinite; }
-.st-work .mascot .b-shadow { animation: rShadow 1.5s ease-in-out infinite; }
-.st-work .mascot .b-eyes { animation: rBlink 3.6s infinite; }
-
-/* --- 完了：にこっとしてゆっくり浮く --- */
-.st-done .mascot .b-eyes { display:none; }
-.st-done .mascot .b-eyes-happy { display:block; }
-.st-done .mascot .b-float { animation: rFloat 3.4s ease-in-out infinite; transform-origin:110px 200px; }
-.st-done .mascot .b-core { animation: rPulse 2.6s ease-in-out infinite; }
-.st-done .mascot .b-thrust { opacity:.35; }
-
-/* --- 失敗：目が×、赤く警告して小刻みに揺れる --- */
-.st-fail .mascot .b-eyes { display:none; }
-.st-fail .mascot .b-eyes-error { display:block; animation: rAlert .7s steps(1) infinite; }
-.st-fail .mascot .b-antenna-light { fill:#ff6b6b; animation: rAlert .7s steps(1) infinite; }
-.st-fail .mascot .b-core { fill:#ff6b6b; animation: rAlert .7s steps(1) infinite; }
-.st-fail .mascot .b-float { animation: rShiver 2.4s ease-in-out infinite; transform-origin:110px 230px; }
-.st-fail .mascot .b-thrust { opacity:.2; }
-
-/* --- 待機：スリープ。ランプは暗く、ゆっくり上下 --- */
-.st-idle .mascot { opacity:.9; }
-.st-idle .mascot .b-eyes { display:none; }
-.st-idle .mascot .b-eyes-sleep { display:block; }
-.st-idle .mascot .b-float { animation: rFloat 5.5s ease-in-out infinite; transform-origin:110px 200px; }
-.st-idle .mascot .b-core { fill:#3f4a63; animation: rPulse 3.6s ease-in-out infinite; }
-.st-idle .mascot .b-antenna-light { fill:#6b7590; }
-.st-idle .mascot .b-thrust { opacity:0; }
-.st-idle .mascot .b-dots { opacity:.15; }
-
-@keyframes rFloat  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-11px)} }
-@keyframes rArmL   { 0%,100%{transform:rotate(6deg)} 50%{transform:rotate(-9deg)} }
-@keyframes rArmR   { 0%,100%{transform:rotate(-6deg)} 50%{transform:rotate(9deg)} }
-@keyframes rPulse  { 0%,100%{opacity:1} 50%{opacity:.35} }
-@keyframes rThrust { 0%,100%{opacity:.6; transform:scaleY(1)} 50%{opacity:1; transform:scaleY(1.45)} }
-@keyframes rDots   { 0%,100%{opacity:.25; transform:translateY(0)} 50%{opacity:1; transform:translateY(-7px)} }
-@keyframes rShadow { 0%,100%{rx:38; opacity:.16} 50%{rx:30; opacity:.09} }
-@keyframes rBlink  { 0%,93%,100%{opacity:1} 95%{opacity:0} }
-@keyframes rAlert  { 0%,49%{opacity:1} 50%,100%{opacity:.25} }
-@keyframes rShiver { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-2.5deg)} 75%{transform:rotate(2.5deg)} }
-
-@media (prefers-reduced-motion: reduce) { .mascot * { animation:none !important; } }
-@media (max-width:520px) { .hero { flex-direction:column; text-align:center; } }
+.sysgrid { display:grid; gap:10px; margin-bottom:24px; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); }
+.sysc { background:#1a1c26; border:1px solid #2a2d3d; border-left:4px solid #3ddc84; border-radius:10px;
+  padding:11px 13px; min-width:0; }
+.sysc.warn { border-left-color:#d9a441; }
+.sysc.bad { border-left-color:#e5534b; }
+h2.sec small { font-weight:normal; color:#6f7288; font-size:11px; }
+ul.syl { list-style:none; margin:6px 0 0; padding:0; font-size:12px; }
+ul.syl li { display:flex; gap:8px; align-items:baseline; padding:3px 0; border-top:1px solid #23263a; min-width:0; }
+ul.syl .sn { flex:none; color:#c8cbe0; }
+ul.syl .sv { color:#9aa0c0; min-width:0; overflow-wrap:anywhere; }
+ul.syl.bad .sn { color:#e5534b; }
+ul.syl.warn .sn { color:#d9a441; }
+.dot { flex:none; width:8px; height:8px; border-radius:50%; background:#3ddc84; align-self:center; }
+.dot.warn { background:#d9a441; }
+.dot.bad { background:#e5534b; }
+.scnt { display:flex; flex-wrap:wrap; gap:4px 12px; font-size:12px; color:#9aa0c0; margin-top:6px; }
+.scnt b { color:#e6e6ef; font-size:15px; }
+.scnt .c-bad b { color:#e5534b; }
+.scnt .c-warn b { color:#d9a441; }
+.ssub { font-size:11px; color:#6f7288; margin-top:9px; }
+table.stab { width:100%; border-collapse:collapse; font-size:11px; margin-top:6px; table-layout:fixed; }
+table.stab th, table.stab td { text-align:left; padding:3px 4px; border-top:1px solid #23263a; vertical-align:top;
+  overflow-wrap:anywhere; }
+table.stab th:nth-child(1) { width:34%; }
+table.stab .t-fail td { color:#e5534b; }
+table.stab .t-miss td { color:#d9a441; }
+table.stab .t-off td { color:#6f7288; }
 
 
 </style></head><body>
 <h1>🤖 AIスタッフ稼働状況 <a class="officelink" href="/" hidden>🏢 オフィスに戻る</a></h1>
-<div class="now">最終更新 2026-09-15 13:39:14（10秒ごとに自動リロード）</div>
-<div class="hero st-work" data-start="2026-09-15T13:39:13"><svg class="mascot" viewBox="0 0 220 260" width="150" height="172" aria-hidden="true">
-  <defs>
-    <linearGradient id="b-shell" x1="0.2" y1="0" x2="0.8" y2="1">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.55" stop-color="#eef1f7"/>
-      <stop offset="1" stop-color="#ccd4e2"/>
-    </linearGradient>
-    <linearGradient id="b-visor" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#3a4256"/>
-      <stop offset="0.5" stop-color="#222838"/>
-      <stop offset="1" stop-color="#161b28"/>
-    </linearGradient>
-    <linearGradient id="b-body" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f7f9fc"/>
-      <stop offset="1" stop-color="#c6cfdf"/>
-    </linearGradient>
-    <radialGradient id="b-glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#7fe9ff" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#7fe9ff" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="b-thrust" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8ef0ff" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="#4dd0e1" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-
-  <ellipse class="b-shadow" cx="110" cy="246" rx="38" ry="7" fill="#000" opacity="0.16"/>
-
-  <!-- 浮遊の噴射光 -->
-  <g class="b-thrust">
-    <ellipse cx="92" cy="222" rx="9" ry="18" fill="url(#b-thrust)"/>
-    <ellipse cx="128" cy="222" rx="9" ry="18" fill="url(#b-thrust)"/>
-  </g>
-
-  <g class="b-float">
-    <!-- アンテナ -->
-    <g class="b-antenna">
-      <path d="M110 40 L110 20" stroke="#b8c2d4" stroke-width="4" stroke-linecap="round"/>
-      <circle class="b-antenna-light" cx="110" cy="16" r="7" fill="#ffd54f"/>
-      <circle cx="110" cy="16" r="14" fill="url(#b-glow)" opacity="0.5"/>
-      <circle cx="108" cy="14" r="2.4" fill="#fff" opacity="0.9"/>
-    </g>
-
-    <!-- 耳パーツ -->
-    <g class="b-ears">
-      <circle cx="42" cy="96" r="15" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
-      <circle cx="42" cy="96" r="6" fill="#4dd0e1"/>
-      <circle cx="178" cy="96" r="15" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
-      <circle cx="178" cy="96" r="6" fill="#4dd0e1"/>
-    </g>
-
-    <!-- 頭 -->
-    <rect x="46" y="40" width="128" height="112" rx="46" fill="url(#b-shell)"/>
-    <rect x="46" y="40" width="128" height="112" rx="46" fill="none" stroke="#b8c2d4" stroke-width="2"/>
-    <!-- 頭のハイライト -->
-    <path d="M66 62 C78 50 108 46 128 50 C110 52 84 58 72 74 Z" fill="#fff" opacity="0.85"/>
-
-    <!-- バイザー -->
-    <rect x="60" y="66" width="100" height="62" rx="31" fill="url(#b-visor)"/>
-    <rect x="60" y="66" width="100" height="62" rx="31" fill="none" stroke="#39415a" stroke-width="2"/>
-    <ellipse cx="110" cy="80" rx="42" ry="10" fill="#fff" opacity="0.09"/>
-
-    <!-- 目（通常） -->
-    <g class="b-eyes">
-      <ellipse cx="88" cy="98" rx="11" ry="12" fill="#7fe9ff"/>
-      <ellipse cx="132" cy="98" rx="11" ry="12" fill="#7fe9ff"/>
-      <circle cx="88" cy="98" r="18" fill="url(#b-glow)" opacity="0.55"/>
-      <circle cx="132" cy="98" r="18" fill="url(#b-glow)" opacity="0.55"/>
-      <circle cx="91" cy="93" r="3.4" fill="#fff"/>
-      <circle cx="135" cy="93" r="3.4" fill="#fff"/>
-    </g>
-    <!-- 目（にこっ） -->
-    <g class="b-eyes-happy">
-      <path d="M76 102 Q88 88 100 102"/>
-      <path d="M120 102 Q132 88 144 102"/>
-    </g>
-    <!-- 目（エラー：×） -->
-    <g class="b-eyes-error">
-      <path d="M80 90 L96 106 M96 90 L80 106"/>
-      <path d="M124 90 L140 106 M140 90 L124 106"/>
-    </g>
-    <!-- 目（スリープ：細い線） -->
-    <g class="b-eyes-sleep">
-      <path d="M78 98 L98 98"/>
-      <path d="M122 98 L142 98"/>
-    </g>
-    <!-- ほっぺランプ -->
-    <ellipse class="b-cheeks" cx="70" cy="116" rx="7" ry="4.5" fill="#ff8fa6" opacity="0.75"/>
-    <ellipse class="b-cheeks" cx="150" cy="116" rx="7" ry="4.5" fill="#ff8fa6" opacity="0.75"/>
-
-    <!-- 首 -->
-    <rect x="100" y="150" width="20" height="12" rx="5" fill="#b8c2d4"/>
-
-    <!-- 体 -->
-    <path d="M110 158 C86 158 74 174 72 196 C71 208 72 216 74 222
-             C90 230 130 230 146 222 C148 216 149 208 148 196
-             C146 174 134 158 110 158 Z" fill="url(#b-body)" stroke="#b8c2d4" stroke-width="2"/>
-    <!-- 胸のコア -->
-    <circle cx="110" cy="192" r="14" fill="#2b3244"/>
-    <circle class="b-core" cx="110" cy="192" r="9" fill="#4dd0e1"/>
-    <circle cx="110" cy="192" r="18" fill="url(#b-glow)" opacity="0.5"/>
-    <circle cx="107" cy="188" r="2.6" fill="#fff" opacity="0.9"/>
-    <!-- パネルの線 -->
-    <path d="M84 212 h18 M136 212 h-18" stroke="#aab5c8" stroke-width="2.4" stroke-linecap="round"/>
-
-    <!-- 腕（球関節） -->
-    <g class="b-arm-l">
-      <circle cx="70" cy="176" r="8" fill="#b8c2d4"/>
-      <rect x="52" y="180" width="16" height="30" rx="8" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
-      <circle cx="60" cy="214" r="9" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
-    </g>
-    <g class="b-arm-r">
-      <circle cx="150" cy="176" r="8" fill="#b8c2d4"/>
-      <rect x="152" y="180" width="16" height="30" rx="8" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
-      <circle cx="160" cy="214" r="9" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
-    </g>
-
-    <!-- 足（浮いてるので短い） -->
-    <ellipse cx="92" cy="228" rx="13" ry="9" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
-    <ellipse cx="128" cy="228" rx="13" ry="9" fill="url(#b-shell)" stroke="#b8c2d4" stroke-width="2"/>
-  </g>
-
-  <!-- まわりの粒子 -->
-  <g class="b-dots" fill="#7fe9ff">
-    <circle cx="26" cy="60" r="3"/>
-    <circle cx="196" cy="52" r="2.4"/>
-    <circle cx="200" cy="180" r="2.6"/>
-    <circle cx="22" cy="168" r="2.2"/>
-  </g>
-</svg>
-  <div class="talk"><div class="line1">🔧 ガーフィール 稼働中</div><div class="line2">処理を実行しています。完了したらDiscordに報告します（<span class="hero-pct" data-start="2026-09-15T13:39:13" data-eta="380">推定 0%</span>）</div></div>
-</div>
+<div class="now">最終更新 2026-09-15 13:52:42（10秒ごとに自動リロード）</div>
 <div class="stats">
-  <div class="stat"><b class="live-active">1</b><span>稼働中</span></div>
-  <div class="stat"><b>10</b><span>今日 完了</span></div>
+  <div class="stat"><b class="live-active">0</b><span>稼働中</span></div>
+  <div class="stat"><b>11</b><span>今日 完了</span></div>
   <div class="stat"><b>0</b><span>今日 失敗</span></div>
-  <div class="stat"><b>0</b><span>要注意</span></div>
+  <div class="stat"><b>1</b><span>要注意</span></div>
   <div class="stat"><b>472</b><span>総実行数</span></div>
 </div>
+<h2 class="sec">指示系統　🧑 ゆうし → 👑 エミリア（監督） → スタッフ</h2><div class="director idle"><div class="w-head"><span class="w-name">👑 エミリア</span><span class="w-badge">👀 監督中</span></div><div class="w-role">監督：仕事の切り出し・検証・報告　今日の指示 4件</div><div class="orders"><div class="o-row stale"><span class="o-time">09-15 13:39</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">806秒</span><div class="o-head"><a class="o-jump" href="#run-d95d17cb-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-15 00:36</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">456秒</span><div class="o-head"><a class="o-jump" href="#run-d83cd51a-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-15 00:15</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">380秒</span><div class="o-head"><a class="o-jump" href="#run-162c05d5-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-15 00:01</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">450秒</span><div class="o-head"><a class="o-jump" href="#run-603e1f66-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:46</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">808秒</span><div class="o-head"><a class="o-jump" href="#run-c7046d1f-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:39</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">362秒</span><div class="o-head"><a class="o-jump" href="#run-724e684c-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:06</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">151秒</span><div class="o-head"><a class="o-jump" href="#run-207c423e-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 22:57</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">169秒</span><div class="o-head"><a class="o-jump" href="#run-688151cf-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-14 16:46</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">479秒</span><div class="o-head"><a class="o-jump" href="#run-1d24f987-koto-analyst">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 17:39</span><span class="o-who">👑 エミリア → 📅 ペトラ</span><span class="o-badge">✅ 完了</span><span class="o-sec">53秒</span><div class="o-head"><a class="o-jump" href="#run-d93be595-avalink-pm">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-13 17:26</span><span class="o-who">👑 エミリア → 📅 ペトラ</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">73秒</span><div class="o-head"><a class="o-jump" href="#run-5729a388-avalink-pm">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:35</span><span class="o-who">👑 エミリア → 💼 ユリウス</span><span class="o-badge">✅ 完了</span><span class="o-sec">43秒</span><div class="o-head"><a class="o-jump" href="#run-e9ba68e2-avalink-staff">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:21</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">✅ 完了</span><span class="o-sec">45秒</span><div class="o-head"><a class="o-jump" href="#run-c17f406a-koto-analyst">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:18</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">✅ 完了</span><span class="o-sec">35秒</span><div class="o-head"><a class="o-jump" href="#run-7cf2e51a-koto-analyst">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-13 16:16</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">⚠️ 報告なし</span><span class="o-sec">27秒</span><div class="o-head"><a class="o-jump" href="#run-e886451a-koto-analyst">報告 →</a></div></div></div></div>
+<h2 class="sec">機械室・スケジューラー　<small>取得 13:52:41</small></h2><div class="sysgrid"><div class="sysc ok"><div class="w-head"><span class="w-name">🗄 機械室</span><span class="w-badge">🟢 正常</span></div><ul class="syl"><li><i class="dot ok"></i><span class="sn">🎰 喰種ナビ配信</span><span class="sv">稼働中</span></li><li><i class="dot ok"></i><span class="sn">🎛 スタッフ操作ボタン</span><span class="sv">稼働中</span></li><li><i class="dot ok"></i><span class="sn">📨 会社LINE転送</span><span class="sv">稼働中</span></li><li><i class="dot ok"></i><span class="sn">🖥 PC</span><span class="sv">空き容量OK</span></li><li><i class="dot ok"></i><span class="sn">🧮 Claude使用量監視</span><span class="sv">取得OK</span></li></ul></div><div class="sysc bad"><div class="w-head"><span class="w-name">⏰ スケジューラー</span><span class="w-badge">🔴 異常</span></div><div class="scnt"><span>3時間以内 <b>6</b></span><span class="c-bad">失敗 <b>2</b></span><span class="c-warn">未実行 <b>0</b></span><span>無効 <b>9</b></span><span>全 <b>66</b></span></div><div class="ssub">これから3時間</div><ul class="syl"><li><span class="sn">14:00</span><span class="sv">CryptoMonitor</span></li><li><span class="sn">15:00</span><span class="sv">KotoUpload_Daily</span></li><li><span class="sn">15:30</span><span class="sv">AutoSessionLog</span></li><li><span class="sn">15:30</span><span class="sv">IgPost_Daily</span></li><li><span class="sn">16:30</span><span class="sv">IgSurge_Daily</span></li><li><span class="sn">16:45</span><span class="sv">SystemHealthCheck</span></li></ul><div class="ssub">失敗</div><ul class="syl bad"><li><span class="sn">エラー(2)</span><span class="sv">MCVideo_EpisodeWeekly</span></li><li><span class="sn">エラー(1)</span><span class="sv">StartupHealthCheck_Logon</span></li></ul></div></div>
 
-<h2 class="sec">指示系統　🧑 ゆうし → 👑 エミリア（監督） → スタッフ</h2><div class="director run"><div class="w-head"><span class="w-name">👑 エミリア</span><span class="w-badge">📨 指示中・✍️ 作業中</span></div><div class="w-role">監督：仕事の切り出し・検証・報告　今日の指示 4件</div><div class="w-said">✍️ 作業中（最後の操作 13:39）</div><div class="orders"><div class="o-row run"><span class="o-time">09-15 13:39</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">🟢 稼働中</span><span class="o-sec"></span><div class="o-head"><a class="o-jump" href="#run-d95d17cb-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-15 00:36</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">456秒</span><div class="o-head"><a class="o-jump" href="#run-d83cd51a-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-15 00:15</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">380秒</span><div class="o-head"><a class="o-jump" href="#run-162c05d5-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-15 00:01</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">450秒</span><div class="o-head"><a class="o-jump" href="#run-603e1f66-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:46</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">808秒</span><div class="o-head"><a class="o-jump" href="#run-c7046d1f-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:39</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">362秒</span><div class="o-head"><a class="o-jump" href="#run-724e684c-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 23:06</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">151秒</span><div class="o-head"><a class="o-jump" href="#run-207c423e-system-dev">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-14 22:57</span><span class="o-who">👑 エミリア → 🔧 ガーフィール</span><span class="o-badge">✅ 完了</span><span class="o-sec">169秒</span><div class="o-head"><a class="o-jump" href="#run-688151cf-system-dev">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-14 16:46</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">479秒</span><div class="o-head"><a class="o-jump" href="#run-1d24f987-koto-analyst">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 17:39</span><span class="o-who">👑 エミリア → 📅 ペトラ</span><span class="o-badge">✅ 完了</span><span class="o-sec">53秒</span><div class="o-head"><a class="o-jump" href="#run-d93be595-avalink-pm">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-13 17:26</span><span class="o-who">👑 エミリア → 📅 ペトラ</span><span class="o-badge">⚠️ 要対応あり</span><span class="o-sec">73秒</span><div class="o-head"><a class="o-jump" href="#run-5729a388-avalink-pm">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:35</span><span class="o-who">👑 エミリア → 💼 ユリウス</span><span class="o-badge">✅ 完了</span><span class="o-sec">43秒</span><div class="o-head"><a class="o-jump" href="#run-e9ba68e2-avalink-staff">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:21</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">✅ 完了</span><span class="o-sec">45秒</span><div class="o-head"><a class="o-jump" href="#run-c17f406a-koto-analyst">報告 →</a></div></div><div class="o-row done"><span class="o-time">09-13 16:18</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">✅ 完了</span><span class="o-sec">35秒</span><div class="o-head"><a class="o-jump" href="#run-7cf2e51a-koto-analyst">報告 →</a></div></div><div class="o-row stale"><span class="o-time">09-13 16:16</span><span class="o-who">👑 エミリア → 🧣 アナスタシア</span><span class="o-badge">⚠️ 報告なし</span><span class="o-sec">27秒</span><div class="o-head"><a class="o-jump" href="#run-e886451a-koto-analyst">報告 →</a></div></div></div></div><h2 class="sec">スタッフ</h2><div class="roster">
+<h2 class="sec">スタッフ</h2><div class="roster">
+    <div class="who stale" data-start="2026-09-15T13:39:13">
+      <div class="w-head"><span class="w-name">🔧 ガーフィール</span>
+        <span class="w-badge">⚠️ 要対応あり</span></div>
+      <div class="w-id">system-dev</div>
+      <div class="w-role">システム開発（新規作成・根本修正）</div>
+      <div class="w-time">最終 09-15 13:39（<span class="ago" data-ts="2026-09-15T13:39:13">13分前</span>）・806秒</div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 8/8</div><div class="w-note">要対応1件：スケジューラーに失敗が2件出ている（MCVideo_EpisodeWeekly が 09/12 8:00 に結果2、StartupHealthChe…</div><a class="w-jump" href="#run-d95d17cb-system-dev">直近の実行を見る →</a>
+    </div>
     <div class="who idle" data-start="2026-09-14T23:50:01">
       <div class="w-head"><span class="w-name">📣 オットー</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">openchat-analyst</div>
       <div class="w-role">オプチャを読んで当日の実戦報告</div>
-      <div class="w-time">最終 09-14 23:50（<span class="ago" data-ts="2026-09-14T23:50:01">13時間49分前</span>）・396秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-15T23:50:00">今日 23:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-53ebf27e-openchat-analyst">直近の実行を見る →</a>
+      <div class="w-time">最終 09-14 23:50（<span class="ago" data-ts="2026-09-14T23:50:01">14時間2分前</span>）・396秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-15T23:50:00">今日 23:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-53ebf27e-openchat-analyst">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T00:10:01">
       <div class="w-head"><span class="w-name">📊 ベアトリス</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">daidata-analyst</div>
       <div class="w-role">台データから狙い台を台番つきで</div>
-      <div class="w-time">最終 09-15 00:10（<span class="ago" data-ts="2026-09-15T00:10:01">13時間29分前</span>）・323秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:10:00">明日 00:10</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-ba1a14df-daidata-analyst">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 00:10（<span class="ago" data-ts="2026-09-15T00:10:01">13時間42分前</span>）・323秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:10:00">明日 00:10</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-ba1a14df-daidata-analyst">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T00:30:01">
       <div class="w-head"><span class="w-name">🔮 エキドナ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">hint-decoder</div>
       <div class="w-role">匂わせ×オプチャ×台データで最終見解</div>
-      <div class="w-time">最終 09-15 00:30（<span class="ago" data-ts="2026-09-15T00:30:01">13時間9分前</span>）・365秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:30:00">明日 00:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-b60ef033-hint-decoder">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 00:30（<span class="ago" data-ts="2026-09-15T00:30:01">13時間22分前</span>）・365秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:30:00">明日 00:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-b60ef033-hint-decoder">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T00:50:02">
       <div class="w-head"><span class="w-name">🎭 ロズワール</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">daily-picks</div>
       <div class="w-role">翌日の狙いを機種＋台番で自動生成</div>
-      <div class="w-time">最終 09-15 00:50（<span class="ago" data-ts="2026-09-15T00:50:02">12時間49分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:50:00">明日 00:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-80bbd688-daily-picks">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 00:50（<span class="ago" data-ts="2026-09-15T00:50:02">13時間2分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T00:50:00">明日 00:50</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-80bbd688-daily-picks">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T01:00:02">
       <div class="w-head"><span class="w-name">🍃 クルシュ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">coverage-check</div>
       <div class="w-role">3情報源のズレ・取得漏れを点検</div>
-      <div class="w-time">最終 09-15 01:00（<span class="ago" data-ts="2026-09-15T01:00:02">12時間39分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T01:00:00">明日 01:00</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-22b94551-coverage-check">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 01:00（<span class="ago" data-ts="2026-09-15T01:00:02">12時間52分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T01:00:00">明日 01:00</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-22b94551-coverage-check">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T10:00:02">
       <div class="w-head"><span class="w-name">💙 レム</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">koto-comment-reply</div>
       <div class="w-role">ことちゃんねるのコメント返信</div>
-      <div class="w-time">最終 09-15 10:00（<span class="ago" data-ts="2026-09-15T10:00:02">3時間39分前</span>）・45秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-15T23:15:00">今日 23:15</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-6bb4fd49-koto-comment-reply">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 10:00（<span class="ago" data-ts="2026-09-15T10:00:02">3時間52分前</span>）・45秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-15T23:15:00">今日 23:15</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-6bb4fd49-koto-comment-reply">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-13T23:00:00">
       <div class="w-head"><span class="w-name">🌸 ラム</span>
@@ -395,14 +236,14 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">koto-analyst</div>
       <div class="w-role">枠の配分・尺・本数を数字で見て提案</div>
-      <div class="w-time">最終 09-14 16:46（<span class="ago" data-ts="2026-09-14T16:46:42">20時間52分前</span>）・479秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T22:30:00">明日 22:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:90%"></i></span>直近 9/10</div><a class="w-jump" href="#run-1d24f987-koto-analyst">直近の実行を見る →</a>
+      <div class="w-time">最終 09-14 16:46（<span class="ago" data-ts="2026-09-14T16:46:42">21時間6分前</span>）・479秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T22:30:00">明日 22:30</span></div><div class="w-rate"><span class="w-bar"><i style="width:90%"></i></span>直近 9/10</div><a class="w-jump" href="#run-1d24f987-koto-analyst">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="2026-09-15T07:05:01">
       <div class="w-head"><span class="w-name">🔔 フレデリカ</span>
         <span class="w-badge">✅ 正常</span></div>
       <div class="w-id">todo-tracker</div>
       <div class="w-role">みんなの「要対応」を片付くまで追う</div>
-      <div class="w-time">最終 09-15 07:05（<span class="ago" data-ts="2026-09-15T07:05:01">6時間34分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T07:05:00">明日 07:05</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-dca14287-todo-tracker">直近の実行を見る →</a>
+      <div class="w-time">最終 09-15 07:05（<span class="ago" data-ts="2026-09-15T07:05:01">6時間47分前</span>）・0秒</div><div class="w-time">次回 <span class="when" data-ts="2026-09-16T07:05:00">明日 07:05</span></div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 10/10</div><a class="w-jump" href="#run-dca14287-todo-tracker">直近の実行を見る →</a>
     </div>
     <div class="who idle" data-start="">
       <div class="w-head"><span class="w-name">🩺 フェリス</span>
@@ -432,13 +273,6 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
       <div class="w-role">制作スケジュール(ガント)・社内資料</div>
       <div class="w-time">最終 09-13 17:39（<span class="ago" data-ts="2026-09-13T17:39:52">1日前</span>）・53秒</div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 2/2</div><a class="w-jump" href="#run-d93be595-avalink-pm">直近の実行を見る →</a>
     </div>
-    <div class="who run" data-start="2026-09-15T13:39:13">
-      <div class="w-head"><span class="w-name">🔧 ガーフィール</span>
-        <span class="w-badge">🟢 稼働中</span></div>
-      <div class="w-id">system-dev</div>
-      <div class="w-role">システム開発（新規作成・根本修正）</div>
-      <div class="w-prog" data-start="2026-09-15T13:39:13" data-eta="380"><span class="w-bar run"><i style="width:0%"></i></span><span class="w-pct">推定 0%</span><span class="w-eta">いつもは6分20秒（2〜14分・直近7回）</span></div><div class="w-time">最終 09-15 13:39（<span class="ago" data-ts="2026-09-15T13:39:13">たった今</span>）</div><div class="w-rate"><span class="w-bar"><i style="width:100%"></i></span>直近 7/7</div><a class="w-jump" href="#run-d95d17cb-system-dev">直近の実行を見る →</a>
-    </div>
     <div class="who idle" data-start="">
       <div class="w-head"><span class="w-name">📚 リリアナ</span>
         <span class="w-badge">💤 依頼待ち</span></div>
@@ -455,13 +289,13 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
     </div></div>
 <h2 class="sec">実行履歴</h2>
 
-    <div class="card run" id="run-d95d17cb-system-dev" data-start="2026-09-15T13:39:13">
+    <div class="card stale" id="run-d95d17cb-system-dev" data-start="2026-09-15T13:39:13">
       <div class="head">
-        <span class="badge">🟢 稼働中</span>
+        <span class="badge">⚠️ 要対応あり</span>
         <span class="agent">🔧 ガーフィール（system-dev）</span><span class="by">👑 エミリアから</span>
-        <span class="meta">2026-09-15T13:39:13 / —</span>
+        <span class="meta">2026-09-15T13:39:13 / 806秒</span>
       </div>
-      
+      <div class="cnt">ツール 20回</div>
       
     </div>
 
@@ -1223,22 +1057,8 @@ h2.sec { font-size:13px; color:#8a8ba0; font-weight:600; margin:0 0 8px;
       : ('推定 ' + pct + '%' + (left >= 1 ? '・あと約' + left + '分' : '・まもなく完了'));
   });
 
-  document.querySelectorAll('.hero-pct[data-start][data-eta]').forEach(function(e){
-    var eta = parseInt(e.getAttribute('data-eta'), 10);
-    var el  = mins(e.getAttribute('data-start')) * 60;
-    if(!eta || el < 0 || el > 1e7) return;
-    e.textContent = '推定 ' + Math.min(96, Math.round(el * 100 / eta)) + '%';
-  });
-
-  var hero = document.querySelector('.hero[data-start]');
-  if(hero && hero.classList.contains('st-work') &&
-     mins(hero.getAttribute('data-start')) > STALE_MIN){
-    hero.classList.remove('st-work'); hero.classList.add('st-idle');
-    var l1 = hero.querySelector('.line1'); if(l1) l1.textContent = '待機中';
-    var l2 = hero.querySelector('.line2'); if(l2) l2.textContent = 'スリープ中';
-    var sc = document.querySelector('b.live-active');
-    if(sc){ var n = (parseInt(sc.textContent,10)||0) - staleCards; sc.textContent = n>0?n:0; }
-  }
+  var sc = document.querySelector('b.live-active');
+  if(sc && staleCards){ var n = (parseInt(sc.textContent,10)||0) - staleCards; sc.textContent = n>0?n:0; }
 })();
 
 /* 10秒ごとの自動リロードでも、スクロール位置と開いた詳細(details)を保つ。
