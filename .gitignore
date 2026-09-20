@@ -38,5 +38,8 @@ confirmed_settings.json
 import_reports.py
 realtime_navi.py
 verify_freq_cz.py
+parse_shikake.py
 going_today.flag
 *.bak_*
+estimate_shikake.py
+publish_navi.py
