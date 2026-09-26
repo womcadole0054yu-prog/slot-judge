@@ -2,7 +2,7 @@
 """
 birthday_check.py
 翌日が誕生日のパチスロ関連アニメキャラをchar_birthdays.jsonから探してDiscord通知する。
-毎日20:00にタスクスケジューラ(SlotCharBirthday_Daily)で実行。
+毎日20:00にタスクスケジューラ(【スロット】キャラ誕生日通知_20時)で実行。
 該当なしの日は通知しない(ノイズ防止)。
 """
 import io, sys, json
